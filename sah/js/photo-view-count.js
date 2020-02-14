@@ -7,7 +7,7 @@ var mapLink="https://www.google.com/maps/contrib/";
 var photo_view = photo_view_match("(\\d+),\\\\\"(C[\\w-]{34,40})\\\\\",(\\d+)", getResponseText(mapLink + contributeID));
 photos += parseInt(photo_view.photos);
 views += parseInt(photo_view.views);
-console.log(photo_view);
+// console.log(photo_view);
 
 contributeID = "103474235754339879446";
 photo_view = photo_view_match("(\\d+),\\\\\"(C[\\w-]{34,40})\\\\\",(\\d+)", getResponseText(mapLink + contributeID));
@@ -15,7 +15,7 @@ photo_view = photo_view_match("(\\d+),\\\\\"(C[\\w-]{34,40})\\\\\",(\\d+)", getR
 photos += parseInt(photo_view.photos);
 views += parseInt(photo_view.views);
 
-console.log(photo_view);
+// console.log(photo_view);
 
 $("#photo-count").attr("data-to", photos);
 $("#view-count").attr("data-to", views);

@@ -152,17 +152,15 @@ function isMobile() {
 }
 
 function setIFrameHeight() {
-	var height=0;
+	var height=500;
 	if (isMobile()) {
 		if(window.innerHeight > window.innerWidth){
 			var navbarHeight = $(".uk-navbar-container").height();
 			var windowHeight = $(window).height();
 			height = windowHeight -navbarHeight - 30;
-		}else{
-			height = 500;
 		}
-		$("iframe").attr("height",height);
 	}
+	$("iframe").attr("height",height);
 }
 
 (function ($) {
