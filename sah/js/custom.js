@@ -175,15 +175,15 @@ $( window ).on( "orientationchange", function( event ) {
 });
 
 function sendMailJS(){
-    var to = "mustafaalibaig4@gmail.com";
-	var subject = "INQUIRE";
+    var to = "sahdigital360@gmail.com";
+	var subject = "HIRE";
 	var firstName = $("input[name=fname]").val();
 	var lastName = $("input[name=lname]").val();
 	var phone = $("input[name=phone]").val();
 	var message = $("textarea[name=message]").val();
 	var body = "Name: "+firstName+" "+lastName
-			+" Phone: "+phone 
-			+" Message: "+message;
+			+" , Phone: "+phone 
+			+" , Message: "+message;
     window.open("mailto:"+to+" ?subject="+subject+"&body="+body);
     // window.open("mailto:email@address.com?subject=test&body=type%20your%0D%0Amessage%20here");
 	

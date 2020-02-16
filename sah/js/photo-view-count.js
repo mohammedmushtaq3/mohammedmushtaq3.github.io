@@ -1,4 +1,6 @@
-var photos=0,views=0;
+var photos=0;
+var views=0;
+
 var contributeID = "103140580685995586585";//SAH new id
 var mapLink="https://www.google.com/maps/contrib/";
 //mircom 
@@ -10,6 +12,12 @@ views += parseInt(photo_view.views);
 // console.log(photo_view);
 
 contributeID = "103474235754339879446";
+photo_view = photo_view_match("(\\d+),\\\\\"(C[\\w-]{34,40})\\\\\",(\\d+)", getResponseText(mapLink + contributeID));
+
+photos += parseInt(photo_view.photos);
+views += parseInt(photo_view.views);
+
+contributeID = "112229672882478638212";
 photo_view = photo_view_match("(\\d+),\\\\\"(C[\\w-]{34,40})\\\\\",(\\d+)", getResponseText(mapLink + contributeID));
 
 photos += parseInt(photo_view.photos);
