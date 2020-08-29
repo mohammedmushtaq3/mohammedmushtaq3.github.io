@@ -1,0 +1,462 @@
+.language-btn {
+  line-height: 2.5;
+  border-radius: 2.5em;
+}
+
+.language-btn {
+  margin-bottom: 1.3em!important;
+}
+
+.gradient-color {
+  background-image: linear-gradient(100deg,#071a3b,#0193d2);
+}
+
+body {
+  height: 100%;
+  color: white;
+  background-image: linear-gradient(100deg,#071a3b,#0188d2);
+}
+
+.remainder {
+  background-image: linear-gradient(80deg,#041739,#04608e);
+}
+
+.row.toolbar-btn {
+  position: absolute;
+  width: 100%;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  line-height: inherit;
+  margin: 0px;
+}
+
+#title {
+  display: inline-block;
+  width: auto;
+  line-height: inherit;
+  white-space: nowrap;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+#toolbar {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  z-index: 1000;
+  color: inherit;
+  font-size: 1em;
+  line-height: 2.5em;
+  background-image: linear-gradient(100deg,#071a3b,#0188d2);
+}
+
+#content {
+  padding: 3em 0em 4em 0em;
+}
+
+#toolbar a {
+  color: inherit;
+}
+
+.upcom-app {
+  list-style: none;
+}
+
+.profile-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.app-date {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+.app-mon {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.app-item {
+  background-color: #041d40;
+}
+
+.app-item i {
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  max-width: 650px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+#message-bar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*max-width: 650px;*/
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0 -2px 5px -2px #333;
+}
+
+.container {
+  color: white;
+  height: inherit;
+  font-size: 0.87rem;
+}
+
+.app-datetime p {
+  margin-bottom: 0;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+#nav-bar .col ul {
+  margin: 0;
+  width: 100%;
+}
+
+#nav-bar .col ul li a {
+  padding: inherit;
+}
+
+@media (min-width: 576px) {
+  #nav-bar {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+#nav-bar .col ul li:nth-child(3) {
+  display: block;
+  position: fixed;
+  bottom: 50%;
+}
+
+.fas.fa-info-circle {
+  padding: 5px;
+}
+
+#nav-bar .col ul li a i {
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 100%;
+  color: #157ab5;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  #about-img {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.app-item p {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.card-body {
+  padding: .5rem;
+}
+
+.language-btn.active {
+  color: #0272b3!important;
+  background-color: white;
+}
+
+.language-btn {
+  width: 85%;
+  cursor: pointer;
+  padding: 3px 3px 3px 20px;
+  background-color: inherit;
+  border: 1px solid #fff;
+}
+
+.app-item .row {
+  margin-left: 0!important;
+  margin-right: 0!important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: inherit;
+}
+
+.btn {
+  border-radius: 30px;
+}
+
+.app-type, .app-duration {
+  font-size: 0.875rem;
+}
+
+.card {
+  margin-bottom: 0.5rem;
+}
+
+.hr-center {
+  margin-left: 50%!important;
+  transform: translateX(-50%)!important;
+}
+
+.input-group {
+  color: #0273b5;
+  background-color: white;
+  padding: .4rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.input-group .input-group-addon {
+  align-self: center;
+  padding-left: .5rem;
+}
+
+.input-group input, .input-group input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.input-group.submit {
+  color: inherit;
+  background-color: rgba(1,123,192,0.35);
+  border: none;
+  border-radius: 2rem;
+}
+
+#login-form {
+  margin-top: 50%;
+  font-size: 1.3em;
+}
+
+#login-form .input-group.submit input, #login-form .input-group input[type="submit"] {
+  color: inherit;
+  background-color: transparent;
+}
+
+#forget-password {
+  font-size: .8em;
+  color: inherit;
+  float: right;
+  margin-top: -15px;
+  padding: 5px 0px;
+}
+
+.list-inline.social-account {
+  color: #0273b5;
+}
+
+.list-inline.social-account li {
+  background-color: white;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.list-inline.social-account li i {
+  line-height: 3.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+#footer {
+  margin-top: 5rem;
+}
+
+#menu li a i {
+  float: right;
+  line-height: 1.5em;
+}
+
+#menu li {
+  padding: .8rem;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.23);
+}
+
+#title h4 {
+  line-height: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+#menu {
+}
+
+#menu li a {
+  display: block;
+}
+
+#menu li a:focus, #menu li a:hover {
+  color: rgb(1,133,206);
+}
+
+#app-tabs .nav-item {
+  text-transform: uppercase;
+}
+
+.app-item .app-mon {
+  text-transform: capitalize;
+}
+
+#video-call {
+  width: 100%;
+  height: 100vh;
+  max-width: 500px;
+  margin: 0;
+}
+
+.card-img {
+  height: 100%;
+  width: auto;
+}
+
+#call-btns {
+  position: fixed;
+  z-index: 124;
+  bottom: 0;
+}
+
+#call-btns li {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  background-color: rgba(0,0,0,0.58);
+  border-radius: 2rem;
+}
+
+#call-btns li a, #call-btns li a:active {
+  text-decoration: none;
+  color: white;
+}
+
+#call-btns li i {
+  line-height: 3em;
+}
+
+#call-btns li:nth-child(2) {
+  background-color: red;
+}
+
+#message-bar input {
+  width: calc(100% - 50px);
+  font-family: 'Open Sans';
+  float: left;
+  border: none;
+  padding: 12px 32px 10px 8px;
+  font-size: 0.8em;
+  color: #32465a;
+}
+
+.messages ul li.sent img {
+  margin: 6px 8px 0 0;
+}
+
+.messages ul li {
+  display: inline-block;
+  clear: both;
+  float: left;
+  margin: 15px 15px 5px 15px;
+  width: 90%;
+  font-size: 0.9em;
+}
+
+.messages li.sent div {
+  background-color: #4285f4;
+  color: #f5f5f5;
+}
+
+@media (min-width: 735px) {
+  .messages li.sent div {
+    max-width: 300px;
+  }
+}
+
+.messages li div {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 205px;
+  line-height: 130%;
+}
+
+.messages ul li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+}
+
+.messages ul li.replies img {
+  float: right;
+  margin: 6px 0 0 8px;
+}
+
+.messages ul li.replies div {
+  color: #000;
+  background-color: #f5f5f5;
+  float: right;
+}
+
+.messages {
+  width: 100%;
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+#caller-img {
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  bottom: 8rem;
+  right: 2rem;
+}
+
+#message-bar .col button {
+  margin: 0;
+  float: right;
+  border: none;
+  border-radius: 0px;
+  width: 50px;
+  padding: 12px 0;
+  cursor: pointer;
+  background: #32465a;
+  color: #f5f5f5;
+  box-shadow: none;
+}
+
+#message-bar input:focus {
+  outline: none;
+}
+
+#user-profile {
+  width: 100vw;
+  height: 43%;
+  border-radius: 0px 0px 0px 0px;
+  background-color: #045389;
+  padding: 15px;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
