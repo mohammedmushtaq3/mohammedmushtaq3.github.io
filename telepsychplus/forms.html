@@ -25,8 +25,8 @@
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="site-survey.html"><i class="fas fa-table"></i><span>Site Surveys</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="forms.html"><i class="fas fa-table"></i><span>Forms</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="site-survey.html"><i class="fas fa-table"></i><span>Site Surveys</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="forms.html"><i class="fas fa-table"></i><span>Forms</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -49,50 +49,46 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-1">Surveys</h3>
-                <div class="row">
-                    <div class="col">
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="site-survey-datatable" style="width: 100%;">
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-dark mb-1">Forms</h3>
                 <hr>
                 <div class="row">
-                    <div class="col-lg-7 col-xl-8">
-                        <div class="card shadow mb-4">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h4 class="text-uppercase">user</h4>
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <h4 class="card-title">Basic Information (Adult)</h4><button class="btn btn-primary" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
+                                <div class="wrap"><iframe name="adult-form" class="scale-down-forms" src="./adult-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true">
+</iframe></div>
                             </div>
-                            <div class="card-body">
-                                <div id="userChart" class="chat-area"></div>
+                            <div class="card"><img class="card-img-top w-100 d-block">
+                                <div class="card-body">
+                                    <h4 class="card-title">Title</h4>
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
+                            </div>
+                            <div class="card"><img class="card-img-top w-100 d-block">
+                                <div class="card-body">
+                                    <h4 class="card-title">Title</h4>
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7 col-xl-8">
-                        <div class="card shadow mb-4">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h4>Questions</h4>
-                            </div>
-                            <div class="card-body"></div>
+                        <div class="card m-3 overflow-hidden">
+                            <div class="card-header">
+                                <h4 class="d-inline-block">Basic Information (Adult)<br></h4><a class="float-right m-2" href="adult-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
+                            <div
+                                class="card-body">
+                                <div class="wrap"><iframe name="adult-form" class="scale-down-forms" src="./adult-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true">
+</iframe></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © TelePsych+ 2020</span></div>
-            </div>
-        </footer>
+    </div>
+    <footer class="bg-white sticky-footer">
+        <div class="container my-auto">
+            <div class="text-center my-auto copyright"><span>Copyright © TelePsych+ 2020</span></div>
+        </div>
+    </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -102,8 +98,6 @@
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="assets/js/script.min.js"></script>
-    <script src="assets/js/g-chart.min.js"></script>
-    <script src="assets/js/site-surveys.min.js"></script>
 </body>
 
 </html>
