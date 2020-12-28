@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Telepsych+</title>
+    <meta name="description" content="Admin Portal">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <h3 class="text-center text-dark mt-lg-2">CLAIM FORM</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <form id="claim-form" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="claim_form">
+                                <div class="form-group input-group"><label>Patient Name</label><input class="form-control" type="text" required="" name="patient_name"></div>
+                                <div class="form-group input-group"><label>File Number</label><input class="form-control" type="text" required="" name="file_number"></div>
+                                <div class="form-group input-group"><label>Thiqa Number</label><input class="form-control" type="text" name="thiqa_number"></div>
+                                <div class="form-group input-group"><label>Policy Number</label><input class="form-control" type="text" name="policy_number"></div>
+                                <div class="form-group input-group"><label>Diagnosis</label><input class="form-control" type="text" name="diagnosis"></div>
+                                <div class="form-group input-group"><label>Mobile Number</label><input class="form-control" type="text" name="mobile_number"></div>
+                                <h5 class="mt-5">Claim for Initial Visit</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Request CPT Codes.</th>
+                                                <th class="text-center"># of procedures Requested</th>
+                                                <th class="text-center"># Approved</th>
+                                                <th class="text-center">Date Issued</th>
+                                                <th class="text-center">Date Expired</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>90801</td>
+                                                <td><input class="form-control" type="text" name="90801_procedures_requested"></td>
+                                                <td><input class="form-control" type="text" name="90801_arrpoved"></td>
+                                                <td><input class="form-control" type="text" name="90801_date_issued"></td>
+                                                <td><input class="form-control" type="text" name="90801_date_expired"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90802</td>
+                                                <td><input class="form-control" type="text" name="90802_procedures_requested"></td>
+                                                <td><input class="form-control" type="text" name="90802_approved"></td>
+                                                <td><input class="form-control" type="text" name="90802_date_issued"></td>
+                                                <td><input class="form-control" type="text" name="90802_date_expired"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>96101</td>
+                                                <td><input class="form-control" type="text" name="96101_procedures_requested"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>96150</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90846</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90847</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3 class="mt-5">Claim for Psychotherapy Treatment</h3>
+                                <h5>Claim for Initial Visit</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Request CPT Codes.</th>
+                                                <th class="text-center"># of procedures Requested</th>
+                                                <th class="text-center"># Approved</th>
+                                                <th class="text-center">Date Issued</th>
+                                                <th class="text-center">Date Expired</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>90808</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90806</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90846</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90847</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>90853</td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="submit">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+</body>
+
+</html>

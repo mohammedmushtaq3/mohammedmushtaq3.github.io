@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Blank Page - TelePsych+</title>
-    <meta name="description" content="Admin Portal">
+    <title>Forms - Telepsych+</title>
+    <meta name="description" content="Forms
+">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -33,7 +34,7 @@
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <nav class="navbar navbar-light navbar-expand fixed-top bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <ul class="nav navbar-nav flex-nowrap ml-auto">
                             <li class="nav-item dropdown no-arrow" role="presentation">
@@ -52,37 +53,50 @@
                 <h3 class="text-dark mb-1">Forms</h3>
                 <hr>
                 <div class="row">
-                    <div class="col">
-                        <div class="card-group">
-                            <div class="card overflow-hidden">
-                                <div class="card-body">
-                                    <h4 class="card-title">Basic Information (Adult)</h4><button class="btn btn-primary" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
-                                <div class="wrap"><iframe name="adult-form" class="scale-down-forms" src="./adult-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true">
-</iframe></div>
-                            </div>
-                            <div class="card"><img class="card-img-top w-100 d-block">
-                                <div class="card-body">
-                                    <h4 class="card-title">Title</h4>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
-                            </div>
-                            <div class="card"><img class="card-img-top w-100 d-block">
-                                <div class="card-body">
-                                    <h4 class="card-title">Title</h4>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
-                            </div>
-                        </div>
+                    <div class="col-sm-12">
                         <div class="card m-3 overflow-hidden">
                             <div class="card-header">
-                                <h4 class="d-inline-block">Basic Information (Adult)<br></h4><a class="float-right m-2" href="adult-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
+                                <h4 class="text-capitalize d-inline-block">Basic Information (Adult)<br></h4><a class="float-right m-2" href="forms/adult-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
                             <div
                                 class="card-body">
-                                <div class="wrap"><iframe name="adult-form" class="scale-down-forms" src="./adult-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true">
+                                <div class="wrap"><iframe name="adult-form" class="scale-down-forms" src="forms/adult-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="auto">
 </iframe></div>
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-12 col-lg-6">
+                    <div class="card m-3 overflow-hidden">
+                        <div class="card-header">
+                            <h4 class="text-capitalize d-inline-block">Claim Form<br></h4><a class="float-right m-2" href="forms/claim-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;claim-form&quot;)">PRINT</button></div>
+                        <div class="card-body">
+                            <div class="wrap"><iframe name="claim-form" class="scale-down-forms" src="forms/claim-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="auto">
+</iframe></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <div class="card m-3 overflow-hidden">
+                        <div class="card-header">
+                            <h4 class="text-capitalize d-inline-block">Psychology Consent Form<br></h4><a class="float-right m-2" href="forms/psychology-consent-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;psychology-consent-form&quot;)">PRINT</button></div>
+                        <div
+                            class="card-body">
+                            <div class="wrap"><iframe name="psychology-consent-form" class="scale-down-forms" src="forms/psychology-consent-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="auto">
+</iframe></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <div class="card m-3 overflow-hidden">
+                    <div class="card-header">
+                        <h4 class="text-capitalize d-inline-block">Referral Form<br></h4><a class="float-right m-2" href="forms/referral-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;referral-form&quot;)">PRINT</button></div>
+                    <div class="card-body">
+                        <div class="wrap"><iframe name="referral-form" class="scale-down-forms" src="forms/referral-form.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="auto">
+</iframe></div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div>
     <footer class="bg-white sticky-footer">
         <div class="container my-auto">

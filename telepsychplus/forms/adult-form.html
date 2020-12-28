@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>TelePsych Plus Admin</title>
+    <title>Telepsych+</title>
     <meta name="description" content="Admin Portal">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <hr>
                     <div class="row">
                         <div class="col">
-                            <form id="adults-form" class="forms" method="post">
+                            <form id="adults-form" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="adult_form">
                                 <div class="form-group input-group"><label>Name</label><input class="form-control" type="text" required="" name="name"></div>
                                 <div class="form-group input-group"><label>File Number</label><input class="form-control" type="text" required="" name="file_number"></div>
                                 <div class="form-group input-group"><label>Address</label><input class="form-control" type="text" name="address"></div>
@@ -43,7 +43,7 @@
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-9" name="education_level" value="secondary"><label class="custom-control-label" for="formCheck-9">Secondary</label></div>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-8" name="education_level" value="higher"><label class="custom-control-label" for="formCheck-8">Higher</label></div>
                                 </div>
-                                <div class="form-group input-group"><label>Employement Status<br></label>
+                                <div class="form-group input-group"><label>Employment Status<br></label>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="employment_status" value="business"><label class="custom-control-label" for="formCheck-3">Business</label></div>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-4" name="employment_status" value="employed"><label class="custom-control-label" for="formCheck-4">Employed</label></div>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-11" name="employment_status" value="unEmployed"><label class="custom-control-label" for="formCheck-11">UnEmployed</label></div>
@@ -69,19 +69,19 @@
                                 </div>
                                 <div class="form-group input-group"><label>The Names Of Drugs That Have Been Taken</label><input class="form-control" type="text" name="the_names_of_drugs_that_have_been_taken"></div>
                                 <div class="form-group input-group"><label>Have You Had Previous Reviews For the Same Problem</label>
-                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-24" name="previous_review" value="yes"><label class="custom-control-label" for="formCheck-24">Yes</label></div>
-                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-23" name="previous_review" value="no"><label class="custom-control-label" for="formCheck-23">No</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-24" name="have_you_had_previous_reviews_for_the_same_problem" value="yes"><label class="custom-control-label" for="formCheck-24">Yes</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-23" name="have_you_had_previous_reviews_for_the_same_problem" value="no"><label class="custom-control-label" for="formCheck-23">No</label></div>
                                 </div>
-                                <div class="form-group input-group"><label>When</label><input class="form-control" type="text" name="when"></div>
+                                <div class="form-group input-group"><label>When</label><input class="form-control" type="text" name="had_previous_reviews_for_the_same_problem_when"></div>
                                 <div class="form-group input-group"><label>Other Related Reviews</label><input class="form-control" type="text" name="other_related_reviews"></div>
-                                <div class="form-group input-group"><label>Do you suffer from physical illnesses did not head them for more than 6 month?</label><input class="form-control" type="text" name="do_you_suffer_from_physical_illnesses_did_not_heal_them_for_more_than_6_months?"></div>
+                                <div class="form-group input-group"><label>Do you suffer from physical illnesses did not heal them for more than 6 month?</label><input class="form-control" type="text" name="do_you_suffer_from_physical_illnesses_did_not_heal_them_for_more_than_6_months_?"></div>
                                 <div
                                     class="form-group input-group"><label>Medication Are Currently Used</label>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-25" name="medication_are_currently_used" value="yes"><label class="custom-control-label" for="formCheck-25">Yes</label></div>
                                     <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-26" name="medication_are_currently_used" value="no"><label class="custom-control-label" for="formCheck-26">No</label></div>
                         </div>
                         <div class="form-group input-group"><label>Name Of the Medications That Are Currently Used</label><input class="form-control" type="text" name="name_of_the_medications_that_are_currently_used"></div>
-                        <div class="form-group input-group" style="width: 100%;"><label style="width: 16%;">Summary For The Reason Of The Review (client description)</label><textarea class="form-control" name="summary_for_the_reason_of_the_review_(client_description)" rows="5"></textarea></div>
+                        <div class="form-group input-group" style="width: 100%;"><label style="width: 16%;">Summary For The Reason Of The Review (client description)</label><textarea class="form-control" name="summary_for_the_reason_of_the_review_(_client_description_)" rows="5"></textarea></div>
                         <hr class="my-5">
                         <h5>Answer The Following Questions To Describe Your Self Using Yes Or No:</h5>
                         <div class="table-responsive">
@@ -102,62 +102,98 @@
                                             <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-27" name="do_you_have_variety_of_hobbies?" value="yes"><label class="custom-control-label" for="formCheck-27"></label></div>
                                         </td>
                                         <td>
-                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-28" value="no" name="do_you_have_variety_of_hobbies?"><label class="custom-control-label" for="formCheck-28"></label></div>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-28" name="do_you_have_variety_of_hobbies?" value="no"><label class="custom-control-label" for="formCheck-28"></label></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td>Are You Always Full Of Energy ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-29" name="are_you_always_full_of_energy_?" value="yes"><label class="custom-control-label" for="formCheck-29"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-30" name="are_you_always_full_of_energy_?" value="no"><label class="custom-control-label" for="formCheck-30"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Do You Consider Your Self&nbsp; A</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>Do You Consider Your Self&nbsp; A Comfortable Person And Never Worries Controls You ?</td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-31" name="do_you_consider_your_self_a_comfortable_person_and_never_Worries_controls_you_?" value="yes"><label class="custom-control-label" for="formCheck-31"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-32" name="do_you_consider_your_self_a_comfortable_person_and_never_Worries_controls_you_?" value="no"><label class="custom-control-label" for="formCheck-32"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td>Do You Always Make New Friends ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-33" name="do_you_always_make_new_friends_?" value="yes"><label class="custom-control-label" for="formCheck-33"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-34" name="do_you_always_make_new_friends_?" value="no"><label class="custom-control-label" for="formCheck-34"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>Can You Easily Turn a Bored Social Gathering To Be a Full Of Joy And Happiness ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-35" name="can_you_easily_turn_a bored_social_gathering_to_be_a_full_of_joy_and_happiness_?" value="yes"><label class="custom-control-label" for="formCheck-35"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-44" name="can_you_easily_turn_a bored_social_gathering_to_be_a_full_of_joy_and_happiness_?" value="no"><label class="custom-control-label" for="formCheck-44"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
                                         <td>Do You Like Mixing With People Always ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-42" name="do_you_like_mixing_with_people_always_?" value="yes"><label class="custom-control-label" for="formCheck-42"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-43" name="do_you_like_mixing_with_people_always_?" value="no"><label class="custom-control-label" for="formCheck-43"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>7</td>
                                         <td>Do You Have A Ready Answers When People Talk To You? all the Time</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-39" name="do_you_have_a_ready_answers_when_people_talk_to_you_?_all_the_time" value="yes"><label class="custom-control-label" for="formCheck-39"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-38" name="do_you_have_a_ready_answers_when_people_talk_to_you_?_all_the_time" value="no"><label class="custom-control-label" for="formCheck-38"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>8</td>
                                         <td>Are You Always On The Right Side And Your Decisions Never Go Wrong ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-36" name="are_you_alwasy_on_the_right_side_and_your_decisions_never_go_wrong_?" value="yes"><label class="custom-control-label" for="formCheck-36"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-40" name="are_you_alwasy_on_the_right_side_and_your_decisions_never_go_wrong_?" value="no"><label class="custom-control-label" for="formCheck-40"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>9</td>
                                         <td>Would You Like The Sand Noise To Surround You Always ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-37" name="would_you_like_the_sand_noise_to_surround_you_always_?" value="yes"><label class="custom-control-label" for="formCheck-37"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-41" name="would_you_like_the_sand_noise_to_surround_you_always_?" value="no"><label class="custom-control-label" for="formCheck-41"></label></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>10</td>
                                         <td>Have You Ever Lied Never ?</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-45" name="have_you_ever_lied_never_?" value="yes"><label class="custom-control-label" for="formCheck-45"></label></div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-46" name="have_you_ever_lied_never_?" value="no"><label class="custom-control-label" for="formCheck-46"></label></div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -168,12 +204,8 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © TelePsych+ 2020</span></div>
-            </div>
-        </footer>
-    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
@@ -181,7 +213,7 @@
     <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
 </body>
 
 </html>
