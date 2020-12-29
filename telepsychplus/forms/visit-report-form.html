@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Telepsych+</title>
+    <meta name="description" content="Admin Portal">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <h3 class="text-center text-dark mt-lg-2">Visit Report Form</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <form id="visit-report-form" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="visit_report_form">
+                                <div class="form-row my-4">
+                                    <div class="col-7 border p-3">
+                                        <div class="form-group input-group"><label>Patient Name :</label><input class="form-control border-bottom-1" type="text"></div>
+                                        <div class="form-group input-group"><label>File Number :&nbsp;</label><input class="form-control border-bottom-1" type="text"></div>
+                                        <div class="form-group input-group"><label>Service Type :</label><input class="form-control border-bottom-1" type="text"></div>
+                                    </div>
+                                    <div class="col-3 p-3">
+                                        <h5>Visit Report</h5>
+                                        <div class="form-group input-group"><label>Visit # :</label><input class="form-control border-bottom-1" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group input-group"><label>Start Time:</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group input-group"><label>End Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Purpose :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Recent Complains :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Current Condition :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Medical Status</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Support :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-row mb-5">
+                                    <div class="col">
+                                        <div class="form-group input-group"><label>Date :</label><input class="form-control border-0" type="text"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group input-group"><label>Signature :</label><input class="form-control border-0" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row mb-2">
+                                    <div class="col-7 border p-3">
+                                        <div class="form-group input-group"><label>Patient Name :</label><input class="form-control border-bottom-1" type="text"></div>
+                                        <div class="form-group input-group"><label>File Number :&nbsp;</label><input class="form-control border-bottom-1" type="text"></div>
+                                        <div class="form-group input-group"><label>Service Type :</label><input class="form-control border-bottom-1" type="text"></div>
+                                    </div>
+                                    <div class="col-3 p-3">
+                                        <h5>Visit Report</h5>
+                                        <div class="form-group input-group"><label>Visit # :</label><input class="form-control border-bottom-1" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group input-group"><label>Start Time:</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group input-group"><label>End Time :&nbsp;</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Purpose :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Recent Complains :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Current Condition :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Medical Status</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="form-group input-group"><label>Support :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group input-group"><label>Date :</label><input class="form-control border-0" type="text"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group input-group"><label>Signature :</label><input class="form-control border-0" type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="submit">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+</body>
+
+</html>
