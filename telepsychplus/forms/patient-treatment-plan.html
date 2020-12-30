@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Telepsych+</title>
+    <meta name="description" content="Admin Portal">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <h3 class="text-center text-dark mt-lg-2">Patient Treatment Plan</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col"><img class="float-right m-3" src="../assets/img/forms/acmc-logo.jpg">
+                            <form id="patient-treatment-form" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="patient_treatment_plan">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4">
+                                                    <div class="form-group input-group"><label>Patient Name :&nbsp;</label><input class="form-control" type="text"></div>
+                                                </th>
+                                                <th colspan="4">
+                                                    <div class="form-group input-group"><label>File No.&nbsp;</label><input class="form-control" type="text"></div>
+                                                </th>
+                                                <th colspan="2">
+                                                    <div class="form-group input-group"><label>Age :&nbsp;</label><input class="form-control" type="text"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-warning">
+                                                <td colspan="4">Sec #1&nbsp;
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #2&nbsp;
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #3&nbsp;
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">R13</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr class="table-warning">
+                                                <td colspan="4">Sec #4
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #5
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #6&nbsp;
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">R13</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr class="table-warning">
+                                                <td colspan="4">Sec #7
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #8
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #9&nbsp;
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">R13</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr class="table-warning">
+                                                <td colspan="4">Sec #10
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #11
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #12
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">R13</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">NV RO4</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">F03</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold">STREAMTH</td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr class="table-warning">
+                                                <td colspan="4">Sec #13
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #14
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                                <td colspan="4">Sec #15
+                                                    <div class="form-group input-group"><label>Date: St. Time :</label><input class="form-control" type="text"></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                                <td>Sesn</td>
+                                                <td>Ins</td>
+                                                <td>Dur.</td>
+                                                <td>Nurse</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary font-weight-bold"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td class="table-secondary"><input class="form-control" type="text"></td>
+                                                <td class="table-dark"><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                                <td><input class="form-control" type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="form-row mt-3">
+                                    <div class="col-12">
+                                        <div class="form-group input-group"><label>Diagnostic :&nbsp;</label><textarea class="form-control border-0 notes" rows="4"></textarea></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group input-group"><label>Number OF SESSIONS :&nbsp;</label><input class="form-control border-bottom-1" type="text"></div>
+                                        <div class="form-group"><label>PATIENT / GUARDIAN SIGNATURE :&nbsp;</label><input class="form-control border-bottom-1" type="text"></div>
+                                    </div>
+                                    <div class="col"><input class="form-control mt-5 border-bottom-1" type="text">
+                                        <p class="text-right d-xl-flex justify-content-xl-end align-items-xl-end">Dr. Ahmed Alnajjar</p>
+                                    </div>
+                                </div>
+                                <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary" type="submit">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/theme.min.js"></script>
+</body>
+
+</html>

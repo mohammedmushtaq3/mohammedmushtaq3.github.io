@@ -26,9 +26,10 @@
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="calendar.html"><i class="far fa-calendar-alt"></i>Calendar</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="site-survey.html"><i class="fas fa-table"></i><span>Site Surveys</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="calendar.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="site-survey.html"><i class="fas fa-tasks"></i><span>Site Surveys</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="forms.html"><i class="fas fa-table"></i><span>Forms</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="forms-ar.html"><i class="fas fa-table"></i><span>Forms Arabic</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -57,7 +58,7 @@
                     <div class="col">
                         <div>
                             <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Basic Infromation (Adult)</a></li>
+                                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-1">Basic Infromation (Adult)</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Claims</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3">Psychology Consent</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-4">Treatment Evaluation</a></li>
@@ -65,9 +66,10 @@
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-6">Referral</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-7">Rights and Responsibilities</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-8">Patient Testimonial</a></li>
+                                <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-9">Patient Treatment Plan</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" role="tabpanel" id="tab-1">
+                                <div class="tab-pane" role="tabpanel" id="tab-1">
                                     <div class="card m-3 overflow-hidden">
                                         <div class="card-header">
                                             <h4 class="text-capitalize d-inline-block">Basic Information (Adult)<br></h4><a class="float-right m-2" href="forms/adult-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
@@ -153,6 +155,17 @@
 </iframe></div>
             </div>
         </div>
+    </div>
+    <div class="tab-pane active" role="tabpanel" id="tab-9">
+        <div class="card m-3 overflow-hidden">
+            <div class="card-header">
+                <h4 class="text-capitalize d-inline-block">Patient Treatment Plan Form<br></h4><a class="float-right m-2" href="forms/patient-treatment-plan.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;patient-treatment-plan&quot;)">PRINT</button></div>
+            <div
+                class="card-body">
+                <div class="wrap"><iframe name="patient-treatment-plan" class="scale-down-forms" src="forms/patient-treatment-plan.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="lazy">
+</iframe></div>
+        </div>
+    </div>
     </div>
     </div>
     </div>
