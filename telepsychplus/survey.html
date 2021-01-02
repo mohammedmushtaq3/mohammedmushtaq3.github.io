@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - TelePsych+</title>
+    <title>Blank Page - TelePsych+</title>
     <meta name="description" content="Admin Portal">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -57,19 +57,24 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                    <h3 class="text-dark mb-0">Dashboard</h3>
+                <form id="survey-form-mail">
+                    <div class="form-group"><label class="d-block">Enter Email</label><input class="form-control w-50" type="email" id="survey-mail" required=""></div><button class="btn btn-primary" type="submit">Continue</button></form>
+                <div class="table-responsive d-none" id="survey-table">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="height: 380px;">
+                                    <form id="surveyForm" style="height: 100%;overflow: auto;"></form>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right"><button class="btn btn-primary px-4 mx-2" id="prevBtn" type="button" onclick="nextPrev(-1)">Previous</button><button class="btn btn-primary px-4 mx-2" id="nextBtn" type="button" onclick="nextPrev(1)">Next</button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="users-datatable" style="width: 100%;">
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <hr>
             </div>
         </div>
         <footer class="bg-white sticky-footer">
@@ -77,18 +82,130 @@
                 <div class="text-center my-auto copyright"><span>Copyright © TelePsych+ 2020</span></div>
             </div>
         </footer>
-    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div><script>
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+
+  function showTab(n) {
+    // This function will display the specified tab of the form...
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    //... and fix the Previous/Next buttons:
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == x.length - 1) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+      //document.getElementById("skipBtn").innerHTML = "Skip";
+    }
+    //... and run a function that will display the correct step indicator:
+    fixStepIndicator(n);
+    $("html, body, form").animate(
+      {
+        scrollTop: 0,
+      },
+      "slow"
+    );
+  }
+  // function skip(n){
+  //      // This function will figure out which tab to display
+  //      var x = document.getElementsByClassName("tab");
+  //      // Exit the function if any field in the current tab is invalid:
+  //      if (n == 1 && !validateForm()) return false;
+  //      // Hide the current tab:
+  //      x[currentTab].style.display = "none";
+  //      // Increase or decrease the current tab by 1:
+  //      currentTab = currentTab + n;
+  //      // if you have reached the end of the form...
+  //      if (currentTab == (x.length-2)) {
+  //          // ... the form gets submitted:
+
+  //      }
+  //      // Otherwise, display the correct tab:
+  //      showTab(currentTab);
+  // }
+  function nextPrev(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm()) return false;
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // if you have reached the end of the form...
+    if (currentTab == x.length - 1) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+      // document.getElementById("skipBtn").disabled = true;
+      // document.getElementById("skipBtn").innerHTML = "Submit";
+      // document.getElementById("skipBtn").setAttribute("click","onSurveySubmit()");
+    }
+    if (currentTab >= x.length) {
+      // ... the form gets submitted:
+      onSurveySubmit();
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+
+  function validateForm() {
+    // This function deals with validation of the form fields
+    var x,
+      y,
+      i,
+      valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+      document.getElementsByClassName("step")[currentTab].className +=
+        " finish";
+    }
+    return valid; // return the valid status
+  }
+
+  function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i,
+      x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+    i = 0;
+    while (i < n) {
+      x[i].className += " finish";
+      i++;
+    }
+  }
+</script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
-    <script src="assets/js/data-tables.min.js"></script>
+    <script src="assets/js/survey-content.min.js"></script>
 </body>
 
 </html>

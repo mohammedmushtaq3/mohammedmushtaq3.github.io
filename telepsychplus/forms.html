@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <style class="style"></style>
 </head>
@@ -25,12 +28,14 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="calendar.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="site-survey.html"><i class="fas fa-tasks"></i><span>Site Surveys</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="forms.html"><i class="fas fa-table"></i><span>Forms</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="forms-ar.html"><i class="fas fa-table"></i><span>Forms Arabic</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../calendar.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="user-reports.html"><i class="fas fa-tasks"></i><span>User Reports</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://overlord-mmorpg.github.io/telepsychplus/survey/" target="_blank"><i class="fas fa-window-maximize"></i><span>Survey Form</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../forms.html"><i class="fas fa-table"></i><span>Forms</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../forms-ar.html"><i class="fas fa-table"></i><span>Forms Arabic</span></a></li>
+                    <li class="nav-item" role="presentation"><button class="btn btn-outline-primary" id="cpt-desc" type="button" style="color: inherit;border: 0;padding-left: 1rem;width: 100%;box-shadow: none;" onclick="cptDesc()">CPT</button></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -59,7 +64,7 @@
                     <div class="col">
                         <div>
                             <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-1">Basic Infromation (Adult)</a></li>
+                                <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Basic Infromation (Adult)</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Claims</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3">Psychology Consent</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-4">Treatment Evaluation</a></li>
@@ -67,10 +72,11 @@
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-6">Referral</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-7">Rights and Responsibilities</a></li>
                                 <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-8">Patient Testimonial</a></li>
-                                <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-9">Patient Treatment Plan</a></li>
+                                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-9">Patient Treatment Plan</a></li>
+                                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-10">DR. Sofiane Sessions</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane" role="tabpanel" id="tab-1">
+                                <div class="tab-pane active" role="tabpanel" id="tab-1">
                                     <div class="card m-3 overflow-hidden">
                                         <div class="card-header">
                                             <h4 class="text-capitalize d-inline-block">Basic Information (Adult)<br></h4><a class="float-right m-2" href="forms/adult-form.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;adult-form&quot;)">PRINT</button></div>
@@ -157,13 +163,24 @@
             </div>
         </div>
     </div>
-    <div class="tab-pane active" role="tabpanel" id="tab-9">
+    <div class="tab-pane" role="tabpanel" id="tab-9">
         <div class="card m-3 overflow-hidden">
             <div class="card-header">
                 <h4 class="text-capitalize d-inline-block">Patient Treatment Plan Form<br></h4><a class="float-right m-2" href="forms/patient-treatment-plan.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;patient-treatment-plan&quot;)">PRINT</button></div>
             <div
                 class="card-body">
                 <div class="wrap"><iframe name="patient-treatment-plan" class="scale-down-forms" src="forms/patient-treatment-plan.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="lazy">
+</iframe></div>
+        </div>
+    </div>
+    </div>
+    <div class="tab-pane" role="tabpanel" id="tab-10">
+        <div class="card m-3 overflow-hidden">
+            <div class="card-header">
+                <h4 class="text-capitalize d-inline-block">Dr. Sofiane Sessions<br></h4><a class="float-right m-2" href="forms/dr-sofiane-sessions.html" target="_blank">&nbsp;FULL PAGE&nbsp;VIEW</a><button class="btn btn-primary float-right" type="button" onclick="printForm(&quot;dr-sofiane-sessions&quot;)">PRINT</button></div>
+            <div
+                class="card-body">
+                <div class="wrap"><iframe name="dr-sofiane-sessions" class="scale-down-forms" src="forms/dr-sofiane-sessions.html" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" loading="lazy">
 </iframe></div>
         </div>
     </div>
@@ -182,10 +199,11 @@
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
 </body>
