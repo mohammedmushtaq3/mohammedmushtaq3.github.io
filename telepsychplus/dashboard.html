@@ -28,9 +28,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="calendar.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="user-reports.html"><i class="fas fa-tasks"></i><span>User Reports</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="survey.html"><i class="fas fa-window-maximize"></i><span>Check List</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="forms.html"><i class="far fa-file-alt"></i><span>Forms</span></a></li>
@@ -61,10 +61,16 @@
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                     <h3 class="text-dark mb-0">Dashboard</h3>
                 </div>
-                <hr>
-                <div class="row" id="calendar">
-                    <div class="col" id="calendar"></div>
+                <div class="row">
+                    <div class="col">
+                        <div class="table-responsive table-borderless">
+                            <table class="table table-bordered table-striped" id="users-datatable" style="width: 100%;">
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+                <hr>
             </div>
         </div>
         <footer class="bg-white sticky-footer">
@@ -77,6 +83,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
@@ -84,7 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
-    <script src="assets/js/calendar.min.js"></script>
+    <script src="assets/js/data-tables.min.js"></script>
 </body>
 
 </html>
