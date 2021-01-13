@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Blank Page - TelePsych+</title>
+    <title>Telepsych+</title>
     <meta name="description" content="Admin Portal">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <style class="style"></style>
@@ -23,7 +22,7 @@
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><img src="assets/img/logo-telepsych.png" style="height: 3.5rem;transform: rotate(15deg);"></div>
+                    <div class="sidebar-brand-icon rotate-n-15"><img src="assets/img/logo-telepsych.png" style="height: 3.5rem;width: auto;transform: rotate(15deg);" alt="logo-img"></div>
                     <div class="sidebar-brand-text mx-3"><span>TelePsych+</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
@@ -46,7 +45,7 @@
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <ul class="nav navbar-nav flex-nowrap ml-auto">
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Dr. Ahmed Al Najjar</span><img class="img-fluid border rounded-circle img-profile" src="assets/img/avatars/al-najjar_30x30.jpg" alt="user avatar"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Dr. Ahmed Al Najjar</span><img class="img-fluid border rounded-circle img-profile" src="assets/img/avatars/al-najjar_30x30.jpg" alt="user avatar" style="width: 32px;height: 32px;"></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
@@ -58,11 +57,11 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-1">Surveys</h3>
+                <h3 class="text-dark mb-1">Reports</h3>
                 <div class="row">
                     <div class="col">
                         <div class="table-responsive">
-                            <table class="table table-striped" id="site-survey-datatable" style="width: 100%;">
+                            <table class="table" id="site-survey-datatable" style="width: 100%;">
                                 <tbody>
                                     <tr>
                                         <td></td>
@@ -77,25 +76,29 @@
                 <hr>
                 <div class="row">
                     <div class="col">
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4 d-none" id="check-list-graph">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="text-capitalize">Check List</h4>
                             </div>
                             <div class="card-body">
-                                <div id="userChart" class="chat-area"></div>
+                                <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{&quot;text&quot;:&quot;Behaviour Chart&quot;,&quot;display&quot;:true,&quot;fontSize&quot;:&quot;14&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:true,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:true,&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;beginAtZero&quot;:true}}]}}}"></canvas></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
                         <div class="card d-none" id="user-report-questions">
                             <div class="card-header">
-                                <h4>Questions</h4>
+                                <h4 id="questions">Questions</h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body p-0 py-2">
                                 <div class="table-responsive" id="survey-table">
-                                    <table class="table" style="height: 530px;">
+                                    <table class="table m-0">
                                         <tbody>
                                             <tr>
-                                                <td style="height: 380px;">
-                                                    <form id="filledSurvey" style="height: 100%;overflow: auto;"></form>
+                                                <td class="border-top-0">
+                                                    <form id="filledSurvey" class="forms p-3 overflow-auto h-100" style="pointer-events: none;"></form>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -140,7 +143,7 @@
     }
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n);
-    $("form").animate(
+    $("#questions").animate(
       {
         scrollTop: 0,
       },
@@ -234,23 +237,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="https://shaack.com/projekte/bootstrap-show-modal/src/bootstrap-show-modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
     <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
     <script src="assets/js/survey-content.min.js"></script>
     <script src="assets/js/user-report.min.js"></script>
-    <script src="assets/js/data-tables.min.js"></script>
     <script src="assets/js/survey.min.js"></script>
-    <script src="assets/js/g-chart-1.min.js"></script>
-    <script src="assets/js/g-chart.min.js"></script>
 </body>
 
 </html>
