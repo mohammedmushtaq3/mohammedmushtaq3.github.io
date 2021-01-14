@@ -136,10 +136,11 @@
     }
     if (n == x.length - 1) {
       document.getElementById("nextBtn").style.display = "none";
+      document.getElementById("skipBtn").disabled = true;
     } else {
       document.getElementById("nextBtn").style.display = "inline";
       document.getElementById("nextBtn").innerHTML = "Next";
-      // document.getElementById("skipBtn").innerHTML = "Skip";
+      document.getElementById("skipBtn").disabled = false;
     }
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n);
@@ -179,8 +180,6 @@
     // if you have reached the end of the form...
     if (currentTab == x.length - 1) {
       document.getElementById("nextBtn").innerHTML = "Submit";
-      // document.getElementById("skipBtn").disabled = true;
-      // document.getElementById("skipBtn").innerHTML = "Submit";
       // document.getElementById("skipBtn").setAttribute("click","onSurveySubmit()");
     }
     if (currentTab >= x.length) {
