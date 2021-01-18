@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Telepsych+</title>
+    <title>Dashboard - TelePsych+</title>
     <meta name="description" content="Admin Portal">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -28,9 +28,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="appointment.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="appointment.html"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="user-reports.html"><i class="fas fa-tasks"></i><span>User Reports</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="survey.html"><i class="fas fa-window-maximize"></i><span>Check List</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="forms.html"><i class="far fa-file-alt"></i><span>Forms</span></a></li>
@@ -59,16 +59,11 @@
             </nav>
             <div class="container-fluid">
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                    <h3 class="text-dark mb-0">Dashboard</h3>
-                </div>
-                <div class="row">
-                    <div class="col"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#new-user-modal">New User</button>
-                        <div class="table-responsive">
-                            <table class="table" id="users-datatable" style="width: 100%;">
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <h3 class="text-dark mb-0">Appointments</h3>
+                </div><button class="btn btn-primary" type="button" data-target="#new-appointment-modal" data-toggle="modal">New Registration</button>
+                <hr>
+                <div class="row" id="calendar">
+                    <div class="col" id="calendar"></div>
                 </div>
             </div>
         </div>
@@ -77,46 +72,50 @@
                 <div class="text-center my-auto copyright"><span>Copyright © TelePsych+ 2020</span></div>
             </div>
         </footer>
-    </div><a class="border rounded d-inline scroll-to-top" id="scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="new-user-modal">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="new-appointment-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="create-appointment-form">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Appointment Booking</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body">
+                        <div class="form-group"><label class="d-block">Patinet</label><select class="form-control d-inline" id="patient-filter-name" style="width: auto;"><option value="email" selected="">Email</option><option value="phone_number">Phone</option><option value="preferred_username">Emirates ID</option><option value="given_name">First Name</option><option value="family_name">Last Name</option></select>
+                            <select
+                                class="custom-select w-75" id="patient-select" name="patient_id" required=""></select><input class="form-control d-none" type="text" id="patient-email" name="patient_email"></div>
+                        <div class="form-group"><label>Doctor</label><select class="form-control" data-placeholder="Select Doctor" name="creator_email"><option value="sims2020@ahmedalnajjar.com">Dr. Ahmed Alnajjar</option></select></div>
+                        <div class="form-group"><label>Start Time</label><input class="form-control datetimepicker" id="start-time" type="datetime-local" name="start"></div>
+                        <div class="form-group"><label>End Time</label><input class="form-control datetimepicker" id="end-time" type="datetime-local" name="end"></div>
+                        <div class="form-group"><label>Payment Type</label><select class="form-control" name="payment_type"><option value="cash" selected="">Cash</option><option value="credit card">Credit Card</option></select></div>
+                        <div class="form-group"><label>Ref. Credit-Card&nbsp;</label><input class="form-control" type="text" name="payment_ref"></div>
+                        <div class="form-group"><label>Amount</label><input class="form-control" type="text" name="cost"></div>
+                        <p class="error-msg border border-danger p-3 text-center text-danger d-none">Error</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="submit">Save</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="appointment-details-modal">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">New User</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <h4 class="modal-title">Appointment Details</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body">
-                    <form id="create-user">
-                        <div class="form-group"><label>Email</label><input class="form-control" type="email" required="" name="email"></div>
-                        <div class="form-group"><label>Phone Number</label><input class="form-control" type="tel" id="new-user-phone" name="phone_number" inputmode="tel"></div>
-                        <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="given_name"></div>
-                        <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" name="middle_name"></div>
-                        <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="family_name"></div>
-                        <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" name="preferred_username"></div>
-                        <div class="form-group"><label>Nationality</label><br><select class="form-control countries-list" name="locale"></select></div>
-                        <div class="form-group"><label>Date Of Birth</label><input class="form-control" type="date" name="birthdate"></div>
-                        <div class="form-group"><label>Gender</label><br>
-                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-1" name="gender" value="male"><label class="custom-control-label" for="formCheck-1">Male</label></div>
-                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" value="female" name="gender"><label class="custom-control-label" for="formCheck-2">Female</label></div>
-                            <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="gender" value="other"><label class="custom-control-label" for="formCheck-3">Other</label></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="send-invite" checked=""><label class="custom-control-label" for="send-invite">Send an Invitation to this new user?</label></div>
-                            <div class="custom-control custom-control-inline custom-checkbox ml-4"><input class="custom-control-input" type="checkbox" id="send-invite-email" checked="" name="invite[0]" value="EMAIL"><label class="custom-control-label" for="send-invite-email">Email (default)</label></div>
-                            <div class="custom-control custom-control-inline custom-checkbox"><input class="custom-control-input" type="checkbox" id="send-invite-sms" name="invite[1]" value="SMS"><label class="custom-control-label" for="send-invite-sms">SMS</label></div>
-                        </div>
-                        <div class="form-group"><label>Temporary Password</label><input class="form-control pwd-strength" type="password" name="tempPassword"><label>Note: temporary password auto-generates if not supplied. Check to Send Invitation to temporary password to this user.&nbsp;</label></div>
-                        <p
-                            class="error-msg border border-danger p-3 text-center text-danger d-none">Error</p><button class="btn btn-primary btn-block" type="submit">Create User</button></form>
-                </div>
+                    <h4 id="event-text">Summary</h4>
+                    <h6 id="event-location">.</h6>
+                    <h6 id="event-description">.</h6><a id="event-url" href="#" target="_blank">Open in Google for More Details</a></div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
@@ -124,7 +123,7 @@
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/lib/bootstrap-show-modal.min.js"></script>
     <script src="assets/js/theme.min.js"></script>
-    <script src="assets/js/dashbaord.min.js"></script>
+    <script src="assets/js/appointment.min.js"></script>
 </body>
 
 </html>
