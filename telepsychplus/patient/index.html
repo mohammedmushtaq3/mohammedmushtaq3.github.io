@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Telepsych+</title>
+    <meta name="description" content="Admin Portal">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+<style class="style"></style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>BRAND</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>&nbsp;Dashboard</span></a></li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    <p class="mb-0">INTERFACE</p>
+                </div>
+                <li class="nav-item">
+                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i>&nbsp;<span>Components</span></a>
+                        <div class="collapse" id="collapse-1">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="collapse-item" href="buttons.html">Buttons</a><a class="collapse-item" href="cards.html">Cards</a></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button"><i class="fas fa-wrench"></i>&nbsp;<span>Utilities</span></a>
+                        <div class="collapse" id="collapse-2">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">CUSTOM UTILITIES:</h6><a class="collapse-item" href="utilities-color.html">Colors</a><a class="collapse-item" href="utilities-border.html">Borders</a><a class="collapse-item" href="utilities-animation.html">Animations</a>
+                                <a
+                                    class="collapse-item" href="utilities-other.html">Other</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    <p class="mb-0">Addons</p>
+                </div>
+                <li class="nav-item">
+                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button"><i class="fas fa-folder"></i>&nbsp;<span>Pages</span></a>
+                        <div class="collapse" id="collapse-3">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="login.html">Login</a><a class="collapse-item" href="register.html">Register</a><a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                                <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="404.html">404 Page</a><a class="collapse-item" href="blank.html">Blank Page</a></div>
+                        </div>
+                    </div>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" aria-controls="collapsePages">
+                        <div class="bg-white border rounded py-2 collapse-inner">
+                            <h6 class="collapse-header">LOGIN SCREENS:</h6><a class="collapse-item" href="#">Login</a><a class="collapse-item" href="#">Register</a><a class="collapse-item" href="#">Forgot Password</a>
+                            <h6 class="collapse-header">OTHER PAGES:</h6><a class="collapse-item" href="#">404 Page</a><a class="collapse-item" href="#">Blank Page</a></div>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="charts.html"><i class="fas fa-chart-area"></i><span>&nbsp;Charts</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="tables.html"><i class="fas fa-table"></i><span>&nbsp;Tables</span></a></li>
+                <hr class="sidebar-divider">
+            </ul>
+            <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand font-weight-bolder" href="#">TelePsych+</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="../patient.html">Home</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card mb-1">
+                    <div class="card-header" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button">
+                        <h5 class="mb-0">Patient Details</h5>
+                    </div>
+                    <div class="card-body collapse show" id="collapse-1">
+                        <ul class="list-unstyled text-capitalize list-column-2 float-left">
+                            <li>Patient Name : FirstName MiddleName LastName</li>
+                            <li>Patient Email : userEmail@gmail.com</li>
+                            <li>Sex : Male</li>
+                            <li>Nationality : UAE</li>
+                            <li>Age : 44 Y</li>
+                            <li>DOB : 10/07/1976</li>
+                            <li>Emirates ID : 9474-24782-38477</li>
+                            <li>Patient Type : FollowUp&nbsp;</li>
+                            <li>Mobile No : +1285937483</li>
+                            <li>Start Time : 13/01/2021 19:14:00</li>
+                            <li>End Time : 13/01/2021 20:12:00</li>
+                        </ul><img class="float-right" src="../assets/img/user.svg" width="130" height="130"></div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><span>Dashboard</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Screening</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Behaviour Chart</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Visit Details</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Scanned Documents</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>History</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Progress Notes</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>OPD Assesment</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span>Referral Form</span></a></li>
+            </ol>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/intlTelInput-jquery.min.js" integrity="sha256-i2ZYpJkTktrbuc1zUltDxztPxDiQKZifRWhyE9yq7ws=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.5.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/lib/bootstrap-show-modal.min.js"></script>
+    <script src="../assets/js/signature-pad.min.js"></script>
+    <script src="../assets/js/theme.min.js"></script>
+    <script src="../assets/js/pagePrint.min.js"></script>
+</body>
+
+</html>
