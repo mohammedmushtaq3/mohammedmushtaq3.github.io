@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Projects - Brand</title>
+    <title>Home - Telepsych+</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,7 @@
                 id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="appointments.html">Appointments</a></li>
                     <li class="nav-item"><a class="nav-link" href="checklist.html">Checklist</a></li>
                     <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
@@ -32,56 +32,24 @@
             </div>
         </div>
     </nav>
-    <main class="page projets-page">
-        <section class="portfolio-block project-no-images">
+    <main class="page cv-page">
+        <section class="border-bottom portfolio-block">
+            <div class="heading">
+                <h2>Profile</h2>
+            </div>
             <div class="container">
-                <div class="heading">
-                    <h2>Recent Work</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">Python</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">JavaScript</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">CSS</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">Ruby</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">PHP</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>Lorem Ipsum</h3>
-                            <h4>Lorem ipsum dolor sit amet</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                            <div class="tags"><a href="#">HTML</a></div>
-                        </div>
-                    </div>
-                </div>
+                <form id="profile-form">
+                    <div class="form-group text-center"><img style="height: 200px;" src="assets/img/user.svg"></div>
+                    <div class="form-group"><label>Email</label><input class="form-control" type="text" readonly="" name="email"></div>
+                    <div class="form-group"><label>First Name</label><input class="form-control" type="text" readonly="" name="given_name"></div>
+                    <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" readonly="" name="middle_name"></div>
+                    <div class="form-group"><label>Last Name</label><input class="form-control" type="text" readonly="" name="family_name"></div>
+                    <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" readonly="" name="preferred_username"></div>
+                    <div class="form-group"><label>Phone</label><input class="form-control" type="text" readonly="" name="phone_number"></div>
+                    <div class="form-group"><label>Date Of Birth</label><input class="form-control" type="text" readonly="" name="birthdate"></div>
+                    <div class="form-group"><label>Nationality</label><input class="form-control" type="text" readonly="" name="locale"></div>
+                    <div class="form-group"><label>Address</label><input class="form-control" type="text" readonly="" name="address"></div>
+                </form>
             </div>
         </section>
     </main>
@@ -107,6 +75,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/script-1.min.js"></script>
+    <script src="assets/js/profile.min.js"></script>
 </body>
 
 </html>
