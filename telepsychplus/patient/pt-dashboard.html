@@ -32,18 +32,17 @@
                     <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" data-action="pt-dashbaord-home" href="#">Patient Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" data-action="visit-details">Visit Details</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-action="user-reports">User Reports</a></li>
+                    <li class="nav-item"><a class="nav-link action" data-action="user-reports" href="#">User Reports</a></li>
                     <li class="nav-item"><a class="nav-link action" href="#" data-action="view-forms">Forms</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <section class="sections user-reports d-none">
+    <section class="sections view-user-reports d-none">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <ul class="list-unstyled mt-1">
-                    <li class="p-3 text-white text-uppercase mb-1" style="background-color: #b5b5b5;" data-action="show-user-report" data-time="">2020-01-10 10:30 AM</li>
-                    <li class="p-3 text-white text-uppercase mb-1" style="background-color: #b5b5b5;">2020-01-10 10:30 AM</li>
+                <ul class="list-unstyled mt-1" id="user-report-list">
+                    <li class="p-3 text-white text-uppercase mb-1" style="background-color: #b5b5b5;" data-action="show-user-report" data-created="">2020-01-10 10:30 AM</li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9">
@@ -75,7 +74,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="forms-list">
-                    <li class="p-3 text-white text-uppercase mb-1 pointer" style="background-color: #b5b5b5;" data-action="show-user-report" data-time=""><span class="d-block mb-1 text-uppercase font-weight-bold">Form name</span><span>Date tiime</span></li>
+                    <li class="p-3 text-white text-uppercase mb-1 pointer" style="background-color: #b5b5b5;" data-action="show-user-report" data-created="" data-form-type=""><span class="d-block mb-1 text-uppercase font-weight-bold">Form name</span><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9 h-100">
@@ -86,7 +85,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <ul class="list-unstyled mt-1" id="visit-details-list">
-                    <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="show-user-report" data-time=""><span>Date tiime</span></li>
+                    <li class="p-3 text-white text-uppercase mb-1 pointer d-none" style="background-color: #b5b5b5;" data-action="show-user-report" data-created=""><span>Date tiime</span></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-9" style="height: 500px;">
@@ -107,10 +106,13 @@
     <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
     <script src="../assets/js/script.min.js"></script>
     <script src="../assets/js/lib/bootstrap-show-modal.min.js"></script>
+    <script src="../assets/js/checklist.min.js"></script>
     <script src="../assets/js/config.min.js"></script>
     <script src="../assets/js/signature-pad.min.js"></script>
-    <script src="../assets/js/patinet-dashboard/forms.min.js"></script>
+    <script src="../assets/js/survey-content.min.js"></script>
+    <script src="../assets/js/survey.min.js"></script>
     <script src="../assets/js/pt-dashboard.min.js"></script>
+    <script src="../assets/js/patinet-dashboard/forms.min.js"></script>
 </body>
 
 </html>
