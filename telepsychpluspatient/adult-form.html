@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Telepsych+</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <h3 class="text-center text-dark mt-lg-2">BASIC INFORMATION (ADULTS)</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <form id="forms" class="forms" method="post" autocomplete="off"><input class="form-control d-none" type="text" name="form_type" value="adult_form">
+                                <div class="form-group input-group"><label>Name</label><input class="form-control" type="text" name="name"></div>
+                                <div class="form-group input-group"><label>Address</label><input class="form-control" type="text" name="address"></div>
+                                <div class="form-group input-group"><label>Telephone Number</label><input class="form-control" type="text" name="phone_number"></div>
+                                <div class="form-group input-group"><label>Age</label><input class="form-control" type="text" name="age"></div>
+                                <div class="form-group input-group"><label>Gender</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-1" name="gender" value="male"><label class="custom-control-label" for="formCheck-1">Male</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-5" name="gender" value="female"><label class="custom-control-label" for="formCheck-5">Female</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Maritial Status</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" name="maritial_status" value="single"><label class="custom-control-label" for="formCheck-2">Single</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-6" name="maritial_status" value="married"><label class="custom-control-label" for="formCheck-6">Married</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-7" name="maritial_status" value="divorced"><label class="custom-control-label" for="formCheck-7">Divorced</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Nationality</label><input class="form-control" type="text" name="nationality"></div>
+                                <div class="form-group input-group"><label>No. Of Children</label><input class="form-control" type="text" name="no_of_children"></div>
+                                <div class="form-group input-group"><label>Education Level</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-10" name="education_level" value="primary"><label class="custom-control-label" for="formCheck-10">Primary</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-9" name="education_level" value="secondary"><label class="custom-control-label" for="formCheck-9">Secondary</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-8" name="education_level" value="higher"><label class="custom-control-label" for="formCheck-8">Higher</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Employment Status<br></label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="employment_status" value="business"><label class="custom-control-label" for="formCheck-3">Business</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-4" name="employment_status" value="employed"><label class="custom-control-label" for="formCheck-4">Employed</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-11" name="employment_status" value="unEmployed"><label class="custom-control-label" for="formCheck-11">UnEmployed</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Income Level</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-16" name="income_level" value="excellent"><label class="custom-control-label" for="formCheck-16">Rich</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-15" name="income_level" value="good"><label class="custom-control-label" for="formCheck-15">Good</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-13" name="income_level" value="mediocre"><label class="custom-control-label" for="formCheck-13">Mediocre</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-14" name="income_level" value="poor"><label class="custom-control-label" for="formCheck-14">Poor</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Presence Of Parents</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-20" name="presence_of_parents" value="both alive"><label class="custom-control-label" for="formCheck-20">Both Alive</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-19" name="presence_of_parents" value="father passed away"><label class="custom-control-label" for="formCheck-19">Father Passed Away</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-18" name="presence_of_parents" value="mother passed away"><label class="custom-control-label" for="formCheck-18">Mother Passed Away</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-17" name="presence_of_parents" value="both are deceased"><label class="custom-control-label" for="formCheck-17">None Alive</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>Number Of Brothers And Sisters</label><input class="form-control" type="text" name="number_of_brothers_and_sisters"></div>
+                                <div class="form-group input-group"><label>Ranking Between Them</label><input class="form-control" type="text" name="ranking_between_them"></div>
+                                <div class="form-group input-group"><label>Did You Take Psychological Medicine Before<br></label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-22" name="did_you_take_psychological_medicine_before" value="yes"><label class="custom-control-label" for="formCheck-22">Yes</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-21" name="did_you_take_psychological_medicine_before" value="no"><label class="custom-control-label" for="formCheck-21">No</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>The Names Of Drugs That Have Been Taken</label><input class="form-control" type="text" name="the_names_of_drugs_that_have_been_taken"></div>
+                                <div class="form-group input-group"><label>Have You Had Previous Reviews For the Same Problem</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-24" name="have_you_had_previous_reviews_for_the_same_problem" value="yes"><label class="custom-control-label" for="formCheck-24">Yes</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-23" name="have_you_had_previous_reviews_for_the_same_problem" value="no"><label class="custom-control-label" for="formCheck-23">No</label></div>
+                                </div>
+                                <div class="form-group input-group"><label>When</label><input class="form-control" type="text" name="had_previous_reviews_for_the_same_problem_when"></div>
+                                <div class="form-group input-group"><label>Other Related Reviews</label><input class="form-control" type="text" name="other_related_reviews"></div>
+                                <div class="form-group input-group"><label>Do you suffer from physical illnesses did not heal them for more than 6 month?</label><input class="form-control" type="text" name="do_you_suffer_from_physical_illnesses_did_not_heal_them_for_more_than_6_months_?"></div>
+                                <div
+                                    class="form-group input-group"><label>Medication Are Currently Used</label>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-25" name="medication_are_currently_used" value="yes"><label class="custom-control-label" for="formCheck-25">Yes</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-26" name="medication_are_currently_used" value="no"><label class="custom-control-label" for="formCheck-26">No</label></div>
+                        </div>
+                        <div class="form-group input-group"><label>Name Of the Medications That Are Currently Used</label><input class="form-control" type="text" name="name_of_the_medications_that_are_currently_used"></div>
+                        <div class="form-group input-group" style="width: 100%;"><label style="width: 16%;">Summary For The Reason Of The Review (client description)</label><textarea class="form-control" name="summary_for_the_reason_of_the_review_(_client_description_)" rows="5"></textarea></div>
+                        <hr class="my-5">
+                        <h5>Answer The Following Questions To Describe Your Self Using Yes Or No:</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Questions</th>
+                                        <th class="text-center">Yes</th>
+                                        <th class="text-center">No</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Do You Have Variety Of Hobbies?</td>
+                                        <td class="text-center"><input type="radio" name="do_you_have_variety_of_hobbies_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" value="no" name="do_you_have_variety_of_hobbies_?"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Are You Always Full Of Energy ?</td>
+                                        <td class="text-center"><input type="radio" name="are_you_always_full_of_energy_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="are_you_always_full_of_energy_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Do You Consider Your Self&nbsp; A Comfortable Person And Never Worries Controls You ?</td>
+                                        <td class="text-center"><input type="radio" name="do_you_consider_yourself_a_comfortable_person_and_never_worries_control_you_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="do_you_consider_yourself_a_comfortable_person_and_never_worries_control_you_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Do You Always Make New Friends ?</td>
+                                        <td class="text-center"><input type="radio" name="do_you_always_make_new_friends_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="do_you_always_make_new_friends_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Can You Easily Turn a Bored Social Gathering To Be a Full Of Joy And Happiness ?</td>
+                                        <td class="text-center"><input type="radio" name="can_you_easily_turn_a_bored_social_gathering_to_be_a_full_of_joy_and_happiness_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="can_you_easily_turn_a_bored_social_gathering_to_be_a_full_of_joy_and_happiness_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Do You Like Mixing With People Always ?</td>
+                                        <td class="text-center"><input type="radio" name="do_you_like_mixing_with_people_always_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="do_you_like_mixing_with_people_always_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Do You Have A Ready Answers When People Talk To You? all the Time</td>
+                                        <td class="text-center"><input type="radio" name="do_you_have_ready_answers_when_people_talk_to_you_?_all_the_time" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="do_you_have_ready_answers_when_people_talk_to_you_?_all_the_time" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Are You Always On The Right Side And Your Decisions Never Go Wrong ?</td>
+                                        <td class="text-center"><input type="radio" name="are_you_always_on_the_right_side_and_your_decisions_never_go_wrong_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="are_you_always_on_the_right_side_and_your_decisions_never_go_wrong_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Would You Like The Sand Noise To Surround You Always ?</td>
+                                        <td class="text-center"><input type="radio" name="would_you_like_the_sand_noise_to_surround_you_always_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" name="would_you_like_the_sand_noise_to_surround_you_always_?" value="no"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Have You Ever Lied Never ?</td>
+                                        <td class="text-center"><input type="radio" name="have_you_ever_lied_never_?" value="yes"></td>
+                                        <td class="text-center"><input type="radio" value="no" name="have_you_ever_lied_never_?"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group float-right d-xl-flex justify-content-xl-end"><button class="btn btn-primary action" type="button" data-action="forms">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <ul class="list-unstyled mx-3">
+                    <li>Al Garhoud - Dubai P.O Box: 13866</li>
+                    <li>Cell: 055 654 6546</li>
+                    <li><i class="fa fa-whatsapp" style="font-size: 20px;"></i>&nbsp;055 654 6546</li>
+                </ul>
+            </div>
+            <div class="col-auto">
+                <ul class="list-unstyled mx-3">
+                    <li>Tel: 04 294 9998</li>
+                    <li>Fax - 04 294 9997</li>
+                    <li>Email: info@arraa.net</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/intlTelInput-jquery.min.js" integrity="sha256-i2ZYpJkTktrbuc1zUltDxztPxDiQKZifRWhyE9yq7ws=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/script-1.min.js"></script>
+</body>
+
+</html>

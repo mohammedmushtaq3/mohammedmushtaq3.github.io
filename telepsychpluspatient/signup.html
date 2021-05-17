@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Contact - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Telepsych+</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page contact-page">
+        <section class="portfolio-block contact">
+            <div class="container">
+                <form id="sign-up-form">
+                    <div class="heading">
+                        <h2>SIGN UP</h2>
+                    </div>
+                    <div class="form-group"><label>Preferred Name *</label><input class="form-control" type="text" name="name" required=""></div>
+                    <div class="form-group"><label for="name">Email *</label><input class="form-control item" type="text" id="email" name="email"></div>
+                    <div class="form-group"><label>Gender</label><br>
+                        <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-1" name="gender" value="male"><label class="custom-control-label" for="formCheck-1">Male</label></div>
+                        <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" name="gender" value="female"><label class="custom-control-label" for="formCheck-2">Female</label></div>
+                        <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="gender" value="other"><label class="custom-control-label" for="formCheck-3">Other</label></div>
+                    </div>
+                    <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="given_name"></div>
+                    <div class="form-group"><label>Middle Name</label><input class="form-control" type="text" name="middle_name"></div>
+                    <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="family_name"></div>
+                    <div class="form-group"><label>Date Of Birth</label><input class="form-control" type="date" name="birthdate"></div>
+                    <div class="form-group"><label>Emirates ID</label><input class="form-control" type="text" name="preferred_username"></div>
+                    <div class="form-group"><label>Phone</label><br><input class="form-control tel-phone-input" type="tel" name="phone_number"></div>
+                    <div class="form-group"><label>Nationality</label><select class="form-control countries-list" name="locale"></select></div>
+                    <div class="form-group"><label>Address</label><input class="form-control" type="text" name="address"></div>
+                    <div class="form-group"><label for="subject">Password</label>
+                        <div class="input-group"><input class="form-control" type="password" id="password" name="password" required="">
+                            <div class="input-group-append"><button class="btn btn-primary password-toggle" type="button"><i class="fa fa-eye"></i></button></div>
+                        </div><span class="text-secondary">Note: password should be at least 8&nbsp; characters&nbsp;long, at least one uppercase letter, a special character and a number.&nbsp;&nbsp;</span></div>
+                    <div class="form-group"><label for="subject">Confirm Password</label>
+                        <div class="input-group"><input class="form-control" type="password" id="confirm-password" name="confirm_password" required="">
+                            <div class="input-group-append"><button class="btn btn-primary password-toggle" type="button"><i class="fa fa-eye"></i></button></div>
+                        </div>
+                    </div>
+                    <p class="error-msg text-danger border border-danger text-center p-2 d-none">Paragraph</p>
+                    <div class="form-group text-right"><button class="btn btn-primary" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links">
+                <p style="margin: 0;">Copyright&nbsp;© Telepsych+&nbsp;</p>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" role="dialog" tabindex="-1" id="new-password-challenge">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="new-password-challenge-form" class="px-2">
+                    <div class="modal-header">
+                        <h4 class="modal-title">New Password</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body">
+                        <div class="form-group"><label>UserName</label><input class="form-control given-name" type="text" required=""></div>
+                        <div class="form-group"><label>New Password</label><input class="form-control new-password" type="text" required=""></div>
+                        <p class="newpass-error-msg text-center text-danger p-2 border border-danger d-none">Paragraph</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/intlTelInput-jquery.min.js" integrity="sha256-i2ZYpJkTktrbuc1zUltDxztPxDiQKZifRWhyE9yq7ws=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/login.min.js"></script>
+</body>
+
+</html>

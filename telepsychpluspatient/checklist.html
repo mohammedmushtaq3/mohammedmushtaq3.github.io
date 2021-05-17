@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Telepsych+</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Telepsych+</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="appointments.html">Appointments</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="checklist.html">Checklist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="signOut()">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page cv-page">
+        <section class="border-bottom portfolio-block">
+            <div class="text-uppercase text-center heading">
+                <h2>Check list</h2>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="card d-none m-auto" id="check-list-graph">
+                    <div class="card-header">
+                        <h5 class="mb-0">CheckList</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="user-report-chart"><canvas data-bs-chart="{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;data&quot;:{&quot;labels&quot;:[],&quot;datasets&quot;:[]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;drawOnChartArea&quot;:false}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;drawOnChartArea&quot;:false}}]}}}"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="table-responsive table-borderless d-none" id="survey-table">
+                    <table class="table table-bordered" style="height: 530px;">
+                        <tbody>
+                            <tr>
+                                <td style="height: 380px;">
+                                    <form id="surveyForm" class="forms m-auto"></form>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right"><button class="btn btn-primary px-4 mx-2" id="prevBtn" type="button" onclick="nextPrev(-1)">Previous</button><button class="btn btn-primary px-4 mx-2" id="nextBtn" type="button" onclick="nextPrev(1)">Next</button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links">
+                <p style="margin: 0;">Copyright&nbsp;© Telepsych+&nbsp;</p>
+            </div>
+        </div>
+    </footer><script>
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+
+  function showTab(n) {
+    // This function will display the specified tab of the form...
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    //... and fix the Previous/Next buttons:
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == x.length - 1) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+      document.getElementById("skipBtn").innerHTML = "Skip";
+      document.getElementById("skipBtn").disabled = false;
+    }
+    //... and run a function that will display the correct step indicator:
+    fixStepIndicator(n);
+    $("html").animate(
+      {
+        scrollTop: 0,
+      },
+      "slow"
+    );
+  }
+
+  function nextPrev(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm()) return false;
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // if you have reached the end of the form...
+    if (currentTab == x.length - 1) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+      document.getElementById("skipBtn").disabled = true;
+    }
+    if (currentTab >= x.length) {
+      // ... the form gets submitted:
+      onSurveySubmit();
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+
+  function validateForm() {
+    // This function deals with validation of the form fields
+    var x,
+      y,
+      i,
+      valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+      document.getElementsByClassName("step")[currentTab].className +=
+        " finish";
+    }
+    return valid; // return the valid status
+  }
+
+  function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i,
+      x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+    i = 0;
+    while (i < n) {
+      x[i].className += " finish";
+      i++;
+    }
+  }
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@4.5.6/dist/amazon-cognito-identity.min.js" integrity="sha256-lv7tvgQ/FiTLMh2l1oHSkVGF5QxPfy1O6bpdes/m1uo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/intlTelInput-jquery.min.js" integrity="sha256-i2ZYpJkTktrbuc1zUltDxztPxDiQKZifRWhyE9yq7ws=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js" integrity="sha256-3kSXcicezu2sKkkqQae/hgspQC+t6zkOA0rS7QtlSyE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js" integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js" integrity="sha256-YS9kklqEaLYBFpFsHZhoRQna5D2+RSAi/3V4+fXi9qQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.4/dist/signature_pad.umd.js" integrity="sha256-n79HB+UxUl9MJJg65BRGXuy6ClRJw+b3ZkW2Rt6db6c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js" integrity="sha256-QJRMHKW7/I7Qk65HxatzQkkRlkHxO0WX65nfgxgnTMw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/script-1.min.js"></script>
+    <script src="assets/js/survey-content.min.js"></script>
+    <script src="assets/js/checklist.min.js"></script>
+    <script src="assets/js/survey.min.js"></script>
+</body>
+
+</html>
