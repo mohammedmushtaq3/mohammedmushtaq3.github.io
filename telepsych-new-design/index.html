@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB CSS-->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="./css/compiled.min.css" />
+    <!-- Custom styles -->
+    <style>
+      @media (min-width: 1400px) {
+        main,
+        header,
+        #main-navbar {
+          padding-left: 240px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!-- Sidenav -->
+      <div
+        id="sidenav-4"
+        class="sidenav"
+        data-mode="side"
+        role="navigation"
+        data-hidden="true"
+        data-accordion="true"
+        data-content="#page-content"
+      >
+        <a
+          class="
+            ripple
+            d-flex
+            justify-content-center
+            py-4
+            ripple-surface ripple-surface-primary
+          "
+          data-ripple-color="primary"
+        >
+          <img
+            id="TelePsychPlus-logo"
+            src="./img/telepsychplus-blue.png"
+            alt="TelePsych+ Logo"
+            height="40rem"
+            draggable="false"
+          />
+        </a>
+        <ul class="sidenav-menu">
+          <li class="sidenav-item">
+            <a class="sidenav-link ripple-surface" href="./index.html">
+              <i class="fas fa-home mr-3"></i
+              ><span data-slim="false" style="display: unset"
+                >Appointments</span
+              ></a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link ripple-surface" href="#">
+              <i class="fas fa-users mr-3"></i
+              ><span data-slim="false" style="display: unset">Patients</span></a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link ripple-surface" href="#">
+              <i class="fas fa-calendar mr-3"></i
+              ><span data-slim="false" style="display: unset">Calendar</span></a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link ripple-surface" href="#">
+              <i class="fab fa-wpforms mr-3"></i
+              ><span data-slim="false" style="display: unset">Forms</span></a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link ripple-surface" href="#">
+              <i class="fas fa-clipboard mr-3"></i
+              ><span data-slim="false" style="display: unset"
+                >Arabic Forms</span
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Sidenav -->
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->
+          <!-- <a class="navbar-brand" href="#">Brand</a> -->
+
+          <!-- Toggle button -->
+          <button
+            class="btn shadow-0 p-0 mr-3 d-block d-xxl-none"
+            data-toggle="sidenav"
+            data-target="#sidenav-4"
+            aria-controls="#sidenav-4"
+            aria-haspopup="true"
+          >
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+
+          <!--Right Links-->
+          <ul class="navbar-nav ml-auto d-flex flex-row">
+            <!--Nofitication drowpdown-->
+            <li class="nav-item dropdown">
+              <a
+                href=""
+                class="nav-link mr-3 mr-lg-0 dropdown-toggle hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger"
+                  >1</span
+                >
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li class="dropdown-item">Some news</li>
+                <li class="dropdown-item">Another news</li>
+                <li class="dropdown-item">Something else here</li>
+              </ul>
+            </li>
+
+            <!-- Avatar -->
+            <li class="nav-item dropdown">
+              <a
+                class="
+                  nav-link
+                  dropdown-toggle
+                  hidden-arrow
+                  d-flex
+                  align-items-center
+                "
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://placehold.co/50x50.png"
+                  class="rounded-circle"
+                  height="22"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">My profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <main class="pt-5 mdb-docs-layout" id="page-content">
+      <div class="container-fluid mt-4 px-lg-5">
+        <form class="my-3" id="appointments-filter">
+          <div class="row">
+            <div class="col-6 col-md-3 col-lg-2 mb-2">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="formInput1" />
+                <label for="formInput1" class="form-label">Date From</label>
+                <button
+                  id="datepicker-toggle-41861"
+                  type="button"
+                  class="datepicker-toggle-button"
+                  data-toggle="datepicker"
+                >
+                  <i class="far fa-calendar datepicker-toggle-icon"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2 mb-2">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="formInput2" />
+                <label for="formInput2" class="form-label">Date To</label>
+                <button
+                  id="datepicker-toggle-41861"
+                  type="button"
+                  class="datepicker-toggle-button"
+                  data-toggle="datepicker"
+                >
+                  <i class="far fa-calendar datepicker-toggle-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-2">
+              <select
+                class="select"
+                data-placeholder="Appointment Status"
+                data-clear-button="true"
+              >
+                <option value="" selected disabled>All Appointments</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-3 mb-2">
+              <select
+                class="select"
+                data-placeholder="Payment"
+                data-clear-button="true"
+              >
+                <option value="" selected disabled>Payment</option>
+                <option value="Pending">Pending</option>
+                <option value="Paid">Paid</option>
+                <option value="OnHold">OnHold</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 mb-2">
+              <select class="select select-initialized">
+                <option selected>All Doctors</option>
+                <option value="simsint2020@ahmedalnajjar.com">
+                  Dr. Ahmed Al Najjar
+                </option>
+                <option value="">Dr. Sofiane</option>
+              </select>
+            </div>
+            <div class="col-12 col-sm-6 col-md-5 mb-2">
+              <select
+                class="select"
+                data-filter="true"
+                data-clear-button="true"
+                data-placeholder="Patients Email"
+              >
+                <option value="" selected disabled>Patients Email</option>
+                <option value="">user1@gmail.com</option>
+                <option value="">user2@gmail.com</option>
+                <option value="">user3@gmail.com</option>
+              </select>
+            </div>
+            <div class="col-5 col-md-2 mb-2">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="formInput5" />
+                <label for="formInput5" class="form-label">File No.</label>
+              </div>
+            </div>
+            <div class="col mb-2">
+              <button class="btn btn-light mr-2" type="reset">Clear</button>
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+          </div>
+        </form>
+        <div id="appointments-list" class="mb-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title">User-1@gmail.com</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    June 8, 2021 11:30 PM - 12:00 AM
+                  </h6>
+                </div>
+                <div class="col-3">
+                  <h5><strong>File No. </strong><span>-</span></h5>
+                </div>
+                <div class="col-12">
+                  <strong>Chief Complaint: </strong><span>-</span>
+                </div>
+                <div class="col-12">
+                  <strong>Location: </strong><span>-</span>
+                </div>
+                <div class="col-12 col-md-6">
+                  <strong>Doctor: </strong><span>-</span>
+                </div>
+                <div class="col-12 col-md-6">
+                  <strong>Service Details: </strong
+                  ><span>Consultation Session | 600 AED </span>
+                </div>
+                <div class="col-12 col-md-6">
+                  <strong>Payment Type: </strong><span>Credit Card</span>
+                </div>
+                <div class="col-12 col-md-6">
+                  <strong>Payment Ref: </strong><span>-</span>
+                </div>
+                <div class="col-12 mt-1">
+                  <button class="btn btn-primary bg-warning mr-2 mb-2">
+                    Pending
+                  </button>
+                  <button class="btn btn-outline-primary mr-2 mb-2">
+                    USER PROFILE
+                  </button>
+                  <a
+                    class="btn btn-outline-primary mr-2 mb-2"
+                    href="#"
+                    target="_self"
+                    >PATIENT DASHBOARD</a
+                  >
+                  <button class="btn btn-outline-primary mr-2 mb-2">
+                    RESCHEDULE
+                  </button>
+                  <button
+                    class="btn btn-outline-primary mr-2 mb-2"
+                    id="abc-defg-124"
+                    data-clipboard-target="#abc-defg-124"
+                    data-clipboard-text="https://google.com/testing-clipboard-copy"
+                  >
+                    <i class="fas fa-copy me-2"></i>PAYMENT LINK
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="users-list" class="">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-3">
+                  <img
+                    src="https://placehold.co/150x150"
+                    class="img-fluid rounded-circle"
+                    alt="user-photo"
+                  />
+                </div>
+                <div class="col">
+                  <h5>User Name</h5>
+                  <h6 class="text-muted">user-1@gmail.com</h6>
+                  <p><strong>DOB: </strong><span>-</span></p>
+                  <p><strong>AGE: </strong><span>- Years</span></p>
+                </div>
+                <div class="col"></div>
+                <div class="col-12 mt-2">
+                  <button class="btn btn-primary">Actions</button>
+                  <button class="btn btn-outline-primary">
+                    PATIENT DASHBOARD
+                  </button>
+                  <button class="btn btn-outline-primary" onclick="alert()">
+                    ALERT
+                  </button>
+                  <button
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    EMIRATES ID
+                  </button>
+                  <div class="collapse mt-3" id="collapseExample">
+                    <div class="row">
+                      <div class="col-12 col-md-6 text-center">
+                        <img
+                          src="./img/eidf.jpg"
+                          class="img-fluid"
+                          alt="user-photo"
+                        />
+                      </div>
+                      <div class="col-12 col-md-6 text-center">
+                        <img
+                          src="./img/eidb.jpg"
+                          class="img-fluid"
+                          alt="user-photo"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--alert-->
+    <div
+      class="alert fade alert-fixed alert-primary"
+      id="placement-example"
+      data-width="250px"
+      data-autohide="true"
+      data-position="top-right"
+      data-delay="5000"
+      role="alert"
+      data-hidden="true"
+      data-append-to-body="true"
+      data-color="primary"
+      style="
+        display: block;
+        width: 250px;
+        top: 10px;
+        right: 10px;
+        bottom: unset;
+        left: unset;
+        transform: unset;
+      "
+    >
+      Show me wherever you want!
+    </div>
+    <!--alert-->
+  </body>
+
+  <!-- MDB JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript">
+    // const sidenavInstance = mdb.Sidenav.getInstance(
+    //   document.getElementById("sidenav-4")
+    // );
+    // sidenavInstance.update({ color: "dark" });
+  </script>
+  <script type="text/javascript">
+    const sidenav = document.getElementById("sidenav-4");
+    const sidenavInstance = mdb.Sidenav.getInstance(sidenav);
+
+    let innerWidth = null;
+
+    const setMode = (e) => {
+      // Check necessary for Android devices
+      if (window.innerWidth === innerWidth) return;
+
+      innerWidth = window.innerWidth;
+      const isFrontPage = 0;
+      if (innerWidth <= 1440 || isFrontPage) {
+        sidenavInstance.changeMode("over");
+        sidenavInstance.hide();
+        return;
+      }
+      sidenavInstance.changeMode("side");
+      sidenavInstance.show();
+    };
+    // Event listeners
+    if (sidenav) {
+      window.addEventListener("resize", setMode);
+      setMode();
+    }
+  </script>
+  <script type="text/javascript">
+    // const slimInstance = new mdb.Sidenav(document.getElementById("sidenav-4"));
+    // slimInstance.show();
+    // document.getElementById("slim-toggler").addEventListener("click", () => {
+    //   slimInstance.toggleSlim();
+    // });
+    // slimInstance.update({ expandOnHover: true });
+  </script>
+  <script type="text/javascript">
+    alertInstance = mdb.Alert.getInstance(
+      document.getElementById("placement-example")
+    );
+    function alert() {
+      alertInstance.show();
+    }
+  </script>
+</html>
