@@ -38,7 +38,7 @@
     <header id="header"></header>
     <main>
       <div class="container vh-100 pt-5">
-        <form id="register">
+        <form id="register" autocomplete="off">
           <div class="row">
             <div class="col col-sm-12 col-md-6">
               <div class="h-100 d-flex flex-column align-items-center">
@@ -58,6 +58,7 @@
                       id="email"
                       class="form-control"
                       name="email"
+                      required
                     />
                     <label class="form-label" for="email">Email address</label>
                   </div>
@@ -68,6 +69,7 @@
                       id="full_name"
                       class="form-control"
                       name="full_name"
+                      required
                     />
                     <label class="form-label" for="full_name">Full Name</label>
                   </div>
@@ -78,6 +80,7 @@
                       id="phone_number"
                       class="form-control"
                       name="phone_number"
+                      required
                     />
                     <label class="form-label" for="phone_number"
                       >Phone Number</label
@@ -127,33 +130,19 @@
     </main>
     <footer id="footer"></footer>
   </body>
-
-  <!-- MDB JavaScript -->
   <script type="text/javascript" src="./js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
-  <!-- <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/aws-amplify/4.0.4-unstable.15/aws-amplify.min.js"
-    integrity="sha512-F2Ia5HOdPvtV7Q1tVN5Pa/Wlv1CI46v5IIGIQdD9VC6KgVToIl0DQi0RhPVePMx3K3OAS0Las553qA12yRjVgQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script> -->
-  <!-- <script
-    src="https://cdn.jsdelivr.net/npm/aws-amplify@4.0.3/dist/aws-amplify.min.js"
-    integrity="sha256-2RC9ImsGpYzBny1QKChnbhZyBJOkK/BZMJVPGBr6ku4="
-    crossorigin="anonymous"
-  ></script> -->
-
   <script type="text/javascript">
     $("form#register").on("submit", (e) => {
       e.preventDefault();
-      let formData = form2js("register", ".", true);
+      let formData = form2js("register", ".", true, processFormData);
       console.log(formData);
-
-      // API.post('register-student',"",formData){
-
-      // }
       sessionStorage.setItem("user", JSON.stringify(formData));
+      window.location = "./alpha-test.html";
     });
+    function processFormData() {
+      //document.getElementById("file-id").files[0].name;
+    }
   </script>
 </html>

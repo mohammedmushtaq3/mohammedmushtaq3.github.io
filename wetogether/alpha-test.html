@@ -48,6 +48,7 @@
             />
           </div>
           <div class="mb-3 text-black">
+            <h1 class="w-100 text-center text-capitalize mb-4">alpha test</h1>
             <form id="alphatest"></form>
           </div>
         </div>
@@ -60,79 +61,19 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
   <!-- Custom scripts -->
-  <script src="./js/student-checklist.js"></script>
+  <script src="./js/scripts.js"></script>
+  <script src="./js/student-surveys.js"></script>
   <script>
-    let languagePreference = sessionStorage.getItem("lang")
-      ? sessionStorage.getItem("lang")
-      : "en";
-  </script>
-  <script>
-    // console.log("language preference ", languagePreference);
-    // console.log("default_survey", student_checklist);
-    var surveyContent = "";
-    student_alpha_test.body.sections.forEach((section) => {
-      if (section.sectionType === "scale") {
-        section.questions.forEach((question, index) => {
-          surveyContent += `<div class="form-group">
-                                <h5 class="questions">${++index}. ${
-            question[languagePreference]
-          }</h5>`;
-          surveyContent += `<table class="table table-responsive table-borderless text-center"><tr>`;
-          $.each(question.labels, function (index, item) {
-            surveyContent += `<th><span class="label"> ${item.label[languagePreference]}</span></th>`;
-          });
-          surveyContent += `</tr><tr>`;
-          $.each(question.labels, function (index, item) {
-            surveyContent += `<td class="text-center">
-            <input type="radio" name="${question[languagePreference]}" value="${item.label.value}">
-            </td>`;
-          });
-
-          surveyContent += `</tr></table>`;
-          surveyContent += `</div>`;
-        });
-        surveyContent += `</div>`;
-      } else if (section.sectionType === "boolean") {
-        section.questions.forEach((question, index) => {
-          surveyContent += `<hr/><div class="form-group">
-                              <h5>${++index}. ${question.en}</h5>
-                              <h5 class="arabic-text text-right d-none">${
-                                question.ar
-                              }</h5>
-                                    <table class="table table-responsive table-borderless text-center">
-                                      <tr>
-                                            <th>TRUE</th>
-                                            <th>FALSE</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><input type="radio" name="${
-                                              question.en
-                                            }" value="true"></td>
-                                            <td class="text-center"><input type="radio" name="${
-                                              question.en
-                                            }" value="false"></td>
-                                        </tr>
-                                    </table>
-                          </div>`;
-        });
-        surveyContent += `</div>`;
-      }
-    });
-    $("#alphatest").html(surveyContent);
-    $("#alphatest").appendChild(
-      '<button type="submit" class="btn btn-primary">SUBMIT</button>'
-    );
+    // console.log("alpha test - ", student_alpha_test);
+    renderSurvey(student_alpha_test, "alphatest");
   </script>
   <script type="text/javascript">
-    $("form#checklist").on("submit", (e) => {
+    $("form#alphatest").on("submit", (e) => {
       e.preventDefault();
       let formData = form2js("alphatest", ".", true);
       console.log(formData);
-
-      // API.post('register-student',"",formData){
-
-      // }
       sessionStorage.setItem("alphatest", JSON.stringify(formData));
+      window.location = "./test.html";
     });
   </script>
 </html>

@@ -49,14 +49,20 @@
             <h1>General Health Assesment</h1>
           </div>
           <div class="mb-3 text-black">
-            <div class="form-outline w-100">
-              <input type="text" id="form1" class="form-control" />
-              <label class="form-label" for="form1">Enter Password</label>
-            </div>
-            <!-- <h1 class="font-weight-bold">General Health Questionnaire</h1> -->
-          </div>
-          <div class="">
-            <!-- <button class="btn btn-success">Start Test</button> -->
+            <form id="login" autocomplete="off">
+              <div class="form-outline w-100">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                />
+                <label class="form-label" for="form1">Enter Password</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3">
+                SUBMIT
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -64,8 +70,22 @@
     <footer id="footer"></footer>
   </body>
 
-  <!-- MDB JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+  <script type="text/javascript">
+    sessionStorage.setItem("lang", "en");
+    var md5 = function (value) {
+      return CryptoJS.MD5(value).toString();
+    };
+  </script>
+  <script>
+    $("#login").on("submit", (e) => {
+      e.preventDefault();
+      // WeTogether123#
+      console.log(" password ", md5($("#password").val()));
+      if (md5($("#password").val()) == "737dfe8c65ae60fb3b812186281dff67") {
+        window.location = "./register.html";
+      }
+    });
+  </script>
 </html>

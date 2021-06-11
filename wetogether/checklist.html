@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
     <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- <link rel="stylesheet" href="./css/compiled.min.css" /> -->
+    <link rel="stylesheet" href="./css/compiled.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!-- Custom styles -->
     <style></style>
@@ -48,6 +48,7 @@
             />
           </div>
           <div class="mb-3 text-black">
+            <h1 class="w-100 text-center text-capitalize mb-4">GHQ</h1>
             <form id="checklist"></form>
           </div>
         </div>
@@ -108,75 +109,21 @@
       </div>
     </template>
   </body>
-
-  <!-- MDB JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
   <!-- Custom scripts -->
-  <script src="./js/student-checklist.js"></script>
-  <script>
-    let languagePreference = sessionStorage.getItem("lang")
-      ? sessionStorage.getItem("lang")
-      : "en";
-  </script>
-  <script>
-    // console.log("language preference ", languagePreference);
-    // console.log("default_survey", student_checklist);
-    var surveyContent = "";
-    student_checklist.body.sections.forEach((section) => {
-      if (section.sectionType === "scale") {
-        section.questions.forEach((question, index) => {
-          surveyContent += `<div class="form-group">
-                                <h5 class="questions">${++index}. ${
-            question[languagePreference]
-          }</h5>`;
-          surveyContent += `<table class="table table-responsive table-borderless text-center"><tr>`;
-          $.each(question.labels, function (index, item) {
-            surveyContent += `<th><span class="label"> ${item.label[languagePreference]}</span></th>`;
-          });
-          surveyContent += `</tr><tr>`;
-          $.each(question.labels, function (index, item) {
-            surveyContent += `<td class="text-center">
-            <input type="radio" name="${question[languagePreference]}" value="${item.label.value}">
-            </td>`;
-          });
-
-          surveyContent += `</tr></table>`;
-          surveyContent += `</div>`;
-        });
-        surveyContent += `</div>`;
-      } else if (section.sectionType === "boolean") {
-        section.questions.forEach((question) => {
-          surveyContent += `<hr/><div class="form-group">
-                              <p>${question.en}</p>
-                              <p class="arabic-text text-right">${question.ar}</p>
-                                    <table class="table-borderless w-100 text-center">
-                                      <tr>
-                                            <th>TRUE</th>
-                                            <th>FALSE</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><input type="radio" name="${question.en}" value="true"></td>
-                                            <td class="text-center"><input type="radio" name="${question.en}" value="false"></td>
-                                        </tr>
-                                    </table>
-                          </div>`;
-        });
-        surveyContent += `</div>`;
-      }
-    });
-    $("#checklist").html(surveyContent);
+  <script src="./js/scripts.js"></script>
+  <script src="./js/student-surveys.js"></script>
+  <script type="text/javascript">
+    renderSurvey(student_checklist, "checklist");
   </script>
   <script type="text/javascript">
     $("form#checklist").on("submit", (e) => {
       e.preventDefault();
       let formData = form2js("checklist", ".", true);
       console.log(formData);
-
-      // API.post('register-student',"",formData){
-
-      // }
       sessionStorage.setItem("checklist", JSON.stringify(formData));
+      window.location = "./admin.html";
     });
   </script>
 </html>
