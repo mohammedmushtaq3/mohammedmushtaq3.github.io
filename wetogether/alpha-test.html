@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <link rel="icon" href="./img/uaeu-favicon2.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- <link rel="stylesheet" href="./css/compiled.min.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom styles -->
+    <style></style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("./header.html");
+        $("#footer").load("./footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main>
+      <div class="container-fluid vh-100 pt-5">
+        <div class="h-100 d-flex flex-column align-items-center">
+          <div class="align-self-center mb-5">
+            <img
+              id="logo"
+              class="img-fluid"
+              src="./img/uaeu-logo.png"
+              alt="United Arab Emirates University Logo"
+            />
+          </div>
+          <div class="mb-3 text-black">
+            <form id="alphatest"></form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+  </body>
+
+  <!-- MDB JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
+  <!-- Custom scripts -->
+  <script src="./js/student-checklist.js"></script>
+  <script>
+    let languagePreference = sessionStorage.getItem("lang")
+      ? sessionStorage.getItem("lang")
+      : "en";
+  </script>
+  <script>
+    // console.log("language preference ", languagePreference);
+    // console.log("default_survey", student_checklist);
+    var surveyContent = "";
+    student_alpha_test.body.sections.forEach((section) => {
+      if (section.sectionType === "scale") {
+        section.questions.forEach((question, index) => {
+          surveyContent += `<div class="form-group">
+                                <h5 class="questions">${++index}. ${
+            question[languagePreference]
+          }</h5>`;
+          surveyContent += `<table class="table table-responsive table-borderless text-center"><tr>`;
+          $.each(question.labels, function (index, item) {
+            surveyContent += `<th><span class="label"> ${item.label[languagePreference]}</span></th>`;
+          });
+          surveyContent += `</tr><tr>`;
+          $.each(question.labels, function (index, item) {
+            surveyContent += `<td class="text-center">
+            <input type="radio" name="${question[languagePreference]}" value="${item.label.value}">
+            </td>`;
+          });
+
+          surveyContent += `</tr></table>`;
+          surveyContent += `</div>`;
+        });
+        surveyContent += `</div>`;
+      } else if (section.sectionType === "boolean") {
+        section.questions.forEach((question, index) => {
+          surveyContent += `<hr/><div class="form-group">
+                              <h5>${++index}. ${question.en}</h5>
+                              <h5 class="arabic-text text-right d-none">${
+                                question.ar
+                              }</h5>
+                                    <table class="table table-responsive table-borderless text-center">
+                                      <tr>
+                                            <th>TRUE</th>
+                                            <th>FALSE</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><input type="radio" name="${
+                                              question.en
+                                            }" value="true"></td>
+                                            <td class="text-center"><input type="radio" name="${
+                                              question.en
+                                            }" value="false"></td>
+                                        </tr>
+                                    </table>
+                          </div>`;
+        });
+        surveyContent += `</div>`;
+      }
+    });
+    $("#alphatest").html(surveyContent);
+    $("#alphatest").appendChild(
+      '<button type="submit" class="btn btn-primary">SUBMIT</button>'
+    );
+  </script>
+  <script type="text/javascript">
+    $("form#checklist").on("submit", (e) => {
+      e.preventDefault();
+      let formData = form2js("alphatest", ".", true);
+      console.log(formData);
+
+      // API.post('register-student',"",formData){
+
+      // }
+      sessionStorage.setItem("alphatest", JSON.stringify(formData));
+    });
+  </script>
+</html>
