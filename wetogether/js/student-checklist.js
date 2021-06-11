@@ -297,3 +297,58 @@ let student_checklist = {
     name: "student-checklist",
   },
 };
+let student_alpha_test = {
+  statusCode: 200,
+  body: {
+    created: "",
+    updated: "",
+    sections: [
+      {
+        questions: [
+          {
+            en: "Do You Have Variety Of Hobbies?",
+            ar: "هل لديك هوايات متنوعة؟",
+          },
+          {
+            en: "Are You Always Full Of Energy?",
+            ar: "هل أنت دائما مليء بالطاقة؟",
+          },
+          {
+            en: "Do You Consider You Self A Comfortable Person And Never Worries Controls You?",
+            ar: "هل تعتبر نفسك شخصًا مريحًا ولا يتحكم بك القلق؟",
+          },
+          {
+            en: "Do You Always Make New Friends?",
+            ar: "هل تصنع دائما صداقات جديدة؟",
+          },
+          {
+            en: "Can You Easily Turn A Bored Social Gathering To Be Full Of Joy And Happiness?",
+            ar: "هل يمكنك تحويل لقاء اجتماعي مٌمل بسهولة إلى المتعة والسعادة؟",
+          },
+          {
+            en: "Do You Like Mixing With People Always?",
+            ar: "هل تحب الاختلاط بالناس دائما؟",
+          },
+          {
+            en: "Do You Have A Ready Answers When People Talk To You? All The Time",
+            ar: "هل لديك إجابات جاهزة عندما يتحدث الناس إليك طوال الوقت؟",
+          },
+          {
+            en: "Are You Always On The Right Side And Your Decisions Never Go Wrong?",
+            ar: "هل أنت دائمًا على الجانب الصحيح وقراراتك لا تخطىء أبدًا؟",
+          },
+          {
+            en: "Would You Like The Sand Noise To Surround You Always?",
+            ar: "هل تحب الضوضاء الرملية ان تحيط بك دائمًا؟",
+          },
+          {
+            en: "Have You Ever Lied Never?",
+            ar: "هل لم تكذب ابدا؟",
+          },
+        ],
+        sectionType: "boolean",
+        title: { en: "Describe Your Self", ar: "صف نفسك" },
+      },
+    ],
+  },
+};
