@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <link rel="icon" href="/img/ueau-favicon2.ico" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/compiled.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <style></style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main>
+      <div class="container-fluid vh-100">
+        <div class="h-100 d-flex flex-column justify-content-start">
+          <div class="align-self-center mb-5 pt-3">
+            <img
+              id="logo"
+              class="img-fluid"
+              src="../img/uaeu-logo.png"
+              alt="United Arab Emirates University Logo"
+            />
+          </div>
+          <div class="mb-3 text-black">
+            <h1 class="font-weight-bold">Dashboard</h1>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="showReport()">
+            Show Modal Report
+          </button>
+
+          <div class="table-responsive">
+            <table
+              id="students-list"
+              class="table table-responsive table-hover"
+            >
+              <thead class="datatable-header">
+                <!-- <th>#</th> -->
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Reviewed</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer"></footer>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 class="text-center">General Health Assesment Test Report</h3>
+            <div class="row">
+              <div class="col">
+                <h6 class="text-danger">Personal Data</h6>
+                <p><strong>Name:</strong> Praveen kumar</p>
+                <p><strong>Email:</strong> Praveen kumar</p>
+                <p><strong>Phone Number:</strong> Praveen kumar</p>
+                <p>
+                  <strong>Date of Application:</strong> 15<sup>th</sup> June
+                  2021 15:30 PM
+                </p>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <img class="img-fluid" src="../img/eidf.jpg" />
+                  </div>
+                  <div class="col">
+                    <img class="img-fluid" src="../img/eidb.jpg" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h4 class="text-center text-danger">Alpha Test Result</h4>
+                <div class="text-center my-4 w-25 m-auto">
+                  <canvas id="alpha-test-chart"></canvas>
+                </div>
+                <hr class="my-3" />
+              </div>
+              <div class="col-12">
+                <h4 class="text-center text-danger">
+                  Psychological Health Questionnaire - Test Result
+                </h4>
+                <div class="row gx-5">
+                  <div class="col text-center">
+                    <div class="phq-rating-wrapper">
+                      <img class="img-fluid" src="../img/ghq-1.jpg" /><span
+                        class="phq-mask-rating"
+                        >12</span
+                      >
+                    </div>
+                    <p>Somatic Symptoms</p>
+                  </div>
+                  <div class="col text-center">
+                    <div class="phq-rating-wrapper">
+                      <img class="img-fluid" src="../img/ghq-2.jpg" /><span
+                        class="phq-mask-rating"
+                        >7</span
+                      >
+                    </div>
+                    <p>Severe Depression</p>
+                  </div>
+                  <div class="col text-center">
+                    <div class="phq-rating-wrapper">
+                      <img class="img-fluid" src="../img/ghq-3.jpg" /><span
+                        class="phq-mask-rating"
+                        >9</span
+                      >
+                    </div>
+                    <p>Anxiety/Insomnia</p>
+                  </div>
+                  <div class="col text-center">
+                    <div class="phq-rating-wrapper">
+                      <img class="img-fluid" src="../img/ghq-4.jpg" /><span
+                        class="phq-mask-rating"
+                        >15</span
+                      >
+                    </div>
+                    <p>Social Dysfunction</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <div class="text-center phq-rating-wrapper">
+                  <img
+                    class="rounded-circle img-fluid w-25"
+                    src="../img/ghq-total-1.jpg"
+                  /><span
+                    class="phq-total-mask-rating font-weight-bold"
+                    style="
+                      position: absolute;
+                      top: 70%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      font-size: 0.75em;
+                    "
+                    >43</span
+                  >
+                </div>
+                <p class="font-weight-bold mt-3" style="font-size: 2.5rem">
+                  Total PHQ Value
+                </p>
+              </div>
+              <div class="col-12">
+                <div class="table-responsive table-bordered text-center">
+                  <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Scale</th>
+                        <th>Somatic Symptoms</th>
+                        <th>Severe Depression</th>
+                        <th>Anxiety/Insomnia</th>
+                        <th>Social Dysfunction</th>
+                        <th>Total Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">Score</td>
+                        <td>12</td>
+                        <td>7</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>43</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row font-weight-bold">
+                  <div class="col">
+                    <p>Interpretation for PHQ Result</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-right">PHQ نتائج تفسي<br /></p>
+                  </div>
+                </div>
+                <textarea
+                  class="w-100 rounded border-success"
+                  rows="4"
+                ></textarea>
+                <hr class="my-3" />
+              </div>
+              <div class="col-12">
+                <h4 class="text-center text-danger">STQ - Test Results</h4>
+                <div class="row">
+                  <div class="col-6">
+                    <div>
+                      <canvas id="stq-chart-1"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div>
+                      <canvas id="stq-chart-2"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div>
+                      <canvas id="stq-chart-3"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div>
+                      <canvas id="stq-chart-4"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="table-responsive table-bordered text-center">
+                  <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Sub Scale</th>
+                        <th>Extrovert</th>
+                        <th>Introvert</th>
+                        <th>Practical (+12)</th>
+                        <th>Imaginative</th>
+                        <th>Thinking</th>
+                        <th>Feeling</th>
+                        <th>Organized</th>
+                        <th>Flexible</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">Total Score</td>
+                        <td>60</td>
+                        <td>49</td>
+                        <td>40</td>
+                        <td>32</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>58</td>
+                        <td>51</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row font-weight-bold">
+                  <div class="col">
+                    <p>Interpretation for STQ Result</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-right">STQ نتائج تفسي<br /></p>
+                  </div>
+                </div>
+                <textarea
+                  class="w-100 rounded border-success"
+                  rows="4"
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <div class="row font-weight-bold">
+                  <div class="col">
+                    <p>Summary</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-right">ملخص<br /></p>
+                  </div>
+                </div>
+                <textarea
+                  class="w-100 rounded border-success"
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- MDB JavaScript -->
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script> -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js"
+    integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
+    integrity="sha256-qoN08nWXsFH+S9CtIq99e5yzYHioRHtNB9t2qy1MSmc="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="../js/scripts.js"></script>
+  <script src="../js/student-surveys.js"></script>
+  <script src="../js/charts.js"></script>
+  <script>
+    //Datatables
+    var student_datatable = $("#students-list").DataTable({
+      // ajax:{
+      //   url:`${ENDPOINT}/users`,
+      //   type:'GET',
+      //   dataFilter: function(data){
+      //       var json = jQuery.parseJSON( data );
+      //       json.recordsTotal = json.total;
+      //       json.recordsFiltered = json.total;
+      //       json.data = json.list;
+
+      //       return JSON.stringify( json ); // return JSON string
+      //   }
+      // },
+      stateSave: true,
+      paging: false,
+      ordering: false,
+      info: false,
+      order: [[2, "asc"]],
+      // columns: [{}, {}, {}],
+    });
+    asyncResponse("GET", "/users/", null, (res) => {
+      // console.log(res);
+      res.Items.forEach((row, index) => {
+        console.log(row);
+        let obj = {
+          id: row.id,
+          sno: index,
+          fullname: row.full_name,
+          email: row.email,
+          phone: row.phone_number,
+          status: row.status,
+        };
+        student_datatable.row.add(row);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    var reportModal = new mdb.Modal(document.getElementById("exampleModal"));
+    let studentList = "";
+    let user = JSON.parse(sessionStorage.getItem("user"));
+    console.log(user);
+    studentList = `
+                <tr>
+                  <td>
+                    <button
+                        type="button"
+                        class="btn btn-outline-dark btn-sm btn-floating"
+                        data-toggle="collapse"
+                        data-target="#${user.full_name.split(" ").join("")}"
+                        aria-expanded="true"
+                        aria-controls="${user.full_name.split(" ").join("")}">
+                      <i class="fas fa-caret-right"></i>
+                    </button>
+                  </td>
+                  <td>1</td>
+                  <td>${user.full_name}</td>
+                  <td>${user.email}</td>
+                  <td>${user.phone_number}</td>
+                  <td><span class="btn btn-warning btn-sm">Pending</span></td>
+                  </tr>
+                  <tr id="${user.full_name
+                    .split(" ")
+                    .join("")}" class="collapse mt-3">
+                    <td colspan="6">
+                    <button id="alpha-test-show" class="btn btn-outline-primary">Alpha Test</button>
+                    <button id="ghq-show" class="btn btn-primary d-none">GHQ</button>
+                    </td>
+                  </tr>
+      `;
+    $("#students-list table tbody").html(studentList);
+    // new Datatable(element, data, {sm: true})
+    // var alphaChart = $("#alpha-test-show").on("click", (e) => {
+    //   let alphatest_data = JSON.parse(sessionStorage.getItem("alpha"));
+    //   renderSurvey(student_alpha_test, "alpha-test", true);
+    //   js2form("alpha-test", alphatest_data.survey);
+    //   showAlphaChart(JSON.stringify(sessionStorage.getItem("alpha")));
+    //   reportModal.show();
+    // });
+
+    // $("#ghq-show").on("click", (e) => {
+    //   renderSurvey(student_checklist, "checklist", true);
+    //   let checklist_data = JSON.parse(sessionStorage.getItem("checklist"));
+    //   js2form("checklist", checklist_data);
+    //   ghqModal.show();
+    // });
+
+    function showReport() {
+      reportModal.show();
+      showAlphaChart(JSON.stringify(sessionStorage.getItem("alpha")));
+    }
+  </script>
+</html>
