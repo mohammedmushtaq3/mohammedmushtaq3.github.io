@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <link rel="icon" href="./img/uaeu-favicon2.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="./css/mdb.min.css" />
+    <!-- <link rel="stylesheet" href="./css/compiled.min.css" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Custom styles -->
+    <style></style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("./header.html");
+        $("#footer").load("./footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header"></header>
+    <main>
+      <div class="container-fluid vh-100 pt-5">
+        <div class="h-100 d-flex flex-column align-items-center">
+          <div class="align-self-center mb-5">
+            <img
+              id="logo"
+              class="img-fluid"
+              src="./img/uaeu-logo.png"
+              alt="United Arab Emirates University Logo"
+            />
+          </div>
+          <div class="mb-3 text-black">
+            <h1 class="w-100 text-center text-capitalize mb-4">STQ</h1>
+            <form id="stq-test"></form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Note: class .show is used for demo purposes. Remove it when using it in the real project. -->
+    <footer id="footer"></footer>
+  </body>
+
+  <!-- MDB JavaScript -->
+  <script type="text/javascript" src="./js/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
+  <!-- Custom scripts -->
+  <script src="./js/scripts.js"></script>
+  <script src="./js/student-surveys.js"></script>
+  <script>
+    // console.log("alpha test - ", student_alpha_test);
+    renderSurvey(student_stq, "stq-test");
+
+    $("form#stq-test").on("submit", (e) => {
+      e.preventDefault();
+      // let formData = checklistFormData(student_stq);
+      let formData = form2js("stq-test", ".", null);
+      console.log(formData);
+      let user = JSON.parse(sessionStorage.getItem("user"));
+      user.stq = JSON.stringify(formData);
+      console.log("new user data", user);
+      asyncResponse("POST", "/users", user, (res) => {
+        console.log("Succesful submitted", res);
+        window.location = "./doctor/";
+      });
+    });
+  </script>
+</html>
