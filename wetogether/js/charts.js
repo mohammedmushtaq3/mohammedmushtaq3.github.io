@@ -257,17 +257,17 @@ function phqGaugeSelector(val) {
   }
 }
 function phqTotalGaugeSelector(val) {
-  if (val <= 10) {
-    return "../img/ghq-total-1.jpg";
+  if (val <= 23) {
+    return "../img/ghq-total-1.png";
   }
-  if (val <= 21) {
-    return "../img/ghq-total-2.jpg";
+  if (val <= 45) {
+    return "../img/ghq-total-2.png";
   }
-  if (val <= 53) {
-    return "../img/ghq-total-3.jpg";
+  if (val <= 68) {
+    return "../img/ghq-total-3.png";
   }
-  if (val > 54) {
-    return "../img/ghq-total-4.jpg";
+  if (val > 69) {
+    return "../img/ghq-total-4.png";
   }
 }
 function showStqChart(data) {

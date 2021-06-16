@@ -111,23 +111,27 @@
               <div class="col">
                 <h6 class="text-danger">Personal Data</h6>
                 <input id="chart-userid" class="d-none" />
+                <p><strong>Name: </strong><span id="chart-username">-</span></p>
+                <p><strong>Gender: </strong><span id="chart-gender">-</span></p>
                 <p>
-                  <strong>Name: </strong
-                  ><span id="chart-username">username</span>
+                  <strong>Date of Birth: </strong
+                  ><span id="chart-birthdate">-</span>
                 </p>
                 <p>
+                  <strong>Emirates: </strong><span id="chart-emirates">-</span>
+                </p>
+
+                <p>
                   <strong>Email: </strong>
-                  <span id="chart-email">user@gmail.com</span>
+                  <span id="chart-email">-</span>
                 </p>
                 <p>
                   <strong>Phone Number: </strong
-                  ><span id="chart-phone-number">56789098765</span>
+                  ><span id="chart-phone-number">-</span>
                 </p>
                 <p>
                   <strong>Date of Application: </strong>
-                  <span id="chart-date">
-                    15<sup>th</sup> June 2021 15:30 PM</span
-                  >
+                  <span id="chart-date">-</span>
                 </p>
               </div>
               <div class="col">
@@ -376,6 +380,10 @@
     crossorigin="anonymous"
   ></script> -->
   <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
     src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
     integrity="sha256-qoN08nWXsFH+S9CtIq99e5yzYHioRHtNB9t2qy1MSmc="
     crossorigin="anonymous"
@@ -452,9 +460,14 @@
         const user = res.Items[0];
         $("#chart-userid").val(user.id);
         $("#chart-username").html(user.full_name);
+        $("#chart-gender").html(user.gender);
+        $("#chart-birthdate").html(
+          moment(user?.birthdate).format("DD-MM-YYYY")
+        );
+        $("#chart-emirates").html(user.emirates);
         $("#chart-email").html(user.email);
         $("#chart-phone-number").html(user.phone_number);
-        $("#chart-date").html(new Date(user.created).toLocaleString());
+        $("#chart-date").html(moment(user.created).format("DD MMM YYYY LT"));
         $("#chart-eidf").attr(
           "src",
           user.emirates_id_front ? user.emirates_id_front : "./../img/eidf.jpg"
