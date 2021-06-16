@@ -8,7 +8,7 @@
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Material Design for Bootstrap</title>
-    <link rel="icon" href="/img/ueau-favicon2.ico" type="image/x-icon" />
+    <link rel="icon" href="./img/ueau-favicon2.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -54,22 +54,25 @@
           <div class="mb-3 text-black">
             <h1 class="font-weight-bold">Dashboard</h1>
           </div>
-          <button type="button" class="btn btn-primary" onclick="showReport()">
+          <button
+            type="button"
+            class="btn btn-primary d-none"
+            onclick="showReport()"
+          >
             Show Modal Report
           </button>
 
           <div class="table-responsive">
-            <table
-              id="students-list"
-              class="table table-responsive table-hover"
-            >
+            <table id="datatable" class="table table-responsive table-hover">
               <thead class="datatable-header">
-                <!-- <th>#</th> -->
-                <th>S.No.</th>
+                <th></th>
+                <th>Sno</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Submission Date</th>
                 <th>Reviewed</th>
+                <th>Report</th>
               </thead>
               <tbody></tbody>
             </table>
@@ -89,7 +92,7 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -101,31 +104,53 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h3 class="text-center">General Health Assesment Test Report</h3>
+            <h3 class="text-center mb-3">
+              General Health Assesment Test Report
+            </h3>
             <div class="row">
               <div class="col">
                 <h6 class="text-danger">Personal Data</h6>
-                <p><strong>Name:</strong> Praveen kumar</p>
-                <p><strong>Email:</strong> Praveen kumar</p>
-                <p><strong>Phone Number:</strong> Praveen kumar</p>
+                <input id="chart-userid" class="d-none" />
                 <p>
-                  <strong>Date of Application:</strong> 15<sup>th</sup> June
-                  2021 15:30 PM
+                  <strong>Name: </strong
+                  ><span id="chart-username">username</span>
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  <span id="chart-email">user@gmail.com</span>
+                </p>
+                <p>
+                  <strong>Phone Number: </strong
+                  ><span id="chart-phone-number">56789098765</span>
+                </p>
+                <p>
+                  <strong>Date of Application: </strong>
+                  <span id="chart-date">
+                    15<sup>th</sup> June 2021 15:30 PM</span
+                  >
                 </p>
               </div>
               <div class="col">
                 <div class="row">
-                  <div class="col">
-                    <img class="img-fluid" src="../img/eidf.jpg" />
+                  <div class="col text-center pb-2">
+                    <img
+                      id="chart-eidf"
+                      class="img-fluid"
+                      src="../img/eidf.jpg"
+                    />
                   </div>
-                  <div class="col">
-                    <img class="img-fluid" src="../img/eidb.jpg" />
+                  <div class="col text-center">
+                    <img
+                      id="chart-eidb"
+                      class="img-fluid"
+                      src="../img/eidb.jpg"
+                    />
                   </div>
                 </div>
               </div>
               <div class="col-12">
                 <h4 class="text-center text-danger">Alpha Test Result</h4>
-                <div class="text-center my-4 w-25 m-auto">
+                <div class="text-center my-4 m-auto" style="max-width: 300px">
                   <canvas id="alpha-test-chart"></canvas>
                 </div>
                 <hr class="my-3" />
@@ -136,37 +161,37 @@
                 </h4>
                 <div class="row gx-5">
                   <div class="col text-center">
-                    <div class="phq-rating-wrapper">
+                    <div id="chart-phq-1" class="phq-rating-wrapper">
                       <img class="img-fluid" src="../img/ghq-1.jpg" /><span
                         class="phq-mask-rating"
-                        >12</span
+                        >0</span
                       >
                     </div>
                     <p>Somatic Symptoms</p>
                   </div>
                   <div class="col text-center">
-                    <div class="phq-rating-wrapper">
+                    <div id="chart-phq-2" class="phq-rating-wrapper">
                       <img class="img-fluid" src="../img/ghq-2.jpg" /><span
                         class="phq-mask-rating"
-                        >7</span
+                        >0</span
                       >
                     </div>
                     <p>Severe Depression</p>
                   </div>
                   <div class="col text-center">
-                    <div class="phq-rating-wrapper">
+                    <div id="chart-phq-3" class="phq-rating-wrapper">
                       <img class="img-fluid" src="../img/ghq-3.jpg" /><span
                         class="phq-mask-rating"
-                        >9</span
+                        >0</span
                       >
                     </div>
                     <p>Anxiety/Insomnia</p>
                   </div>
                   <div class="col text-center">
-                    <div class="phq-rating-wrapper">
+                    <div id="chart-phq-4" class="phq-rating-wrapper">
                       <img class="img-fluid" src="../img/ghq-4.jpg" /><span
                         class="phq-mask-rating"
-                        >15</span
+                        >0</span
                       >
                     </div>
                     <p>Social Dysfunction</p>
@@ -174,20 +199,24 @@
                 </div>
               </div>
               <div class="col-12 text-center">
-                <div class="text-center phq-rating-wrapper">
+                <div
+                  id="chart-phq-total"
+                  class="text-center phq-rating-wrapper m-auto"
+                >
                   <img
-                    class="rounded-circle img-fluid w-25"
+                    class="rounded-circle img-fluid"
                     src="../img/ghq-total-1.jpg"
                   /><span
+                    id="chart-phq-total-number"
                     class="phq-total-mask-rating font-weight-bold"
                     style="
                       position: absolute;
                       top: 70%;
                       left: 50%;
                       transform: translateX(-50%);
-                      font-size: 0.75em;
+                      font-size: 2em;
                     "
-                    >43</span
+                    >0</span
                   >
                 </div>
                 <p class="font-weight-bold mt-3" style="font-size: 2.5rem">
@@ -196,7 +225,10 @@
               </div>
               <div class="col-12">
                 <div class="table-responsive table-bordered text-center">
-                  <table class="table table-bordered table-sm">
+                  <table
+                    id="chart-phq-table"
+                    class="table table-bordered table-sm"
+                  >
                     <thead>
                       <tr>
                         <th>Scale</th>
@@ -210,11 +242,11 @@
                     <tbody>
                       <tr>
                         <td scope="row">Score</td>
-                        <td>12</td>
-                        <td>7</td>
-                        <td>9</td>
-                        <td>15</td>
-                        <td>43</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                       </tr>
                     </tbody>
                   </table>
@@ -230,6 +262,7 @@
                   </div>
                 </div>
                 <textarea
+                  id="chart-phq-interpretation"
                   class="w-100 rounded border-success"
                   rows="4"
                 ></textarea>
@@ -239,54 +272,49 @@
                 <h4 class="text-center text-danger">STQ - Test Results</h4>
                 <div class="row">
                   <div class="col-6">
-                    <div>
-                      <canvas id="stq-chart-1"></canvas>
-                    </div>
+                    <canvas id="stq-chart-1"></canvas>
                   </div>
                   <div class="col-6">
-                    <div>
-                      <canvas id="stq-chart-2"></canvas>
-                    </div>
+                    <canvas id="stq-chart-2"></canvas>
                   </div>
                   <div class="col-6">
-                    <div>
-                      <canvas id="stq-chart-3"></canvas>
-                    </div>
+                    <canvas id="stq-chart-3"></canvas>
                   </div>
                   <div class="col-6">
-                    <div>
-                      <canvas id="stq-chart-4"></canvas>
-                    </div>
+                    <canvas id="stq-chart-4"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-12">
                 <div class="table-responsive table-bordered text-center">
-                  <table class="table table-bordered table-sm">
+                  <table
+                    id="chart-stq-table"
+                    class="table table-bordered table-sm"
+                  >
                     <thead>
                       <tr>
-                        <th>Sub Scale</th>
-                        <th>Extrovert</th>
-                        <th>Introvert</th>
-                        <th>Practical (+12)</th>
-                        <th>Imaginative</th>
-                        <th>Thinking</th>
-                        <th>Feeling</th>
-                        <th>Organized</th>
-                        <th>Flexible</th>
+                        <th class="stq-chart-0">Sub Scale</th>
+                        <th class="stq-chart-1">Extrovert</th>
+                        <th class="stq-chart-1">Introvert</th>
+                        <th class="stq-chart-2">Practical (+12)</th>
+                        <th class="stq-chart-2">Imaginative</th>
+                        <th class="stq-chart-3">Thinking</th>
+                        <th class="stq-chart-3">Feeling</th>
+                        <th class="stq-chart-4">Organized</th>
+                        <th class="stq-chart-4">Flexible</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td scope="row">Total Score</td>
-                        <td>60</td>
-                        <td>49</td>
-                        <td>40</td>
-                        <td>32</td>
-                        <td>24</td>
-                        <td>24</td>
-                        <td>58</td>
-                        <td>51</td>
+                      <tr class="font-weight-bold">
+                        <td class="stq-chart-0" scope="row">Total Score</td>
+                        <td class="stq-chart-1">0</td>
+                        <td class="stq-chart-1">0</td>
+                        <td class="stq-chart-2">0</td>
+                        <td class="stq-chart-2">0</td>
+                        <td class="stq-chart-3">0</td>
+                        <td class="stq-chart-3">0</td>
+                        <td class="stq-chart-4">0</td>
+                        <td class="stq-chart-4">0</td>
                       </tr>
                     </tbody>
                   </table>
@@ -302,11 +330,12 @@
                   </div>
                 </div>
                 <textarea
+                  id="chart-stq-interpretation"
                   class="w-100 rounded border-success"
                   rows="4"
                 ></textarea>
               </div>
-              <div class="col-12">
+              <div class="col-12 d-none">
                 <div class="row font-weight-bold">
                   <div class="col">
                     <p>Summary</p>
@@ -316,24 +345,31 @@
                   </div>
                 </div>
                 <textarea
+                  id="chart-summary"
                   class="w-100 rounded border-success"
                   rows="4"
                 ></textarea>
+              </div>
+              <div class="col-12 text-right mb-3">
+                <button class="btn btn-primary" id="chart-submit">
+                  SUBMIT
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!--Modal-->
   </body>
   <!-- MDB JavaScript -->
   <script type="text/javascript" src="../js/mdb.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script> -->
-  <script
+  <!-- <script
     src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/js2form.js"
     integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE="
     crossorigin="anonymous"
-  ></script>
+  ></script> -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
@@ -346,96 +382,94 @@
   <script src="../js/student-surveys.js"></script>
   <script src="../js/charts.js"></script>
   <script>
+    var reportModal = new mdb.Modal(document.getElementById("exampleModal"));
     //Datatables
-    var student_datatable = $("#students-list").DataTable({
-      // ajax:{
-      //   url:`${ENDPOINT}/users`,
-      //   type:'GET',
-      //   dataFilter: function(data){
-      //       var json = jQuery.parseJSON( data );
-      //       json.recordsTotal = json.total;
-      //       json.recordsFiltered = json.total;
-      //       json.data = json.list;
-
-      //       return JSON.stringify( json ); // return JSON string
-      //   }
-      // },
+    var student_datatable = $("#datatable").DataTable({
+      responsive: true,
+      select: true,
       stateSave: true,
       paging: false,
-      ordering: false,
+      // ordering: false,
       info: false,
       order: [[2, "asc"]],
-      // columns: [{}, {}, {}],
+      columnDefs: [
+        {
+          targets: [0],
+          visible: false,
+          searchable: false,
+        },
+        {
+          targets: [1],
+          searchable: false,
+          width: "20px",
+        },
+      ],
     });
     asyncResponse("GET", "/users/", null, (res) => {
       // console.log(res);
+      student_datatable.clear();
       res.Items.forEach((row, index) => {
-        console.log(row);
-        let obj = {
-          id: row.id,
-          sno: index,
-          fullname: row.full_name,
-          email: row.email,
-          phone: row.phone_number,
-          status: row.status,
-        };
-        student_datatable.row.add(row);
+        // console.log(row);
+        let array = [
+          row.id,
+          index + 1,
+          row.full_name,
+          row.email,
+          row.phone_number,
+          new Date(row.created).toLocaleString(),
+          renderStatusButton(row.status),
+          `<button class="btn btn-dark btn-rounded report">REPORT</button>`,
+        ];
+        student_datatable.row.add(array).draw();
+      });
+    });
+
+    function renderStatusButton(data = "PENDING") {
+      // console.log("status button - ", data);
+      let html = `<button class="btn ${
+        data == "COMPLETED" ? "btn-success" : "btn-warning"
+      } btn-rounded pe-none">${data}</button>`;
+      return html;
+    }
+
+    $("#datatable tbody").on("click", "button", function () {
+      var data = student_datatable.row($(this).parents("tr")).data();
+      // console.log("id - ", data[0]);
+      asyncResponse("GET", "/users/", { userid: data[0] }, (res) => {
+        console.log("report data - ", res);
+        // sessionStorage.setItem("phq", JSON.stringify(res.Items[0].phq));
+        reportModal.show();
+        const user = res.Items[0];
+        $("#chart-userid").val(user.id);
+        $("#chart-username").html(user.full_name);
+        $("#chart-email").html(user.email);
+        $("#chart-phone-number").html(user.phone_number);
+        $("#chart-date").html(new Date(user.created).toLocaleString());
+        $("#chart-eidf").attr(
+          "src",
+          user.emirates_id_front ? user.emirates_id_front : "./../img/eidf.jpg"
+        );
+        $("#chart-eidb").attr(
+          "src",
+          user.emirates_id_back ? user.emirates_id_back : "./../img/eidb.jpg"
+        );
+        showAlphaChart(user.alpha);
+        showPhqChart(user.phq);
+        showStqChart(user.stq);
       });
     });
   </script>
   <script type="text/javascript">
-    var reportModal = new mdb.Modal(document.getElementById("exampleModal"));
-    let studentList = "";
-    let user = JSON.parse(sessionStorage.getItem("user"));
-    console.log(user);
-    studentList = `
-                <tr>
-                  <td>
-                    <button
-                        type="button"
-                        class="btn btn-outline-dark btn-sm btn-floating"
-                        data-toggle="collapse"
-                        data-target="#${user.full_name.split(" ").join("")}"
-                        aria-expanded="true"
-                        aria-controls="${user.full_name.split(" ").join("")}">
-                      <i class="fas fa-caret-right"></i>
-                    </button>
-                  </td>
-                  <td>1</td>
-                  <td>${user.full_name}</td>
-                  <td>${user.email}</td>
-                  <td>${user.phone_number}</td>
-                  <td><span class="btn btn-warning btn-sm">Pending</span></td>
-                  </tr>
-                  <tr id="${user.full_name
-                    .split(" ")
-                    .join("")}" class="collapse mt-3">
-                    <td colspan="6">
-                    <button id="alpha-test-show" class="btn btn-outline-primary">Alpha Test</button>
-                    <button id="ghq-show" class="btn btn-primary d-none">GHQ</button>
-                    </td>
-                  </tr>
-      `;
-    $("#students-list table tbody").html(studentList);
-    // new Datatable(element, data, {sm: true})
-    // var alphaChart = $("#alpha-test-show").on("click", (e) => {
-    //   let alphatest_data = JSON.parse(sessionStorage.getItem("alpha"));
-    //   renderSurvey(student_alpha_test, "alpha-test", true);
-    //   js2form("alpha-test", alphatest_data.survey);
-    //   showAlphaChart(JSON.stringify(sessionStorage.getItem("alpha")));
-    //   reportModal.show();
-    // });
-
-    // $("#ghq-show").on("click", (e) => {
-    //   renderSurvey(student_checklist, "checklist", true);
-    //   let checklist_data = JSON.parse(sessionStorage.getItem("checklist"));
-    //   js2form("checklist", checklist_data);
-    //   ghqModal.show();
-    // });
-
-    function showReport() {
-      reportModal.show();
-      showAlphaChart(JSON.stringify(sessionStorage.getItem("alpha")));
-    }
+    $("#chart-submit").on("click", (e) => {
+      let userid = $("#chart-userid");
+      let payload = {
+        phq_interpretation: $("#chart-phq-interpretation").val(),
+        stq_interpretation: $("#chart-stq-interpretation").val(),
+      };
+      console.log("chart submit - ", userid, payload);
+      // asyncResponse("PUT", `/users/${userid}`, payload, (res) => {
+      //   console.log("chart submit result", res);
+      // });
+    });
   </script>
 </html>

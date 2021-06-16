@@ -40,7 +40,7 @@ function renderSurvey(data, contentHolder, forViewing = false) {
             <tr class="text-center">`;
         $.each(question.labels, function (labelIndex, item) {
           surveyContent += `
-                <th class="px-3">${item.label[languagePreference]}</th>`;
+                <th class="px-3">${item[languagePreference]}</th>`;
         });
 
         surveyContent += `
@@ -48,11 +48,9 @@ function renderSurvey(data, contentHolder, forViewing = false) {
               <tr class="text-center">`;
         $.each(question.labels, function (labelIndex, item) {
           surveyContent += `<td>
-                <input type="radio" name="${
-                  question[languagePreference]
-                }" value="${item.label.value}" class="${
-            forViewing ? "pe-none" : ""
-          }"/>
+                <input type="radio" name="${question.en}" value="${
+            item.value
+          }" class="${forViewing ? "pe-none" : ""}"/>
               </td>`;
         });
         surveyContent += `</tr>`;
@@ -72,12 +70,12 @@ function renderSurvey(data, contentHolder, forViewing = false) {
               <th>${sessionStorage.getItem("lang") == "en" ? "No" : "لا"}</th>
             </tr>
             <tr class="text-center">
-              <td><input type="radio" name="sections[${sectionIndex}].questions[${questionIndex}].${
-          question.en
-        }" value="yes" class="${forViewing ? "pe-none" : ""}"/></td>
-              <td><input type="radio" name="sections[${sectionIndex}].questions[${questionIndex}].${
-          question.en
-        }" value="no" class="${forViewing ? "pe-none" : ""}"/></td>
+              <td><input type="radio" name="${
+                question.en
+              }" value="yes" class="${forViewing ? "pe-none" : ""}"/></td>
+              <td><input type="radio" name="${question.en}" value="no" class="${
+          forViewing ? "pe-none" : ""
+        }"/></td>
             </tr>`;
       });
     }
@@ -120,15 +118,16 @@ function checklistFormData(checklist) {
       let checked = $(
         `input[name="sections[${sectionIndex}].questions[${questionIndex}].${question.en}"]:checked`
       ).val();
-      // console.log(`checked - ${checked}`);
+
+      console.log(`checked  - ${checked}`);
       if (checked) {
         sectionFilled = true;
         let temp2 = {};
         temp2.en = question.en;
         temp2.ar = question.ar;
-        temp2[question.en] = $(
-          `input[name="sections[${sectionIndex}].questions[${questionIndex}].${question.en}"]:checked`
-        ).val();
+        // temp2[question.en] = $(
+        //   `input[name="sections[${sectionIndex}].questions[${questionIndex}].${question.en}"]:checked`
+        // ).val();
         temp2.value = $(
           `input[name="sections[${sectionIndex}].questions[${questionIndex}].${question.en}"]:checked`
         ).val();
@@ -145,7 +144,7 @@ function checklistFormData(checklist) {
   if (sessionStorage.getItem("pt-email") != null) {
     formData.email = sessionStorage.getItem("pt-email");
   }
-
+  console.log("get form survey data - ", survey);
   formData.survey = survey;
   if (formData.survey.sections.length == 0) {
     console.log("cannot send empty request");
