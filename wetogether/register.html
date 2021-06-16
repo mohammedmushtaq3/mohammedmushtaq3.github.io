@@ -80,6 +80,38 @@
                     />
                     <label class="form-label" for="full_name">Full Name</label>
                   </div>
+                  <!--GENDER-->
+                  <div class="mb-4">
+                    <select class="form-control" required>
+                      <option value="" disabled selected>Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                  <!-- Emirates -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="Emirates"
+                      class="form-control"
+                      name="emirates"
+                      required
+                    />
+                    <label class="form-label" for="Emirates">Emirates</label>
+                  </div>
+                  <!-- DOB-->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="date"
+                      id="birthdate"
+                      class="form-control"
+                      name="birthdate"
+                      required
+                    />
+                    <label class="form-label" for="birthdate"
+                      >Date of Birth</label
+                    >
+                  </div>
                   <!-- Phone Number-->
                   <div class="form-outline mb-4">
                     <input
@@ -116,7 +148,7 @@
                   name="emirates_id_front"
                   class="file-upload-input"
                   data-file-upload="file-upload"
-                  data-default-file="./img/eidf.jpg"
+                  data-default-file="/img/eidf.jpg"
                   data-default-msg="UPLOAD - EMIRATES ID FRONT"
                   data-height="200"
                   data-max-file-size="1M"
@@ -132,7 +164,7 @@
                   name="emirates_id_back"
                   class="file-upload-input"
                   data-file-upload="file-upload"
-                  data-default-file="./img/eidb.jpg"
+                  data-default-file="/img/eidb.jpg"
                   data-default-msg="UPLOAD - EMIRATES ID BACK"
                   data-height="200"
                   data-max-file-size="1M"

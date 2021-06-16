@@ -370,12 +370,22 @@
     integrity="sha256-jqAXOHx2o5QjrSkBIbN3QXYkCVpo5cWAuARDjnnpMpE="
     crossorigin="anonymous"
   ></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
+    integrity="sha256-qoN08nWXsFH+S9CtIq99e5yzYHioRHtNB9t2qy1MSmc="
+    crossorigin="anonymous"
+  ></script> -->
   <script
     src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"
     integrity="sha256-qoN08nWXsFH+S9CtIq99e5yzYHioRHtNB9t2qy1MSmc="
     crossorigin="anonymous"
   ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc/dist/chartjs-plugin-datalabels.min.js"
+    integrity="sha256-xnHIGzvvjYxzGnqAsH3nWhaoONgNZ5oifAsNMi48pYA="
+    crossorigin="anonymous"
+  ></script>
+
   <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
   <!-- Custom scripts -->
   <script src="../js/scripts.js"></script>
@@ -436,7 +446,7 @@
       var data = student_datatable.row($(this).parents("tr")).data();
       // console.log("id - ", data[0]);
       asyncResponse("GET", "/users/", { userid: data[0] }, (res) => {
-        console.log("report data - ", res);
+        // console.log("report data - ", res);
         // sessionStorage.setItem("phq", JSON.stringify(res.Items[0].phq));
         reportModal.show();
         const user = res.Items[0];

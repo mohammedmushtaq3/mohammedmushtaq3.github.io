@@ -20,10 +20,22 @@ let alphaChartData = {
     labels: ["No", "Yes"],
     datasets: [
       {
+        label: ["No", "Yes"],
         data: [1, 1],
         backgroundColor: ["rgba(34,102,211,0.9)", "rgba(240,36,36,0.9)"],
+        datalabels: {
+          color: "#BBBBBB",
+        },
       },
     ],
+  },
+  dataLabelsPlugin: true,
+  options: {
+    plugins: {
+      datalabels: {
+        color: "#CCCCCC",
+      },
+    },
   },
 };
 var alphaChartOptions = {
@@ -58,8 +70,8 @@ var alphaChartOptions = {
 };
 var alphaChart = new Chart(
   document.getElementById("alpha-test-chart"),
-  alphaChartData,
-  alphaChartOptions
+  alphaChartData
+  // alphaChartOptions
 );
 
 function showAlphaChart(data) {
@@ -171,7 +183,10 @@ var stqChart4 = new Chart(
 );
 
 function showPhqChart(data) {
-  console.log("phq - data - ", data);
+  // console.log("phq - data - ", data);
+  if (!data) {
+    return;
+  }
   let phqData = data;
   // console.log("chart - ", alphatest_data);
   let somatic_symptoms = 0;
@@ -256,7 +271,10 @@ function phqTotalGaugeSelector(val) {
   }
 }
 function showStqChart(data) {
-  console.log("stq - chart - ", data);
+  // console.log("stq - chart - ", data);
+  if (!data) {
+    return;
+  }
   let stqData = data;
   // console.log("chart - ", alphatest_data);
   let extrovert = 0;
