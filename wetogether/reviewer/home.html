@@ -58,7 +58,7 @@
             />
           </div>
           <div class="mb-3 text-black">
-            <h1 class="font-weight-bold h3">Invigilator Dashboard</h1>
+            <h1 class="font-weight-bold h3">Reviewer Dashboard</h1>
           </div>
           <div class="table-responsive">
             <table
@@ -489,11 +489,15 @@
         $("#chart-date").html(moment(user.created).format("DD MMM YYYY LT"));
         $("#chart-eidf").attr(
           "src",
-          user.emirates_id_front ? user.emirates_id_front.key : "./../img/eidf.jpg"
+          user.emirates_id_front
+            ? user.emirates_id_front.key
+            : "./../img/eidf.jpg"
         );
         $("#chart-eidb").attr(
           "src",
-          user.emirates_id_back ? user.emirates_id_back.key : "./../img/eidb.jpg"
+          user.emirates_id_back
+            ? user.emirates_id_back.key
+            : "./../img/eidb.jpg"
         );
         $("#chart-phq-interpretation").val(user.phq_interpretation);
         $("#chart-stq-interpretation").val(user.stq_interpretation);

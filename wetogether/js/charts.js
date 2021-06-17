@@ -206,7 +206,7 @@ function showPhqChart(data) {
     return;
   }
   let phqData = data;
-  // console.log("chart - ", alphatest_data);
+  console.log("chart - ", data);
   let somatic_symptoms = 0;
   let severe_depression = 0;
   let anxiety_insomnia = 0;
@@ -224,7 +224,7 @@ function showPhqChart(data) {
       case "anxiety-insomnia":
         anxiety_insomnia += parseInt(value.split("#")[1]);
         break;
-      case "social-dsyfunction":
+      case "social-dysfunction":
         social_dsyfunction += parseInt(value.split("#")[1]);
         break;
     }
