@@ -1,3 +1,5 @@
+Chart.register(ChartDataLabels);
+
 function chartAddData(chart, label, data) {
   chart.data.labels.push(label);
   chart.data.datasets.forEach((dataset) => {
@@ -14,47 +16,37 @@ function chartRemoveData(chart) {
   chart.update();
 }
 
-let alphaChartData = {
+var alphaChartData = {
   type: "pie",
   data: {
     labels: ["No", "Yes"],
     datasets: [
       {
         label: ["No", "Yes"],
-        data: [1, 1],
+        data: [0, 0],
         backgroundColor: ["rgba(34,102,211,0.9)", "rgba(240,36,36,0.9)"],
         datalabels: {
-          color: "#BBBBBB",
+          color: "white",
         },
       },
     ],
   },
-  dataLabelsPlugin: true,
   options: {
     plugins: {
       datalabels: {
-        color: "#CCCCCC",
-      },
-    },
-  },
-};
-var alphaChartOptions = {
-  dataLabelsPlugin: true,
-  tooltops: {
-    enabled: false,
-  },
-  options: {
-    plugins: {
-      datalabels: {
-        formatter: (value, ctx) => {
+        formatter: (value, context) => {
+          // return context.dataIndex + ": " + Math.round(value * 100) + "%";
           let sum = 0;
           // Assign the data to the variable and format it according to your needs
           let dataArr = alphaChartData.data.datasets[0].data;
           dataArr.map((data) => {
             sum += data;
           });
-          let percentage = ((value * 100) / sum).toFixed(2) + "%";
-          return percentage;
+          let percentage = ((value * 100) / sum).toFixed(0) + "%";
+          console.log("formatter - ", context);
+          let displayText =
+            context.dataset.label[context.dataIndex] + ` - ${percentage}`;
+          return displayText;
         },
         color: "white",
         labels: {
@@ -67,13 +59,67 @@ var alphaChartOptions = {
       },
     },
   },
+  // dataLabelsPlugin: true,
+  // options: {
+  //   plugins: {
+  //     datalabels: {
+  //       formatter: (value, ctx) => {
+  //         let sum = 0;
+  //         // Assign the data to the variable and format it according to your needs
+  //         let dataArr = alphaChartData.chart.data.datasets[0].data;
+  //         dataArr.map((data) => {
+  //           sum += data;
+  //         });
+  //         let percentage = ((value * 100) / sum).toFixed(2) + "%";
+  //         return percentage;
+  //       },
+  //       color: "white",
+  //       labels: {
+  //         title: {
+  //           font: {
+  //             size: "14",
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 };
+// var alphaChartOptions = {
+//   // dataLabelsPlugin: true,
+//   tooltops: {
+//     enabled: false,
+//   },
+//   options: {
+//     plugins: {
+//       datalabels: {
+//         formatter: (value, ctx) => {
+//           let sum = 0;
+//           // Assign the data to the variable and format it according to your needs
+//           let dataArr = alphaChartData.data.datasets[0].data;
+//           dataArr.map((data) => {
+//             sum += data;
+//           });
+//           let percentage = ((value * 100) / sum).toFixed(2) + "%";
+//           return percentage;
+//         },
+//         color: "white",
+//         labels: {
+//           title: {
+//             font: {
+//               size: "14",
+//             },
+//           },
+//         },
+//       },
+//     },
+//   },
+// };
 var alphaChart = new Chart(
-  document.getElementById("alpha-test-chart"),
+  document.getElementById("alpha-test-chart").getContext("2d"),
   alphaChartData
   // alphaChartOptions
 );
-
 function showAlphaChart(data) {
   let alphatest_data = data;
   // console.log("chart - ", alphatest_data);
@@ -82,15 +128,9 @@ function showAlphaChart(data) {
   for (const [key, value] of Object.entries(alphatest_data)) {
     value == "yes" ? yes++ : no++;
   }
-  // alphatest_data.forEach((question) => {
-  //   question.value == "yes" ? yes++ : no++;
-  // });
-
   yes *= 10;
   no *= 10;
   //   console.log("yes no ", yes, no);
-  // console.log(alphaChart);
-  // alphaChart._data.data.datasets[0].data = [no, yes];
   alphaChart.config._config.data.datasets[0].data = [no, yes];
   alphaChart.update();
 }
@@ -206,7 +246,7 @@ function showPhqChart(data) {
     return;
   }
   let phqData = data;
-  console.log("chart - ", data);
+  // console.log("chart - ", data);
   let somatic_symptoms = 0;
   let severe_depression = 0;
   let anxiety_insomnia = 0;

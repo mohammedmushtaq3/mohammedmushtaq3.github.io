@@ -217,7 +217,7 @@
                     src="../img/ghq-total-1.png"
                   /><span
                     id="chart-phq-total-number"
-                    class="phq-total-mask-rating font-weight-bold"
+                    class="phq-total-mask-rating font-weight-bold text-danger"
                     style="
                       position: absolute;
                       top: 70%;
@@ -271,7 +271,7 @@
                   </div>
                 </div>
                 <textarea
-                  id="chart-phq-interpretation "
+                  id="chart-phq-interpretation"
                   class="w-100 rounded border-success"
                   rows="4"
                 ></textarea>
@@ -474,6 +474,7 @@
       // console.log("id - ", data[0]);
       asyncResponse("GET", "/users/", { userid: data[0] }, (res) => {
         // console.log("report data - ", res);
+        console.log("user data - ", res.Items[0]);
         // sessionStorage.setItem("phq", JSON.stringify(res.Items[0].phq));
         reportModal.show();
         const user = res.Items[0];

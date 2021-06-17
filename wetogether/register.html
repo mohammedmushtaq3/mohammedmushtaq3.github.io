@@ -108,10 +108,12 @@
                   <!-- DOB-->
                   <div class="form-outline mb-4">
                     <input
-                      type="date"
+                      type="text"
                       id="birthdate"
                       class="form-control"
                       name="birthdate"
+                      onfocus="(this.type='date')"
+                      onfocusout="(this.type='text')"
                       required
                     />
                     <label class="form-label" for="birthdate"
