@@ -84,7 +84,8 @@ function renderSurvey(data, contentHolder, forViewing = false) {
     surveyContent += `
     <tr>
       <td colspan="4" class="text-right">
-        <button class="btn btn-primary" type="submit">SUBMIT</button>
+        <button id="formSubmitBtn" class="btn btn-primary" type="submit">
+        SUBMIT</button>
       </td>
     </tr>
     `;
@@ -187,6 +188,24 @@ function disableBtnOnSubmit() {
   // $('#btnSubmit').removeAttr("disabled");
 }
 
+function uploadFiles(inputId, link) {
+  let file = document.getElementById(inputId).files[0];
+  $.ajax({
+    url: link,
+    type: "PUT",
+    data: file,
+    // contentType: "image/jpeg",
+    processData: false,
+    // cache: false,
+    error: function (error) {
+      console.error("error", error);
+      // dangerToast("Error While Upload Images");
+    },
+    success: function (res) {
+      console.log("success -", res);
+    },
+  });
+}
 function uploadFile(link, cropperId) {
   $(`#${cropperId}`)
     .croppie("result", {

@@ -17,6 +17,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css"
+      integrity="sha256-qpXwccFYncH5gTqXFe9EXZ8QeDw1Re68bbNVfFZzIzg="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/mdb.min.css" />
     <!-- <link rel="stylesheet" href="./css/compiled.min.css" /> -->
     <link
@@ -106,7 +112,6 @@
                       id="birthdate"
                       class="form-control"
                       name="birthdate"
-                      autofocus
                       required
                     />
                     <label class="form-label" for="birthdate"
@@ -193,6 +198,7 @@
     referrerpolicy="no-referrer"
   ></script>
   <!-- Custom scripts -->
+
   <script src="./js/scripts.js"></script>
   <script type="text/javascript">
     $("#register").on("submit", function (e) {
@@ -208,22 +214,20 @@
           return;
         }
 
-        // if (res.hasOwnProperty("emirates_id_front")) {
-        //   uploadFile(res["emirates_id_front"], "emirates_id_front_preview");
-        // }
+        if (res.hasOwnProperty("emirates_id_front")) {
+          uploadFiles("emirates_id_front", res.emirates_id_front);
+        }
 
-        // if (res.hasOwnProperty("emirates_id_back")) {
-        //   uploadFile(res["emirates_id_back"], "emirates_id_back_preview");
-        // }
+        if (res.hasOwnProperty("emirates_id_back")) {
+          uploadFiles(res["emirates_id_back"], "emirates_id_back_preview");
+        }
 
-        // if (res.hasOwnProperty("profile")) {
-        //   uploadFile(res["profile"], "profile_preview");
-        // }
-
-        // $(".modal").modal("hide");
-        // successToast("Successful");
-        // $("#register").trigger("reset");
-        window.location = "./alpha.html";
+        $(".modal").modal("hide");
+        successToast("Successful");
+        $("#register").trigger("reset");
+        setTimeout(() => {
+          window.location = "./alpha.html";
+        }, 3000);
       });
     });
   </script>
