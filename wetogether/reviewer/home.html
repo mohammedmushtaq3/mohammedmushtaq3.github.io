@@ -267,11 +267,11 @@
                     <p>Interpretation for PHQ Result</p>
                   </div>
                   <div class="col">
-                    <p class="text-right">PHQ نتائج تفسي<br /></p>
+                    <p class="text-right">PHQ تفسير نتيجة فحص<br /></p>
                   </div>
                 </div>
                 <textarea
-                  id="chart-phq-interpretation "
+                  id="chart-phq-interpretation"
                   class="w-100 rounded border-success pe-none"
                   rows="4"
                 ></textarea>
@@ -283,15 +283,6 @@
                   <div class="col-12">
                     <canvas id="stq-chart-1"></canvas>
                   </div>
-                  <!-- <div class="col-6">
-                    <canvas id="stq-chart-2"></canvas>
-                  </div>
-                  <div class="col-6">
-                    <canvas id="stq-chart-3"></canvas>
-                  </div>
-                  <div class="col-6">
-                    <canvas id="stq-chart-4"></canvas>
-                  </div> -->
                 </div>
               </div>
               <div class="col-12">
@@ -335,7 +326,7 @@
                     <p>Interpretation for STQ Result</p>
                   </div>
                   <div class="col">
-                    <p class="text-right">STQ نتائج تفسي<br /></p>
+                    <p class="text-right">STQ تفسير نتيجة فحص<br /></p>
                   </div>
                 </div>
                 <textarea
@@ -429,7 +420,7 @@
     });
     getStudents();
 
-    function getStudents(formData = null) {
+    function getStudents(formData = { user: "reviewer" }) {
       asyncResponse("GET", "/users/", formData, (res) => {
         if (formData == null) student_datatable.clear();
 
@@ -521,6 +512,7 @@
             icon: "success",
           });
           reportModal.hide();
+          student_datatable.row(sessionStorage.getItem("rowIndex")).remove();
           getStudents({ userid: userid });
         } else {
           Swal.fire({

@@ -1,21 +1,5 @@
 Chart.register(ChartDataLabels);
 
-function chartAddData(chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.push(data);
-  });
-  chart.update();
-}
-
-function chartRemoveData(chart) {
-  chart.data.labels.pop();
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.pop();
-  });
-  chart.update();
-}
-
 var alphaChartData = {
   type: "pie",
   data: {
@@ -35,16 +19,15 @@ var alphaChartData = {
     plugins: {
       datalabels: {
         formatter: (value, context) => {
-          // return context.dataIndex + ": " + Math.round(value * 100) + "%";
           let sum = 0;
-          // Assign the data to the variable and format it according to your needs
           let dataArr = alphaChartData.data.datasets[0].data;
           dataArr.map((data) => {
             sum += data;
           });
           let percentage = ((value * 100) / sum).toFixed(0) + "%";
-          let displayText =
-            context.dataset.label[context.dataIndex] + ` - ${percentage}`;
+          let displayText = `${
+            context.dataset.label[context.dataIndex]
+          } - ${percentage}`;
           return displayText;
         },
         color: "white",
@@ -58,62 +41,7 @@ var alphaChartData = {
       },
     },
   },
-  // dataLabelsPlugin: true,
-  // options: {
-  //   plugins: {
-  //     datalabels: {
-  //       formatter: (value, ctx) => {
-  //         let sum = 0;
-  //         // Assign the data to the variable and format it according to your needs
-  //         let dataArr = alphaChartData.chart.data.datasets[0].data;
-  //         dataArr.map((data) => {
-  //           sum += data;
-  //         });
-  //         let percentage = ((value * 100) / sum).toFixed(2) + "%";
-  //         return percentage;
-  //       },
-  //       color: "white",
-  //       labels: {
-  //         title: {
-  //           font: {
-  //             size: "14",
-  //           },
-  //         },
-  //       },
-  //     },
-  //   },
-  // },
 };
-// var alphaChartOptions = {
-//   // dataLabelsPlugin: true,
-//   tooltops: {
-//     enabled: false,
-//   },
-//   options: {
-//     plugins: {
-//       datalabels: {
-//         formatter: (value, ctx) => {
-//           let sum = 0;
-//           // Assign the data to the variable and format it according to your needs
-//           let dataArr = alphaChartData.data.datasets[0].data;
-//           dataArr.map((data) => {
-//             sum += data;
-//           });
-//           let percentage = ((value * 100) / sum).toFixed(2) + "%";
-//           return percentage;
-//         },
-//         color: "white",
-//         labels: {
-//           title: {
-//             font: {
-//               size: "14",
-//             },
-//           },
-//         },
-//       },
-//     },
-//   },
-// };
 var alphaChart = new Chart(
   document.getElementById("alpha-test-chart").getContext("2d"),
   alphaChartData
@@ -121,7 +49,6 @@ var alphaChart = new Chart(
 );
 function showAlphaChart(data) {
   let alphatest_data = data;
-  // console.log("chart - ", alphatest_data);
   let yes = 0;
   let no = 0;
   for (const [key, value] of Object.entries(alphatest_data)) {
@@ -170,74 +97,10 @@ let stqChartData1 = {
   },
 };
 
-// let stqChartData2 = {
-//   type: "bar",
-//   data: {
-//     labels: ["Practical", "Imaginative"],
-//     datasets: [
-//       {
-//         data: [12, 0],
-//         backgroundColor: "rgb(253, 245, 23)",
-//       },
-//     ],
-//   },
-//   options: {
-//     plugins: {
-//       legend: false,
-//     },
-//   },
-// };
-// let stqChartData3 = {
-//   type: "bar",
-//   data: {
-//     labels: ["Thinking", "Feeling"],
-//     datasets: [
-//       {
-//         data: [0, 0],
-//         backgroundColor: "rgb(78, 218, 2)",
-//       },
-//     ],
-//   },
-//   options: {
-//     plugins: {
-//       legend: false,
-//     },
-//   },
-// };
-// let stqChartData4 = {
-//   type: "bar",
-//   data: {
-//     labels: ["Organized", "Flexible"],
-//     datasets: [
-//       {
-//         data: [0, 0],
-//         backgroundColor: "rgb(89, 229, 253)",
-//       },
-//     ],
-//   },
-//   options: {
-//     plugins: {
-//       legend: false,
-//     },
-//   },
-// };
-
 var stqChart1 = new Chart(
   document.getElementById("stq-chart-1"),
   stqChartData1
 );
-// var stqChart2 = new Chart(
-//   document.getElementById("stq-chart-2"),
-//   stqChartData2
-// );
-// var stqChart3 = new Chart(
-//   document.getElementById("stq-chart-3"),
-//   stqChartData3
-// );
-// var stqChart4 = new Chart(
-//   document.getElementById("stq-chart-4"),
-//   stqChartData4
-// );
 
 function showPhqChart(data) {
   // console.log("phq - data - ", data);
@@ -245,7 +108,6 @@ function showPhqChart(data) {
     return;
   }
   let phqData = data;
-  // console.log("chart - ", data);
   let somatic_symptoms = 0;
   let severe_depression = 0;
   let anxiety_insomnia = 0;
@@ -333,7 +195,6 @@ function showStqChart(data) {
     return;
   }
   let stqData = data;
-  // console.log("chart - ", alphatest_data);
   let extrovert = 0;
   let introvert = 0;
   let practical = 12;
@@ -343,7 +204,6 @@ function showStqChart(data) {
   let organized = 0;
   let flexible = 0;
   for (const [key, value] of Object.entries(stqData)) {
-    // stqData.survey.sections[0].questions.forEach((question) => {
     let category = value.split("#")[0];
     switch (category) {
       case "extrovert":
@@ -391,10 +251,4 @@ function showStqChart(data) {
     flexible,
   ];
   stqChart1.update();
-  // stqChart2.config._config.data.datasets[0].data = [practical, imaginative];
-  // stqChart2.update();
-  // stqChart3.config._config.data.datasets[0].data = [thinking, feeling];
-  // stqChart3.update();
-  // stqChart4.config._config.data.datasets[0].data = [organized, flexible];
-  // stqChart4.update();
 }

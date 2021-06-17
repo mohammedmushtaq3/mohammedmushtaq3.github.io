@@ -74,6 +74,7 @@
                 <th>Submission Date</th>
                 <th>Reviewed</th>
                 <th>Report</th>
+                <th>DELETE</th>
               </thead>
               <tbody></tbody>
             </table>
@@ -267,7 +268,7 @@
                     <p>Interpretation for PHQ Result</p>
                   </div>
                   <div class="col">
-                    <p class="text-right">PHQ نتائج تفسي<br /></p>
+                    <p class="text-right">PHQ تفسير نتيجة فحص<br /></p>
                   </div>
                 </div>
                 <textarea
@@ -283,15 +284,6 @@
                   <div class="col-12">
                     <canvas id="stq-chart-1"></canvas>
                   </div>
-                  <!-- <div class="col-6">
-                    <canvas id="stq-chart-2"></canvas>
-                  </div>
-                  <div class="col-6">
-                    <canvas id="stq-chart-3"></canvas>
-                  </div>
-                  <div class="col-6">
-                    <canvas id="stq-chart-4"></canvas>
-                  </div> -->
                 </div>
               </div>
               <div class="col-12">
@@ -335,7 +327,7 @@
                     <p>Interpretation for STQ Result</p>
                   </div>
                   <div class="col">
-                    <p class="text-right">STQ نتائج تفسي<br /></p>
+                    <p class="text-right">STQ تفسير نتيجة فحص <br /></p>
                   </div>
                 </div>
                 <textarea
@@ -425,6 +417,10 @@
           // visible: false,
           width: "20px",
         },
+        {
+          targets: [-1],
+          width: "40px",
+        },
       ],
     });
     getStudents();
@@ -443,6 +439,7 @@
             new Date(row.created).toLocaleString(),
             renderStatusButton(row.status),
             `<button class="btn btn-dark btn-rounded report">REPORT</button>`,
+            `<button class="btn btn-danger btn-floating delete-user"><i class="far fa-trash-alt"></i></button>`,
           ];
           student_datatable.row.add(array).draw();
         });
@@ -461,7 +458,7 @@
       return html;
     }
 
-    $("#studentsTable tbody").on("click", "button", function () {
+    $("#studentsTable tbody").on("click", "button.report", function () {
       sessionStorage.setItem(
         "rowIndex",
         student_datatable.row($(this).parents("tr")).index()
@@ -507,6 +504,36 @@
         showStqChart(user.stq);
       });
     });
+    $("#studentsTable tbody").on("click", "button.delete-user", function () {
+      sessionStorage.setItem(
+        "rowIndex",
+        student_datatable.row($(this).parents("tr")).index()
+      );
+      console.log(
+        "row index - ",
+        student_datatable.row($(this).parents("tr")).index()
+      );
+      var data = student_datatable.row($(this).parents("tr")).data();
+      let userId = data[0];
+      asyncResponse("DELETE", `/users/${userId}`, null, (res) => {
+        console.log("delete response - ", res);
+        if (res.statusCode == 200) {
+          Swal.fire({
+            icon: "success",
+            title: "Deleted Successfully",
+          });
+          student_datatable
+            .row(sessionStorage.getItem("rowIndex"))
+            .remove()
+            .draw();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Failed to Delete",
+          });
+        }
+      });
+    });
   </script>
   <script type="text/javascript">
     $("#chart-submit").on("click", (e) => {
@@ -522,6 +549,7 @@
             icon: "success",
           });
           reportModal.hide();
+          student_datatable.row(sessionStorage.getItem("rowIndex")).remove();
           getStudents({ userid: userid });
         } else {
           Swal.fire({
