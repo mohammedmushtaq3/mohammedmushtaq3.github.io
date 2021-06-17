@@ -98,11 +98,29 @@ function showAlphaChart(data) {
 let stqChartData1 = {
   type: "bar",
   data: {
-    labels: ["Extrovert", "Introvert"],
+    labels: [
+      "Extrovert",
+      "Introvert",
+      "Practical",
+      "Imaginative",
+      "Thinking",
+      "Feeling",
+      "Organized",
+      "Flexible",
+    ],
     datasets: [
       {
         data: [0, 0],
-        backgroundColor: "rgb(71,125,201)",
+        backgroundColor: [
+          "rgb(71,125,201)",
+          "rgb(71,125,201)",
+          "rgb(253, 245, 23)",
+          "rgb(253, 245, 23)",
+          "rgb(78, 218, 2)",
+          "rgb(78, 218, 2)",
+          "rgb(89, 229, 253)",
+          "rgb(89, 229, 253)",
+        ],
       },
     ],
   },
@@ -113,74 +131,74 @@ let stqChartData1 = {
   },
 };
 
-let stqChartData2 = {
-  type: "bar",
-  data: {
-    labels: ["Practical", "Imaginative"],
-    datasets: [
-      {
-        data: [12, 0],
-        backgroundColor: "rgb(253, 245, 23)",
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: false,
-    },
-  },
-};
-let stqChartData3 = {
-  type: "bar",
-  data: {
-    labels: ["Thinking", "Feeling"],
-    datasets: [
-      {
-        data: [0, 0],
-        backgroundColor: "rgb(78, 218, 2)",
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: false,
-    },
-  },
-};
-let stqChartData4 = {
-  type: "bar",
-  data: {
-    labels: ["Organized", "Flexible"],
-    datasets: [
-      {
-        data: [0, 0],
-        backgroundColor: "rgb(89, 229, 253)",
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: false,
-    },
-  },
-};
+// let stqChartData2 = {
+//   type: "bar",
+//   data: {
+//     labels: ["Practical", "Imaginative"],
+//     datasets: [
+//       {
+//         data: [12, 0],
+//         backgroundColor: "rgb(253, 245, 23)",
+//       },
+//     ],
+//   },
+//   options: {
+//     plugins: {
+//       legend: false,
+//     },
+//   },
+// };
+// let stqChartData3 = {
+//   type: "bar",
+//   data: {
+//     labels: ["Thinking", "Feeling"],
+//     datasets: [
+//       {
+//         data: [0, 0],
+//         backgroundColor: "rgb(78, 218, 2)",
+//       },
+//     ],
+//   },
+//   options: {
+//     plugins: {
+//       legend: false,
+//     },
+//   },
+// };
+// let stqChartData4 = {
+//   type: "bar",
+//   data: {
+//     labels: ["Organized", "Flexible"],
+//     datasets: [
+//       {
+//         data: [0, 0],
+//         backgroundColor: "rgb(89, 229, 253)",
+//       },
+//     ],
+//   },
+//   options: {
+//     plugins: {
+//       legend: false,
+//     },
+//   },
+// };
 
 var stqChart1 = new Chart(
   document.getElementById("stq-chart-1"),
   stqChartData1
 );
-var stqChart2 = new Chart(
-  document.getElementById("stq-chart-2"),
-  stqChartData2
-);
-var stqChart3 = new Chart(
-  document.getElementById("stq-chart-3"),
-  stqChartData3
-);
-var stqChart4 = new Chart(
-  document.getElementById("stq-chart-4"),
-  stqChartData4
-);
+// var stqChart2 = new Chart(
+//   document.getElementById("stq-chart-2"),
+//   stqChartData2
+// );
+// var stqChart3 = new Chart(
+//   document.getElementById("stq-chart-3"),
+//   stqChartData3
+// );
+// var stqChart4 = new Chart(
+//   document.getElementById("stq-chart-4"),
+//   stqChartData4
+// );
 
 function showPhqChart(data) {
   // console.log("phq - data - ", data);
@@ -323,23 +341,21 @@ function showStqChart(data) {
   $("#chart-stq-table tbody tr:last td:eq(6)").html(feeling);
   $("#chart-stq-table tbody tr:last td:eq(7)").html(organized);
   $("#chart-stq-table tbody tr:last td:eq(8)").html(flexible);
-  // $("#chart-stq-table tbody tr").html(`
-  //   <td class="stq-chart-0" scope="row">Total Score</td>
-  //   <td class="stq-chart-1">${extrovert}</td>
-  //   <td class="stq-chart-1">${introvert}</td>
-  //   <td class="stq-chart-2">${practical}</td>
-  //   <td class="stq-chart-2">${imaginative}</td>
-  //   <td class="stq-chart-3">${thinking}</td>
-  //   <td class="stq-chart-3">${feeling}</td>
-  //   <td class="stq-chart-4">${organized}</td>
-  //   <td class="stq-chart-4">${flexible}</td>
-  // `);
-  stqChart1.config._config.data.datasets[0].data = [extrovert, introvert];
+  stqChart1.config._config.data.datasets[0].data = [
+    extrovert,
+    introvert,
+    practical,
+    imaginative,
+    thinking,
+    feeling,
+    organized,
+    flexible,
+  ];
   stqChart1.update();
-  stqChart2.config._config.data.datasets[0].data = [practical, imaginative];
-  stqChart2.update();
-  stqChart3.config._config.data.datasets[0].data = [thinking, feeling];
-  stqChart3.update();
-  stqChart4.config._config.data.datasets[0].data = [organized, flexible];
-  stqChart4.update();
+  // stqChart2.config._config.data.datasets[0].data = [practical, imaginative];
+  // stqChart2.update();
+  // stqChart3.config._config.data.datasets[0].data = [thinking, feeling];
+  // stqChart3.update();
+  // stqChart4.config._config.data.datasets[0].data = [organized, flexible];
+  // stqChart4.update();
 }

@@ -280,10 +280,10 @@
               <div class="col-12">
                 <h4 class="text-center text-danger">STQ - Test Results</h4>
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-12">
                     <canvas id="stq-chart-1"></canvas>
                   </div>
-                  <div class="col-6">
+                  <!-- <div class="col-6">
                     <canvas id="stq-chart-2"></canvas>
                   </div>
                   <div class="col-6">
@@ -291,7 +291,7 @@
                   </div>
                   <div class="col-6">
                     <canvas id="stq-chart-4"></canvas>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="col-12">
@@ -497,6 +497,7 @@
         );
         $("#chart-phq-interpretation").val(user.phq_interpretation);
         $("#chart-stq-interpretation").val(user.stq_interpretation);
+        $("#chart-summary").val(user.summary);
         showAlphaChart(user.alpha);
         showPhqChart(user.phq);
         showStqChart(user.stq);
