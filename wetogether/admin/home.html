@@ -515,21 +515,27 @@
       );
       var data = student_datatable.row($(this).parents("tr")).data();
       let userId = data[0];
-      asyncResponse("DELETE", `/users/${userId}`, null, (res) => {
-        console.log("delete response - ", res);
-        if (res.statusCode == 200) {
-          Swal.fire({
-            icon: "success",
-            title: "Deleted Successfully",
-          });
-          student_datatable
-            .row(sessionStorage.getItem("rowIndex"))
-            .remove()
-            .draw();
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Failed to Delete",
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          asyncResponse("DELETE", `/users/${userId}`, null, (res) => {
+            console.log("delete response - ", res);
+            if (res.statusCode == 200) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              student_datatable
+                .row(sessionStorage.getItem("rowIndex"))
+                .remove()
+                .draw();
+            } else {
+              Swal.fire("Error!", "Failed to Delete", "error");
+            }
           });
         }
       });
