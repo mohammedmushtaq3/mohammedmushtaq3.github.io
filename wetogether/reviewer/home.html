@@ -489,11 +489,11 @@
         $("#chart-date").html(moment(user.created).format("DD MMM YYYY LT"));
         $("#chart-eidf").attr(
           "src",
-          user.emirates_id_front ? user.emirates_id_front : "./../img/eidf.jpg"
+          user.emirates_id_front ? user.emirates_id_front.key : "./../img/eidf.jpg"
         );
         $("#chart-eidb").attr(
           "src",
-          user.emirates_id_back ? user.emirates_id_back : "./../img/eidb.jpg"
+          user.emirates_id_back ? user.emirates_id_back.key : "./../img/eidb.jpg"
         );
         $("#chart-phq-interpretation").val(user.phq_interpretation);
         $("#chart-stq-interpretation").val(user.stq_interpretation);
