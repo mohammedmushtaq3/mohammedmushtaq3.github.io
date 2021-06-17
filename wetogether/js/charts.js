@@ -43,7 +43,6 @@ var alphaChartData = {
             sum += data;
           });
           let percentage = ((value * 100) / sum).toFixed(0) + "%";
-          console.log("formatter - ", context);
           let displayText =
             context.dataset.label[context.dataIndex] + ` - ${percentage}`;
           return displayText;
