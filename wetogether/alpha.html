@@ -67,6 +67,11 @@
   <!-- MDB JavaScript -->
   <script type="text/javascript" src="./js/mdb.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"
+    integrity="sha256-/A5TntSW7qgHFs6AcLw31t3ExTWuFBXgBAIkUZqX6o0="
+    crossorigin="anonymous"
+  ></script>
   <!-- Custom scripts -->
   <script src="./js/scripts.js"></script>
   <script src="./js/student-surveys.js"></script>
@@ -79,17 +84,6 @@
       // let formData = checklistFormData(student_alpha_test);
       let formData = form2js("alpha-test", ".", null);
       console.log(formData);
-      $("#formSubmitBtn")
-        .html(
-          `
-        <span
-          class="spinner-border spinner-border-sm"
-          role="status"
-          aria-hidden="true"
-        ></span> Submit
-        `
-        )
-        .addClass("pe-none");
       sessionStorage.setItem("alpha", JSON.stringify(formData));
       let user = JSON.parse(sessionStorage.getItem("user"));
       user.alpha = JSON.stringify(formData);

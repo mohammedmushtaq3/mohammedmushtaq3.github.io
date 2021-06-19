@@ -157,6 +157,18 @@ function checklistFormData(checklist) {
 }
 
 function asyncResponse(method, link, formData, callback) {
+  $("form")
+    .find("button[type=submit]")
+    .html(
+      `
+        <span
+          class="spinner-border spinner-border-sm mx-2"
+          role="status"
+          aria-hidden="true"
+        ></span> Submit
+        `
+    )
+    .addClass("pe-none");
   // const CORS = "https://cors-anywhere.herokuapp.com/";
   const CORS = "";
   // showSpinner();
@@ -180,6 +192,10 @@ function asyncResponse(method, link, formData, callback) {
     })
     .always((result) => {
       // hideSpinner();
+      $("form")
+        .find("button[type=submit]")
+        .html(`Submit`)
+        .removeClass("pe-none");
     });
 }
 

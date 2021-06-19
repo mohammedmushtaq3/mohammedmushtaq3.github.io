@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="./css/mdb.min.css" />
     <!-- <link rel="stylesheet" href="./css/compiled.min.css" /> -->
     <link rel="stylesheet" href="./css/style.css" />
-
     <!-- Custom styles -->
     <style></style>
     <script
@@ -46,7 +45,7 @@
     <main>
       <div class="container-fluid vh-100 pt-5">
         <div class="h-100 d-flex flex-column align-items-center">
-          <div class="align-self-center mb-5">
+          <!-- <div class="align-self-center mb-5">
             <img
               id="logo"
               class="img-fluid"
@@ -54,10 +53,7 @@
               alt="United Arab Emirates University Logo"
             />
           </div>
-          <div class="mb-3 text-black">
-            <h1 class="w-100 text-center text-capitalize mb-4">STQ</h1>
-            <form id="stq-test"></form>
-          </div>
+          <div class="mb-3 text-black"></div> -->
         </div>
       </div>
     </main>
@@ -67,49 +63,35 @@
 
   <!-- MDB JavaScript -->
   <script type="text/javascript" src="./js/mdb.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/form2js@1.0.0/src/form2js.js"></script>
   <!-- Custom scripts -->
   <script src="./js/scripts.js"></script>
-  <script src="./js/student-surveys.js"></script>
   <script>
-    setTimeout(() => {
-      Swal.fire({
-        title: "STQ",
-        html: `<h5 class="text-left">This scale includes 69 items that inquire about what the student would like or prefer
-          to do at home or at school. Please, read each item and then choose only one statement that applies to you from the two statements
-          that follow each item</h5>
-                <h3 class="text-right"></h3>`,
-        icon: "info",
-        grow: "row",
-        backdrop: false,
-        padding: "3em",
-      });
-    }, 1000);
-  </script>
-  <script>
-    // console.log("alpha test - ", student_alpha_test);
-    renderSurvey(student_stq, "stq-test");
-
-    $("form#stq-test").on("submit", (e) => {
-      e.preventDefault();
-      // let formData = checklistFormData(student_stq);
-      let formData = form2js("stq-test", ".", null);
-      console.log(formData);
-      let user = JSON.parse(sessionStorage.getItem("user"));
-      user.stq = JSON.stringify(formData);
-      console.log("new user data", user);
-      asyncResponse("POST", "/users", user, (res) => {
-        console.log("Succesful submitted", res);
-        Swal.fire({
-          icon: "success",
-          title: "Successful",
-          text: "Your Assessment is Completed",
-        });
-        sessionStorage.clear();
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
         setTimeout(() => {
-          window.location = "./index.html";
-        }, 3000);
-      });
-    });
+          Swal.fire({
+            title: "Choose Language",
+            text: "You can also change the language afterwards from the top-right coner of the page.",
+            icon: "question",
+            backdrop: false,
+            showCancelButton: true,
+            confirmButtonText: "English",
+            cancelButtonText: "Arabic",
+            reverseButtons: true,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              sessionStorage.setItem("lang", "en");
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+              sessionStorage.setItem("lang", "ar");
+            }
+            setTimeout(() => {
+              window.location = "./alpha.html";
+            }, 500);
+          });
+        }, 500);
+      },
+      false
+    );
   </script>
 </html>

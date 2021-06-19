@@ -120,6 +120,21 @@
   <!-- Custom scripts -->
   <script src="./js/student-surveys.js"></script>
   <script src="./js/scripts.js"></script>
+  <script>
+    setTimeout(() => {
+      Swal.fire({
+        title: "PHQ",
+        html: `<h5 class="text-left">This questionnaire is about present and recent medical and health complaints. 
+          Please answer All the questions simply by selecting the answers which you thing most 
+          nearly applies to you. It is important that you try to answer All the questions.</h5>
+                <h3 class="text-right"></h3>`,
+        icon: "info",
+        grow: "row",
+        backdrop: false,
+        padding: "3em",
+      });
+    }, 1000);
+  </script>
   <script type="text/javascript">
     renderSurvey(student_phq, "phq-test");
 

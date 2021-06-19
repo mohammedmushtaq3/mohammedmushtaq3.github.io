@@ -94,16 +94,23 @@
                       <option value="female">Female</option>
                     </select>
                   </div>
-                  <!-- Emirates -->
-                  <div class="form-outline mb-4">
-                    <input
-                      type="text"
-                      id="Emirates"
+                  <!--Emirates -->
+                  <div class="mb-4">
+                    <select
                       class="form-control"
                       name="emirates"
+                      id="emirates"
                       required
-                    />
-                    <label class="form-label" for="Emirates">Emirates</label>
+                    >
+                      <option value="" disabled selected>Emirates</option>
+                      <option value="Abu Dhabi">Abu Dhabi</option>
+                      <option value="Ajman">Ajman</option>
+                      <option value="Dubai">Dubai</option>
+                      <option value="Fujairah">Fujairah</option>
+                      <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                      <option value="Sharjah">Sharjah</option>
+                      <option value="Umm Al Quwain">Umm Al Quwain</option>
+                    </select>
                   </div>
                   <!-- DOB-->
                   <div class="form-outline mb-4">
@@ -225,7 +232,7 @@
 
         // $("#register").trigger("reset");
         setTimeout(() => {
-          window.location = "./alpha.html";
+          window.location = "./language.html";
         }, 3000);
       });
     });
