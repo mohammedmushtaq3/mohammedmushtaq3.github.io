@@ -113,8 +113,10 @@ function showPhqChart(data) {
   let anxiety_insomnia = 0;
   let social_dsyfunction = 0;
   let phq_total = 0;
+
   for (const [key, value] of Object.entries(phqData)) {
     let category = value.split("#")[0];
+    // console.log(value);
     switch (category) {
       case "somatic-symptoms":
         somatic_symptoms += parseInt(value.split("#")[1]);
@@ -130,6 +132,7 @@ function showPhqChart(data) {
         break;
     }
   }
+
   phq_total =
     somatic_symptoms +
     severe_depression +
@@ -204,33 +207,35 @@ function showStqChart(data) {
   let organized = 0;
   let flexible = 0;
   for (const [key, value] of Object.entries(stqData)) {
-    let category = value.split("#")[0];
-    switch (category) {
-      case "extrovert":
-        extrovert += parseInt(value.split("#")[1]);
-        break;
-      case "introvert":
-        introvert += parseInt(value.split("#")[1]);
-        break;
-      case "practical":
-        practical += parseInt(value.split("#")[1]);
-        break;
-      case "imaginative":
-        imaginative += parseInt(value.split("#")[1]);
-        break;
-      case "thinking":
-        thinking += parseInt(value.split("#")[1]);
-        break;
-      case "feeling":
-        feeling += parseInt(value.split("#")[1]);
-        break;
-      case "organized":
-        organized += parseInt(value.split("#")[1]);
-        break;
-      case "flexible":
-        flexible += parseInt(value.split("#")[1]);
-        break;
-    }
+    value.split("_").forEach((item) => {
+      let category = item.split("#")[0];
+      switch (category) {
+        case "extrovert":
+          extrovert += parseInt(value.split("#")[1]);
+          break;
+        case "introvert":
+          introvert += parseInt(value.split("#")[1]);
+          break;
+        case "practical":
+          practical += parseInt(value.split("#")[1]);
+          break;
+        case "imaginative":
+          imaginative += parseInt(value.split("#")[1]);
+          break;
+        case "thinking":
+          thinking += parseInt(value.split("#")[1]);
+          break;
+        case "feeling":
+          feeling += parseInt(value.split("#")[1]);
+          break;
+        case "organized":
+          organized += parseInt(value.split("#")[1]);
+          break;
+        case "flexible":
+          flexible += parseInt(value.split("#")[1]);
+          break;
+      }
+    });
   }
   $("#chart-stq-table tbody tr:last td:eq(1)").html(extrovert);
   $("#chart-stq-table tbody tr:last td:eq(2)").html(introvert);

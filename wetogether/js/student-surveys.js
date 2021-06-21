@@ -1004,12 +1004,12 @@ const student_stq = {
               {
                 en: "Quietly in my seat",
                 ar: "بهدوء وأنا في مقعدي",
-                value: "introvert#2",
+                value: "introvert#2_flexible#2",
               },
               {
                 en: "Actively within a group",
                 ar: "بنشاط ضمن مجموعة",
-                value: "extrovert#3",
+                value: "extrovert#3_organized#3",
               },
             ],
           },
@@ -1239,8 +1239,8 @@ const student_stq = {
             en: "Mostly most people say that I __________",
             ar: "في الغالب يقول معظم الناس بأني __________",
             labels: [
-              { en: "brave", ar: "شجاع", value: "extrovert#3" },
-              { en: "Shy", ar: "خجول", value: "introvert#2" },
+              { en: "brave", ar: "شجاع", value: "extrovert#3_thinking#3" },
+              { en: "Shy", ar: "خجول", value: "introvert#2_feeling#2" },
             ],
           },
           {
@@ -1319,12 +1319,12 @@ const student_stq = {
               {
                 en: "teach me to think in new ways",
                 ar: "يعلموني بأن أفكر بطرق جديدة",
-                value: "imaginative#3",
+                value: "imaginative#3_feeling#3",
               },
               {
                 en: "give me a lot of information",
                 ar: "يزودوني بمعلومات كثيرة",
-                value: "practical#2",
+                value: "practical#2_thinking#2",
               },
             ],
           },
@@ -1336,12 +1336,12 @@ const student_stq = {
               {
                 en: "start by introducing myself to them",
                 ar: "أبدأ بتعريف نفسي إليهم ",
-                value: "extrovert#2",
+                value: "extrovert#2_organized#2",
               },
               {
                 en: "stand away and watch them for a while",
                 ar: "أقف بعيداً وأراقبهم لفترة من الوقت",
-                value: "introvert#3",
+                value: "introvert#3_flexible#3",
               },
             ],
           },
@@ -1421,12 +1421,12 @@ const student_stq = {
               {
                 en: "be done properly ",
                 ar: "ينجز بشكل صحيح",
-                value: "flexible#2",
+                value: "organized#2",
               },
               {
                 en: "make others happy",
                 ar: "يسعد الآخرين",
-                value: "organized#2",
+                value: "flexible#3",
               },
             ],
           },
@@ -1523,12 +1523,12 @@ const student_stq = {
               {
                 en: "boring thing",
                 ar: "مملاُ",
-                value: "practical#1",
+                value: "practical#1_flexible#2",
               },
               {
                 en: "fun thing",
                 ar: "ممتعاُ",
-                value: "imaginative#2",
+                value: "imaginative#2_organized#1",
               },
             ],
           },
@@ -1540,12 +1540,12 @@ const student_stq = {
               {
                 en: "Within a group of students",
                 ar: "ضمن مجموعة من الطلاب",
-                value: "extrovert#3",
+                value: "extrovert#2",
               },
               {
                 en: "solo by myself",
                 ar: "منفرداً لوحدي",
-                value: "introvert#2",
+                value: "introvert#3",
               },
             ],
           },
@@ -1741,11 +1741,11 @@ const student_stq = {
             en: "In the classroom, I'm talking too __________",
             ar: "في داخل غرفة الصف، أتحدث __________",
             labels: [
-              { en: "much", ar: "كثيراً", value: "extrovert#2" },
+              { en: "much", ar: "كثيراً", value: "extrovert#2_flexible#1" },
               {
                 en: "Little",
                 ar: "قليلاً",
-                value: "introvert#1",
+                value: "introvert#1_organized#2",
               },
             ],
           },
@@ -1847,7 +1847,7 @@ const student_stq = {
               {
                 en: "as soon as possible",
                 ar: "في أسرع وقت ممكن",
-                value: "thinking#3",
+                value: "organized#2",
               },
             ],
           },
@@ -1893,12 +1893,12 @@ const student_stq = {
               {
                 en: "use the program",
                 ar: "أقوم باستخدام البرنامج",
-                value: "organized#1",
+                value: "flexible#2",
               },
               {
                 en: "Ask how the program works",
                 ar: "استفسر عن كيفية عمل البرنامج",
-                value: "flexible#2",
+                value: "organized#1",
               },
             ],
           },
