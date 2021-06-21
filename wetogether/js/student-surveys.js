@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+/*jshint esversion: 8 */
 
 const student_alpha_test = {
   statusCode: 200,
@@ -12,54 +13,94 @@ const student_alpha_test = {
             question: 1,
             en: "Do you have variety of hobbies?",
             ar: "هل لديك هوايات متنوعة؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "yes" },
+              { en: "no", ar: "لا", value: "no" },
+            ],
           },
           {
             question: 2,
             en: "Are you always full of energy?",
             ar: "هل أنت دائما مليء بالطاقة؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "yes" },
+              { en: "no", ar: "لا", value: "no" },
+            ],
           },
           {
             question: 3,
             en: "Have you ever taken anything (even a pencil or an eraser) that belonged to someone else?",
             ar: "هل سبق لك أن أخذت شيئًا (حتى لو كان ممحاة أو قلما) يخص شخصًا آخر؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "no" },
+              { en: "no", ar: "لا", value: "yes" },
+            ],
           },
           {
             question: 4,
             en: "Do you always make new friends?",
             ar: "هل تُكون دائما صداقات جديدة؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "yes" },
+              { en: "no", ar: "لا", value: "no" },
+            ],
           },
           {
             question: 5,
             en: "Have You Ever Cheated at a game?",
             ar: "هل سبق أن قمت بالغش أثناء ممارسة لعبة ما",
+            labels: [
+              { en: "yes", ar: "نعم", value: "no" },
+              { en: "no", ar: "لا", value: "yes" },
+            ],
           },
           {
             question: 6,
             en: "Do you often interact with people?",
-            ar: "هل تحب التعامل معالناس دائما؟",
+            ar: "هل تحب التعامل مع الناس دائما؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "yes" },
+              { en: "no", ar: "لا", value: "no" },
+            ],
           },
           {
             question: 7,
             en: "Have you ever blamed someone for doing something you knew was really your fault?",
             ar: "هل سبق لك أن القيت باللوم على شخص آخربسبب خطأ قمت أنت بارتكابه ؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "no" },
+              { en: "no", ar: "لا", value: "yes" },
+            ],
           },
           {
             question: 8,
             en: "Are you always right, and your decisions never go wrong?",
             ar: "هل أنت دائمًا على صواب وقراراتك لا تخطىء أبدًا؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "yes" },
+              { en: "no", ar: "لا", value: "no" },
+            ],
           },
           {
             question: 9,
             en: "Have you ever said anything bad or nasty about anyone?",
             ar: "هل سبق لك أن قلت شيئًا سيئًا أو بذيئا عن أي شخص؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "no" },
+              { en: "no", ar: "لا", value: "yes" },
+            ],
           },
           {
             question: 10,
             en: "Have you ever lied?",
             ar: "هل سبق لك أن كذبت؟",
+            labels: [
+              { en: "yes", ar: "نعم", value: "no" },
+              { en: "no", ar: "لا", value: "yes" },
+            ],
           },
         ],
-        sectionType: "boolean",
+        sectionType: "scale",
         title: { en: "", ar: "" },
         en: "",
         ar: "",
@@ -810,7 +851,7 @@ const student_phq = {
           {
             question: 28,
             en: "Have you recently found that the idea of taking your own life keptcoming into your mind?",
-            ar: "تجد أن فكرة الإنتحار تراودك أو تتردد فيرأسك",
+            ar: "تجد ان فكرة الانتحار تراودك او تتردد في رأسك",
             labels: [
               {
                 en: "Definitly not",
