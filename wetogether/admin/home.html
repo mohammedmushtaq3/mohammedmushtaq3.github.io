@@ -2,29 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Material Design for Bootstrap</title>
     <link rel="icon" href="./img/ueau-favicon2.ico" type="image/x-icon" />
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <link rel="stylesheet" href="../css/mdb.min.css" />
     <link rel="stylesheet" href="../css/compiled.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css"
@@ -47,24 +35,16 @@
   <body>
     <header id="header"></header>
     <main>
-      <div class="container-fluid vh-100">
+      <div class="container-fluid">
         <div class="h-100 d-flex flex-column justify-content-start">
           <div class="align-self-center pt-3">
-            <img
-              id="logo"
-              class="img-fluid"
-              src="../img/uaeu-logo.png"
-              alt="United Arab Emirates University Logo"
-            />
+            <img id="logo" class="img-fluid" src="../img/uaeu-logo.png" alt="United Arab Emirates University Logo" />
           </div>
           <div class="mb-3 text-black">
             <h1 class="font-weight-bold h3">Admin Dashboard</h1>
           </div>
           <div class="table-responsive">
-            <table
-              id="studentsTable"
-              class="table table-responsive table-hover"
-            >
+            <table id="studentsTable" class="table table-responsive table-hover">
               <thead class="datatable-header">
                 <th></th>
                 <th>Sno</th>
@@ -87,50 +67,28 @@
     <!-- Button trigger modal -->
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h3 class="text-center mb-3">
-              General Health Assesment Test Report
-            </h3>
+            <h3 class="text-center mb-3">General Health Assesment Test Report</h3>
             <div class="row">
               <div class="col">
                 <h6 class="text-danger">Personal Data</h6>
                 <input id="chart-userid" class="d-none" />
                 <p><strong>Name: </strong><span id="chart-username">-</span></p>
                 <p><strong>Gender: </strong><span id="chart-gender">-</span></p>
-                <p>
-                  <strong>Date of Birth: </strong
-                  ><span id="chart-birthdate">-</span>
-                </p>
-                <p>
-                  <strong>Emirates: </strong><span id="chart-emirates">-</span>
-                </p>
-
+                <p><strong>Date of Birth: </strong><span id="chart-birthdate">-</span></p>
+                <p><strong>Emirates: </strong><span id="chart-emirates">-</span></p>
                 <p>
                   <strong>Email: </strong>
                   <span id="chart-email">-</span>
                 </p>
-                <p>
-                  <strong>Phone Number: </strong
-                  ><span id="chart-phone-number">-</span>
-                </p>
+                <p><strong>Phone Number: </strong><span id="chart-phone-number">-</span></p>
                 <p>
                   <strong>Date of Application: </strong>
                   <span id="chart-date">-</span>
@@ -139,18 +97,10 @@
               <div class="col">
                 <div class="row">
                   <div class="col text-center pb-2">
-                    <img
-                      id="chart-eidf"
-                      class="img-fluid"
-                      src="../img/eidf.jpg"
-                    />
+                    <img id="chart-eidf" class="img-fluid" src="../img/eidf.jpg" />
                   </div>
                   <div class="col text-center">
-                    <img
-                      id="chart-eidb"
-                      class="img-fluid"
-                      src="../img/eidb.jpg"
-                    />
+                    <img id="chart-eidb" class="img-fluid" src="../img/eidb.jpg" />
                   </div>
                 </div>
               </div>
@@ -162,15 +112,11 @@
                 <hr class="my-3" />
               </div>
               <div class="col-12">
-                <h4 class="text-center text-danger">
-                  Psychological Health Questionnaire - Test Result
-                </h4>
+                <h4 class="text-center text-danger">Psychological Health Questionnaire - Test Result</h4>
                 <div class="row gx-5">
                   <div class="col text-center">
                     <div id="chart-phq-1" class="phq-rating-wrapper">
-                      <img class="img-fluid" src="../img/ghq-1.jpg" /><span
-                        class="text-danger"
-                        class="phq-mask-rating"
+                      <img class="img-fluid" src="../img/ghq-1.jpg" /><span class="text-danger" class="phq-mask-rating"
                         >0</span
                       >
                     </div>
@@ -178,9 +124,7 @@
                   </div>
                   <div class="col text-center">
                     <div id="chart-phq-2" class="phq-rating-wrapper">
-                      <img class="img-fluid" src="../img/ghq-2.jpg" /><span
-                        class="text-danger"
-                        class="phq-mask-rating"
+                      <img class="img-fluid" src="../img/ghq-2.jpg" /><span class="text-danger" class="phq-mask-rating"
                         >0</span
                       >
                     </div>
@@ -188,9 +132,7 @@
                   </div>
                   <div class="col text-center">
                     <div id="chart-phq-3" class="phq-rating-wrapper">
-                      <img class="img-fluid" src="../img/ghq-3.jpg" /><span
-                        class="text-danger"
-                        class="phq-mask-rating"
+                      <img class="img-fluid" src="../img/ghq-3.jpg" /><span class="text-danger" class="phq-mask-rating"
                         >0</span
                       >
                     </div>
@@ -198,9 +140,7 @@
                   </div>
                   <div class="col text-center">
                     <div id="chart-phq-4" class="phq-rating-wrapper">
-                      <img class="img-fluid" src="../img/ghq-4.jpg" /><span
-                        class="text-danger"
-                        class="phq-mask-rating"
+                      <img class="img-fluid" src="../img/ghq-4.jpg" /><span class="text-danger" class="phq-mask-rating"
                         >0</span
                       >
                     </div>
@@ -209,36 +149,19 @@
                 </div>
               </div>
               <div class="col-12 text-center">
-                <div
-                  id="chart-phq-total"
-                  class="text-center phq-rating-wrapper m-auto"
-                >
-                  <img
-                    class="rounded-circle img-fluid"
-                    src="../img/ghq-total-1.png"
-                  /><span
+                <div id="chart-phq-total" class="text-center phq-rating-wrapper m-auto">
+                  <img class="rounded-circle img-fluid" src="../img/ghq-total-1.png" /><span
                     id="chart-phq-total-number"
                     class="phq-total-mask-rating font-weight-bold text-danger"
-                    style="
-                      position: absolute;
-                      top: 70%;
-                      left: 50%;
-                      transform: translateX(-50%);
-                      font-size: 2em;
-                    "
+                    style="position: absolute; top: 70%; left: 50%; transform: translateX(-50%); font-size: 2em"
                     >0</span
                   >
                 </div>
-                <p class="font-weight-bold mt-3" style="font-size: 2.5rem">
-                  Total PHQ Value
-                </p>
+                <p class="font-weight-bold mt-3" style="font-size: 2.5rem">Total PHQ Value</p>
               </div>
               <div class="col-12">
                 <div class="table-responsive table-bordered text-center">
-                  <table
-                    id="chart-phq-table"
-                    class="table table-bordered table-sm"
-                  >
+                  <table id="chart-phq-table" class="table table-bordered table-sm">
                     <thead>
                       <tr>
                         <th>Scale</th>
@@ -271,11 +194,15 @@
                     <p class="text-right">PHQ تفسير نتيجة فحص<br /></p>
                   </div>
                 </div>
-                <textarea
-                  id="chart-phq-interpretation"
-                  class="w-100 rounded border-success"
-                  rows="4"
-                ></textarea>
+                <div>
+                  <div class="switch-field">
+                    <input type="radio" id="radio-one" name="phq-interpretation-lang" value="en" checked />
+                    <label for="radio-one">EN</label>
+                    <input type="radio" id="radio-two" name="phq-interpretation-lang" value="ar" />
+                    <label for="radio-two">AR</label>
+                  </div>
+                  <textarea id="chart-phq-interpretation" class="w-100 rounded border-success" rows="4"></textarea>
+                </div>
                 <hr class="my-3" />
               </div>
               <div class="col-12">
@@ -288,10 +215,7 @@
               </div>
               <div class="col-12">
                 <div class="table-responsive table-bordered text-center">
-                  <table
-                    id="chart-stq-table"
-                    class="table table-bordered table-sm"
-                  >
+                  <table id="chart-stq-table" class="table table-bordered table-sm">
                     <thead>
                       <tr>
                         <th class="stq-chart-0">Sub Scale</th>
@@ -330,11 +254,15 @@
                     <p class="text-right">STQ تفسير نتيجة فحص <br /></p>
                   </div>
                 </div>
-                <textarea
-                  id="chart-stq-interpretation"
-                  class="w-100 rounded border-success"
-                  rows="4"
-                ></textarea>
+                <div>
+                  <div class="switch-field">
+                    <input id="radio-three" type="radio" name="stq-interpretation-lang" value="en" checked />
+                    <label for="radio-three">EN</label>
+                    <input id="radio-four" type="radio" name="stq-interpretation-lang" value="ar" />
+                    <label for="radio-four">AR</label>
+                  </div>
+                  <textarea id="chart-stq-interpretation" class="w-100 rounded border-success" rows="4"></textarea>
+                </div>
               </div>
               <div class="col-12 d-none">
                 <div class="row font-weight-bold">
@@ -345,16 +273,18 @@
                     <p class="text-right">ملخص<br /></p>
                   </div>
                 </div>
-                <textarea
-                  id="chart-summary"
-                  class="w-100 rounded border-success"
-                  rows="4"
-                ></textarea>
+                <div>
+                  <div class="switch-field">
+                    <input id="radio-five" type="radio" name="summary-lang" value="en" checked />
+                    <label for="radio-five">EN</label>
+                    <input id="radio-six" type="radio" name="summary-lang" value="ar" />
+                    <label for="radio-six">AR</label>
+                  </div>
+                  <textarea id="chart-summary" class="w-100 rounded border-success" rows="4"></textarea>
+                </div>
               </div>
               <div class="col-12 text-right mb-3">
-                <button class="btn btn-primary" id="chart-submit">
-                  SUBMIT
-                </button>
+                <button class="btn btn-primary" id="chart-submit">SUBMIT</button>
               </div>
             </div>
           </div>
@@ -385,6 +315,7 @@
   <script src="../js/scripts.js"></script>
   <script src="../js/student-surveys.js"></script>
   <script src="../js/charts.js"></script>
+  <script></script>
   <script>
     var reportModal = new mdb.Modal(document.getElementById("exampleModal"));
     //Datatables
@@ -449,24 +380,14 @@
     function renderStatusButton(data = "PENDING") {
       let html = `
       <button class="btn ${
-        data == "COMPLETED"
-          ? "btn-success"
-          : data == "REVIEWED"
-          ? "btn-danger"
-          : "btn-warning"
+        data == "COMPLETED" ? "btn-success" : data == "REVIEWED" ? "btn-danger" : "btn-warning"
       } btn-rounded pe-none">${data}</button>`;
       return html;
     }
 
     $("#studentsTable tbody").on("click", "button.report", function () {
-      sessionStorage.setItem(
-        "rowIndex",
-        student_datatable.row($(this).parents("tr")).index()
-      );
-      console.log(
-        "row index - ",
-        student_datatable.row($(this).parents("tr")).index()
-      );
+      sessionStorage.setItem("rowIndex", student_datatable.row($(this).parents("tr")).index());
+      console.log("row index - ", student_datatable.row($(this).parents("tr")).index());
       var data = student_datatable.row($(this).parents("tr")).data();
       // console.log("id - ", data[0]);
       asyncResponse("GET", "/users/", { userid: data[0] }, (res) => {
@@ -478,41 +399,26 @@
         $("#chart-userid").val(user.id);
         $("#chart-username").html(user.full_name);
         $("#chart-gender").html(user.gender);
-        $("#chart-birthdate").html(
-          moment(user?.birthdate).format("DD-MM-YYYY")
-        );
+        $("#chart-birthdate").html(moment(user?.birthdate).format("DD-MM-YYYY"));
         $("#chart-emirates").html(user.emirates);
         $("#chart-email").html(user.email);
         $("#chart-phone-number").html(user.phone_number);
         $("#chart-date").html(moment(user.created).format("DD MMM YYYY LT"));
-        $("#chart-eidf").attr(
-          "src",
-          user.emirates_id_front
-            ? user.emirates_id_front.key
-            : "./../img/eidf.jpg"
-        );
-        $("#chart-eidb").attr(
-          "src",
-          user.emirates_id_back
-            ? user.emirates_id_back.key
-            : "./../img/eidb.jpg"
-        );
+        $("#chart-eidf").attr("src", user.emirates_id_front ? user.emirates_id_front.key : "./../img/eidf.jpg");
+        $("#chart-eidb").attr("src", user.emirates_id_back ? user.emirates_id_back.key : "./../img/eidb.jpg");
         $("#chart-phq-interpretation").val(user.phq_interpretation);
+        textDirection(user.phq_interpretation_lang, "#chart-phq-interpretation");
         $("#chart-stq-interpretation").val(user.stq_interpretation);
+        textDirection(user.stq_interpretation_lang, "#chart-stq-interpretation");
         showAlphaChart(user.alpha);
         showPhqChart(user.phq);
         showStqChart(user.stq);
       });
     });
+
     $("#studentsTable tbody").on("click", "button.delete-user", function () {
-      sessionStorage.setItem(
-        "rowIndex",
-        student_datatable.row($(this).parents("tr")).index()
-      );
-      console.log(
-        "row index - ",
-        student_datatable.row($(this).parents("tr")).index()
-      );
+      sessionStorage.setItem("rowIndex", student_datatable.row($(this).parents("tr")).index());
+      console.log("row index - ", student_datatable.row($(this).parents("tr")).index());
       var data = student_datatable.row($(this).parents("tr")).data();
       let userId = data[0];
       Swal.fire({
@@ -529,10 +435,7 @@
             console.log("delete response - ", res);
             if (res.statusCode == 200) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              student_datatable
-                .row(sessionStorage.getItem("rowIndex"))
-                .remove()
-                .draw();
+              student_datatable.row(sessionStorage.getItem("rowIndex")).remove().draw();
             } else {
               Swal.fire("Error!", "Failed to Delete", "error");
             }
@@ -546,7 +449,9 @@
       let userid = $("#chart-userid").val();
       let payload = {
         phq_interpretation: $("#chart-phq-interpretation").val(),
+        phq_interpretation_lang: $("input[name=phq-interpretation-lang]:checked").val(),
         stq_interpretation: $("#chart-stq-interpretation").val(),
+        stq_interpretation_lang: $("input[name=stq-interpretation-lang]:checked").val(),
       };
       console.log("chart submit - ", userid, payload);
       asyncResponse("POST", `/users/${userid}`, payload, (res) => {

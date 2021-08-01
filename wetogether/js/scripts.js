@@ -2,13 +2,31 @@
 /* jshint esversion:8 */
 //@ts-check
 
-const ENDPOINT =
-  "https://97j6jnn5gc.execute-api.us-east-1.amazonaws.com/dev/uaeu";
-
+const ENDPOINT = "https://97j6jnn5gc.execute-api.us-east-1.amazonaws.com/dev/uaeu";
+$(`#language-preference option[value=${sessionStorage.getItem("lang") || "en"}]`).attr("selected", true);
 function languageChange(val) {
   console.log("language - ", val);
   sessionStorage.setItem("lang", val);
   location.reload();
+}
+
+$("input[name=phq-interpretation-lang],input[name=stq-interpretation-lang],input[name=summary-lang]").change(
+  function () {
+    if (this.value == "en") {
+      $(this).parent().parent().find("textarea").attr("dir", "ltr");
+    } else if (this.value == "ar") {
+      $(this).parent().parent().find("textarea").attr("dir", "rtl");
+    }
+  }
+);
+
+function textDirection(lang = "en", target) {
+  var text_direction = "ltr";
+  if (lang == "ar") {
+    text_direction = "rtl";
+  }
+  $(target).attr("dir", text_direction);
+  $(target).parent().find("input[name=phq-interpretation-lang][value=en]").prop("checked", true);
 }
 
 /**
@@ -18,9 +36,7 @@ function languageChange(val) {
  * @param {boolean} forViewing
  */
 function renderSurvey(data, contentHolder, forViewing = false) {
-  let languagePreference = sessionStorage.getItem("lang")
-    ? sessionStorage.getItem("lang")
-    : "en";
+  let languagePreference = sessionStorage.getItem("lang") ? sessionStorage.getItem("lang") : "en";
   var surveyContent = "";
   data.body.sections.forEach((section, sectionIndex) => {
     surveyContent += `<div class="table-responsive"> <table class="table table-borderless" ${
@@ -48,9 +64,7 @@ function renderSurvey(data, contentHolder, forViewing = false) {
               <tr class="text-center">`;
         $.each(question.labels, function (labelIndex, item) {
           surveyContent += `<td>
-                <input type="radio" name="${question.en}" value="${
-            item.value
-          }" class="${forViewing ? "pe-none" : ""}"/>
+                <input type="radio" name="${question.en}" value="${item.value}" class="${forViewing ? "pe-none" : ""}"/>
               </td>`;
         });
         surveyContent += `</tr>`;
@@ -70,12 +84,8 @@ function renderSurvey(data, contentHolder, forViewing = false) {
               <th>${sessionStorage.getItem("lang") == "en" ? "No" : "لا"}</th>
             </tr>
             <tr class="text-center">
-              <td><input type="radio" name="${
-                question.en
-              }" value="yes" class="${forViewing ? "pe-none" : ""}"/></td>
-              <td><input type="radio" name="${question.en}" value="no" class="${
-          forViewing ? "pe-none" : ""
-        }"/></td>
+              <td><input type="radio" name="${question.en}" value="yes" class="${forViewing ? "pe-none" : ""}"/></td>
+              <td><input type="radio" name="${question.en}" value="no" class="${forViewing ? "pe-none" : ""}"/></td>
             </tr>`;
       });
     }
@@ -192,10 +202,7 @@ function asyncResponse(method, link, formData, callback) {
     })
     .always((result) => {
       // hideSpinner();
-      $("form")
-        .find("button[type=submit]")
-        .html(`Submit`)
-        .removeClass("pe-none");
+      $("form").find("button[type=submit]").html(`Submit`).removeClass("pe-none");
     });
 }
 
@@ -374,10 +381,7 @@ function uploadCanvasImage(link, cropperId) {
         $(modal.element).on("click", ".btn", function (event) {
           event.preventDefault();
           modal.hide();
-          modal.props.onSubmit(
-            event.target.getAttribute("class").indexOf("btn-true") !== -1,
-            modal
-          );
+          modal.props.onSubmit(event.target.getAttribute("class").indexOf("btn-true") !== -1, modal);
         });
       };
       return this.showModal(props);
