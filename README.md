@@ -4,4 +4,4 @@ Samples Works
 
 [SAH Digitals](https://mohammedmushtaq3.github.io/sah/)
 
-[Kartikeya Group](https://mohammedmushtaq3.github.io/kartikeyagroups/index.html)
+[Kartikeya Group](https://mohammedmushtaq3.github.io/kartikeyagroups/)
