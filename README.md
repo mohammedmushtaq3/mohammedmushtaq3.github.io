@@ -1,7 +1,7 @@
-# overlord-mmorpg.github.io
-
 Samples Works
 
-[EAZYFIX](./eazyfix/)
-[SAH Digitals](./sah/)
-[Kartikeya Group](./kartikeyagroups/index.html)
+[EAZYFIX](https://mohammedmushtaq3.github.io/eazyfix/)
+
+[SAH Digitals](https://mohammedmushtaq3.github.io/sah/)
+
+[Kartikeya Group](https://mohammedmushtaq3.github.io/kartikeyagroups/index.html)
